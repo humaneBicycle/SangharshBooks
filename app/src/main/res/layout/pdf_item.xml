@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="124dp"
     android:id="@+id/pdf_item_background"
-    android:layout_margin="8dp"
-    app:circularflow_radiusInDP="6dp"
+    android:layout_marginTop="8dp"
+    app:circularflow_radiusInDP="16dp"
     android:background="@drawable/tiny_stroke">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

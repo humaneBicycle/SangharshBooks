@@ -17,12 +17,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
 
-        <FrameLayout
-            android:id="@+id/greetings_holder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="16dp"
+                android:id="@+id/latestCard"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:cardElevation="0dp"
+                android:clipChildren="false"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="?attr/backgroundColorTheme"
+                android:backgroundTint="@android:color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.viewpager.widget.ViewPager
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:visibility="visible"
+                        app:layout_constraintDimensionRatio="1.36"
+                        android:layout_height="0dp" />
+
+                    <TextView
+                        android:id="@+id/counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="?attr/textColorTheme"
+                        android:textSize="18sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <FrameLayout
+                android:id="@+id/greetings_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/backgroundColorTheme" />
 
         <FrameLayout
             android:id="@+id/body_holder_main_activity"
@@ -31,16 +75,18 @@
             android:background="?attr/backgroundColorTheme" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_home_admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_baseline_add_24"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent" />
 
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/myAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:layout_constraintBottom_toTopOf="@id/bottomBar"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"

@@ -15,6 +15,8 @@
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/drawable/ic_layer_4.xml" value="0.1495" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/drawable/ic_profile.xml" value="0.1565" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/font/poppins.xml" value="0.2523076923076923" />
+        <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/activity_banner_add.xml" value="0.16875" />
+        <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/activity_banner_delete.xml" value="0.16875" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/activity_file.xml" value="0.43771626297577854" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/activity_notification.xml" value="0.264" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/add_notification_bottom_sheet.xml" value="0.2359375" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/books_item.xml" value="0.225" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/file_item.xml" value="0.2359375" />
+        <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/fragment_banner.xml" value="0.23489583333333333" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/fragment_bookmarks.xml" value="0.2359375" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/fragment_downloads.xml" value="0.2359375" />
         <entry key="..\:/Storage/code/Project 2/SangharshBooks/app/src/main/res/layout/fragment_greeting.xml" value="0.22604166666666667" />

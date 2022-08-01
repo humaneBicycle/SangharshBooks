@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.sangharshAdmin.books">
+    package="com.sangharsh.books">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.sangharshAdmin.books.SangharshBooks"
+        android:name=".SangharshBooks"
         android:allowBackup="true"
-        android:requestLegacyExternalStorage="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Light"
         tools:targetApi="31">
         <activity
-            android:name="com.sangharshAdmin.books.NotificationActivity"
+            android:name=".BannerDeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
             android:exported="false" />
 
         <provider
@@ -33,13 +36,13 @@
         </provider>
 
         <activity
-            android:name="com.sangharshAdmin.books.PDFDisplay"
+            android:name=".PDFDisplay"
             android:exported="false" />
         <activity
-            android:name="com.sangharshAdmin.books.FileActivity"
+            android:name=".FileActivity"
             android:exported="false" />
         <activity
-            android:name="com.sangharshAdmin.books.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,13 +52,17 @@
         </activity>
 
         <service
-            android:name="com.sangharshAdmin.books.NotificationMessagingService"
+            android:name=".NotificationMessagingService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
 
 </manifest>

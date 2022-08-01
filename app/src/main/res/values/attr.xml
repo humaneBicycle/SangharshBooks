@@ -5,6 +5,7 @@
         <attr name="textColorTheme" format="color"/>
         <attr name="bottom_bar" format="color"/>
         <attr name="bottom_bar_indicator" format="color"/>
+        <attr name="image_background" format="color"/>
     </declare-styleable>
 
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sangharsh Books Admin</string>
+    <string name="app_name">Sangharsh Books</string>
     <string name="good">Good</string>
     <string name="morning">Morning!</string>
     <string name="evening">Evening!</string>
@@ -25,3 +25,4 @@
     <string name="enter_pdf_url">Enter PDF URL</string>
     <string name="bookmark">Bookmark</string>
 </resources>
+

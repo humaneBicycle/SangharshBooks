@@ -16,5 +16,6 @@
         <item name="textColorTheme">#000000</item>
         <item name="bottom_bar">#173535</item>
         <item name="bottom_bar_indicator">#86727878</item>
+        <item name="image_background">#B1BDBD</item>
     </style>
 </resources>
