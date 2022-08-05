@@ -3,6 +3,7 @@ package com.sangharsh.books;
 import android.app.Application;
 
 import com.sangharsh.books.model.Directory;
+import com.sangharsh.books.model.Notification;
 import com.sangharsh.books.model.PDFModel;
 
 import java.util.ArrayList;
@@ -12,6 +13,33 @@ public class SangharshBooks extends Application {
     static PDFModel pdfModel;
     static String activeFragment;
     static String currentImageUrl;
+    static int adCount;
+    private Directory homeDirectory;
+    private ArrayList<Notification> notifications;
+
+    public Directory getHomeDirectory() {
+        return homeDirectory;
+    }
+
+    public void setHomeDirectory(Directory homeDirectory) {
+        this.homeDirectory = homeDirectory;
+    }
+
+    public ArrayList<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(ArrayList<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+    public static int getAdCount() {
+        return adCount;
+    }
+
+    public static void setAdCount(int adCount) {
+        SangharshBooks.adCount = adCount;
+    }
 
     public static String getCurrentImageUrl() {
         return currentImageUrl;

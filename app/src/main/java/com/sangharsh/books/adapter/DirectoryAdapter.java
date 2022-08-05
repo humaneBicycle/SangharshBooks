@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -222,222 +223,95 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 //                }
 //            });
 
-            ((PDFVIewHolder) holder).basicPDFViewer.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(false);
-                    ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(false);
-                    Log.d("sba directoryadapter", "onClick: advanced pdf viewer");
-                    boolean b = false;
-                    for(int i =0;i<new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).size();i++){
-                        //directory.getPdfModels().get(position).getPointingDir();
-                        //String s = (new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir());
-                        if(new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir().equals(directory.getPdfModels().get(index).getPointingDir()) ){
-                            //if(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf").exists()) {
-                                b = true;
-                                break;
-                            //}
-                        }
-                    }
-                    if(b){
-                        //downloaded file
-                        String dirPath = context.getFilesDir().getAbsolutePath()+"/"+directory.getPdfModels().get(index).getPointingDir()+".pdf";
-                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf";
-                        File file = new File(dirPath);
-                        //Log.d("sba adapter", dirPath);
-//                        if(!file.exists()){
-//                            file.mkdir();
+//            ((PDFVIewHolder) holder).basicPDFViewer.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//                    ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(false);
+//                    ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(false);
+//                    Log.d("sba directoryadapter", "onClick: advanced pdf viewer");
+//                    boolean b = false;
+//                    for(int i =0;i<new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).size();i++){
+//                        //directory.getPdfModels().get(position).getPointingDir();
+//                        //String s = (new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir());
+//                        if(new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir().equals(directory.getPdfModels().get(index).getPointingDir()) ){
+//                            //if(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf").exists()) {
+//                                b = true;
+//                                break;
+//                            //}
 //                        }
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        Uri uri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider",file);
-                        intent.setDataAndType(uri, "application/pdf");
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-                        context.startActivity(intent);
-                    }else{
-                        //download the file. add it to storage
-                        Log.d("sba pdf onclick", "onClick: not downloaded! initiating download");
-                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
-                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
-                        PRDownloader.initialize(context);
-                        String url = directory.getPdfModels().get(index).getUrl();
-                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
-                        String dirPath = context.getFilesDir().getAbsolutePath();
-//                        if(!new File(dirPath+"/abhay.pdf").exists()){
-//                            Log.d("sba add bottomsheet", "directory does not exist");
-//                            //new File(dirPath).mkdir();
-//                        }
-                        //String fileName = directory.getPdfModels().get(index).getPointingDir();
-                        //Log.d("sba downloading details", "url: "+url +" dirPath " + dirPath+" filename "+fileName );
-                        int downloadId = PRDownloader.download(url, dirPath, directory.getPdfModels().get(index).getPointingDir()+".pdf")
-                                .build()
-                                .setOnStartOrResumeListener(new OnStartOrResumeListener() {
-                                    @Override
-                                    public void onStartOrResume() {
-//                                        Toast.makeText(context, "Starting download!", Toast.LENGTH_SHORT).show();
-//                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
-//                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
-
-                                    }
-                                })
-                                .setOnPauseListener(new OnPauseListener() {
-                                    @Override
-                                    public void onPause() {
-
-                                    }
-                                })
-                                .setOnCancelListener(new OnCancelListener() {
-                                    @Override
-                                    public void onCancel() {
-
-                                    }
-                                })
-                                .setOnProgressListener(new OnProgressListener() {
-                                    @Override
-                                    public void onProgress(Progress progress) {
-                                        //Log.d("sba bottom sheet", "download progress"+progress.currentBytes);
-
-                                        int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
-                                        Log.d("sba", "onProgress: "+String.valueOf(prog));
-                                        ((PDFVIewHolder) holder).seekBar.setProgress(prog);
-                                        ((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
-
-                                    }
-                                })
-                                .start(new OnDownloadListener() {
-                                    @Override
-                                    public void onDownloadComplete() {
-
-                                        ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
-                                        pdfs.add(directory.getPdfModels().get(index));
-                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
-                                        new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
-                                        Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
-                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-//                                        if(pdfs.size()==0){
-//                                            pdfs.add(directory.)
-//                                        }else {
-//                                            pdfs.get(index).setOfflinePath(dirPath);
-//                                        }
-                                    }
-
-                                    @Override
-                                    public void onError(Error error) {
-                                        Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
-                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
-                                        Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
-                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-                                    }
-
-                                });
-
-                    }
-                }
-            });
-
-            ((PDFVIewHolder) holder).advancedPDFViewer.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(false);
-                    ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(false);
-                    boolean b = false;
-                    for(int i =0;i<new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).size();i++){
-                        //directory.getPdfModels().get(position).getPointingDir();
-                        //String s = (new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir());
-                        if(new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir().equals(directory.getPdfModels().get(index).getPointingDir()) ){
-                            //if(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf").exists()) {
-                            b = true;
-                            break;
-                            //}
-                        }
-                    }
-                    if(b){
-                        //downloaded file
-                        String dirPath = context.getFilesDir().getAbsolutePath()+"/"+directory.getPdfModels().get(index).getPointingDir()+".pdf";
-                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf";
-                        File file = new File(dirPath);
-                        //Log.d("sba adapter", dirPath);
-//                        if(!file.exists()){
-//                            file.mkdir();
-//                        }
-                        sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
-                        context.startActivity(new Intent(context, PDFDisplay.class));
-                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-                    }else{
-                        //download the file. add it to storage
-                        Log.d("sba pdf onclick", "onClick: not downloaded! initiating download");
-                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
-                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
-                        PRDownloader.initialize(context);
-                        String url = directory.getPdfModels().get(index).getUrl();
-                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
-                        String dirPath = context.getFilesDir().getAbsolutePath();
-//                        if(!new File(dirPath+"/abhay.pdf").exists()){
-//                            Log.d("sba add bottomsheet", "directory does not exist");
-//                            //new File(dirPath).mkdir();
-//                        }
-                        //String fileName = directory.getPdfModels().get(index).getPointingDir();
-                        //Log.d("sba downloading details", "url: "+url +" dirPath " + dirPath+" filename "+fileName );
-                        int downloadId = PRDownloader.download(url, dirPath, directory.getPdfModels().get(index).getPointingDir()+".pdf")
-                                .build()
-                                .setOnStartOrResumeListener(new OnStartOrResumeListener() {
-                                    @Override
-                                    public void onStartOrResume() {
-                                        //Toast.makeText(context, "Starting download!", Toast.LENGTH_SHORT).show();
-//                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
-//                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
-
-                                    }
-                                })
-                                .setOnPauseListener(new OnPauseListener() {
-                                    @Override
-                                    public void onPause() {
-
-                                    }
-                                })
-                                .setOnCancelListener(new OnCancelListener() {
-                                    @Override
-                                    public void onCancel() {
-
-                                    }
-                                })
-                                .setOnProgressListener(new OnProgressListener() {
-                                    @Override
-                                    public void onProgress(Progress progress) {
-                                        //Log.d("sba bottom sheet", "download progress"+progress.currentBytes);
-
-                                        int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
-                                        Log.d("sba", "onProgress: "+String.valueOf(prog));
-                                        ((PDFVIewHolder) holder).seekBar.setProgress(prog);
-                                        ((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
-
-                                    }
-                                })
-                                .start(new OnDownloadListener() {
-                                    @Override
-                                    public void onDownloadComplete() {
-
-                                        ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
-                                        pdfs.add(directory.getPdfModels().get(index));
-                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
-                                        new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
-                                        Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
-                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-
-
-//                                        Log.d("sba", "basic pdf view onClick at: "+directory.getPdfModels().get(index).getName());
-//                                        sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
-//                                        context.startActivity(new Intent(context, PDFDisplay.class));
+//                    }
+//                    if(b){
+//                        //downloaded file
+//                        String dirPath = context.getFilesDir().getAbsolutePath()+"/"+directory.getPdfModels().get(index).getPointingDir()+".pdf";
+//                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf";
+//                        File file = new File(dirPath);
+//                        //Log.d("sba adapter", dirPath);
+////                        if(!file.exists()){
+////                            file.mkdir();
+////                        }
+//                        Intent intent = new Intent(Intent.ACTION_VIEW);
+//                        Uri uri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider",file);
+//                        intent.setDataAndType(uri, "application/pdf");
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
+//                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+//                        context.startActivity(intent);
+//                    }else{
+//                        //download the file. add it to storage
+//                        Log.d("sba pdf onclick", "onClick: not downloaded! initiating download");
+//                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
+//                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
+//                        PRDownloader.initialize(context);
+//                        String url = directory.getPdfModels().get(index).getUrl();
+//                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+//                        String dirPath = context.getFilesDir().getAbsolutePath();
+////                        if(!new File(dirPath+"/abhay.pdf").exists()){
+////                            Log.d("sba add bottomsheet", "directory does not exist");
+////                            //new File(dirPath).mkdir();
+////                        }
+//                        //String fileName = directory.getPdfModels().get(index).getPointingDir();
+//                        //Log.d("sba downloading details", "url: "+url +" dirPath " + dirPath+" filename "+fileName );
+//                        int downloadId = PRDownloader.download(url, dirPath, directory.getPdfModels().get(index).getPointingDir()+".pdf")
+//                                .build()
+//                                .setOnStartOrResumeListener(new OnStartOrResumeListener() {
+//                                    @Override
+//                                    public void onStartOrResume() {
+////                                        Toast.makeText(context, "Starting download!", Toast.LENGTH_SHORT).show();
+////                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
+////                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
+//
+//                                    }
+//                                })
+//                                .setOnPauseListener(new OnPauseListener() {
+//                                    @Override
+//                                    public void onPause() {
+//
+//                                    }
+//                                })
+//                                .setOnCancelListener(new OnCancelListener() {
+//                                    @Override
+//                                    public void onCancel() {
+//
+//                                    }
+//                                })
+//                                .setOnProgressListener(new OnProgressListener() {
+//                                    @Override
+//                                    public void onProgress(Progress progress) {
+//                                        //Log.d("sba bottom sheet", "download progress"+progress.currentBytes);
+//
+//                                        int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
+//                                        Log.d("sba", "onProgress: "+String.valueOf(prog));
+//                                        ((PDFVIewHolder) holder).seekBar.setProgress(prog);
+//                                        ((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
+//
+//                                    }
+//                                })
+//                                .start(new OnDownloadListener() {
+//                                    @Override
+//                                    public void onDownloadComplete() {
+//
 //                                        ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
 //                                        pdfs.add(directory.getPdfModels().get(index));
 //                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
@@ -446,31 +320,158 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 //                                        Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
 //                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
 //                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-//                                        if(pdfs.size()==0){
-//                                            pdfs.add(directory.)
-//                                        }else {
-//                                            pdfs.get(index).setOfflinePath(dirPath);
-//                                        }
-                                    }
+////                                        if(pdfs.size()==0){
+////                                            pdfs.add(directory.)
+////                                        }else {
+////                                            pdfs.get(index).setOfflinePath(dirPath);
+////                                        }
+//                                    }
+//
+//                                    @Override
+//                                    public void onError(Error error) {
+//                                        Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
+//                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+//                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+//                                        Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
+//                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
+//                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+//                                    }
+//
+//                                });
+//
+//                    }
+//                }
+//            });
 
-                                    @Override
-                                    public void onError(Error error) {
-                                        Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
-                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
-                                        Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
-                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
-                                    }
-
-                                });
-
-                    }
-
-
-
-                }
-            });
+//            ((PDFVIewHolder) holder).advancedPDFViewer.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(false);
+//                    ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(false);
+//                    boolean b = false;
+//                    for(int i =0;i<new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).size();i++){
+//                        //directory.getPdfModels().get(position).getPointingDir();
+//                        //String s = (new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir());
+//                        if(new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir().equals(directory.getPdfModels().get(index).getPointingDir()) ){
+//                            //if(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf").exists()) {
+//                            b = true;
+//                            break;
+//                            //}
+//                        }
+//                    }
+//                    if(b){
+//                        //downloaded file
+//                        String dirPath = context.getFilesDir().getAbsolutePath()+"/"+directory.getPdfModels().get(index).getPointingDir()+".pdf";
+//                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf";
+//                        File file = new File(dirPath);
+//                        //Log.d("sba adapter", dirPath);
+////                        if(!file.exists()){
+////                            file.mkdir();
+////                        }
+//                        sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
+//                        context.startActivity(new Intent(context, PDFDisplay.class));
+//                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
+//                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+//                    }else{
+//                        //download the file. add it to storage
+//                        Log.d("sba pdf onclick", "onClick: not downloaded! initiating download");
+//                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
+//                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
+//                        PRDownloader.initialize(context);
+//                        String url = directory.getPdfModels().get(index).getUrl();
+//                        //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+//                        String dirPath = context.getFilesDir().getAbsolutePath();
+////                        if(!new File(dirPath+"/abhay.pdf").exists()){
+////                            Log.d("sba add bottomsheet", "directory does not exist");
+////                            //new File(dirPath).mkdir();
+////                        }
+//                        //String fileName = directory.getPdfModels().get(index).getPointingDir();
+//                        //Log.d("sba downloading details", "url: "+url +" dirPath " + dirPath+" filename "+fileName );
+//                        int downloadId = PRDownloader.download(url, dirPath, directory.getPdfModels().get(index).getPointingDir()+".pdf")
+//                                .build()
+//                                .setOnStartOrResumeListener(new OnStartOrResumeListener() {
+//                                    @Override
+//                                    public void onStartOrResume() {
+//                                        //Toast.makeText(context, "Starting download!", Toast.LENGTH_SHORT).show();
+////                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
+////                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
+//
+//                                    }
+//                                })
+//                                .setOnPauseListener(new OnPauseListener() {
+//                                    @Override
+//                                    public void onPause() {
+//
+//                                    }
+//                                })
+//                                .setOnCancelListener(new OnCancelListener() {
+//                                    @Override
+//                                    public void onCancel() {
+//
+//                                    }
+//                                })
+//                                .setOnProgressListener(new OnProgressListener() {
+//                                    @Override
+//                                    public void onProgress(Progress progress) {
+//                                        //Log.d("sba bottom sheet", "download progress"+progress.currentBytes);
+//
+//                                        int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
+//                                        Log.d("sba", "onProgress: "+String.valueOf(prog));
+//                                        ((PDFVIewHolder) holder).seekBar.setProgress(prog);
+//                                        ((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
+//
+//                                    }
+//                                })
+//                                .start(new OnDownloadListener() {
+//                                    @Override
+//                                    public void onDownloadComplete() {
+//
+//                                        ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
+//                                        pdfs.add(directory.getPdfModels().get(index));
+//                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+//                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+//                                        new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
+//                                        Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
+//                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
+//                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+//
+//
+////                                        Log.d("sba", "basic pdf view onClick at: "+directory.getPdfModels().get(index).getName());
+////                                        sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
+////                                        context.startActivity(new Intent(context, PDFDisplay.class));
+////                                        ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
+////                                        pdfs.add(directory.getPdfModels().get(index));
+////                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+////                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+////                                        new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
+////                                        Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
+////                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
+////                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+////                                        if(pdfs.size()==0){
+////                                            pdfs.add(directory.)
+////                                        }else {
+////                                            pdfs.get(index).setOfflinePath(dirPath);
+////                                        }
+//                                    }
+//
+//                                    @Override
+//                                    public void onError(Error error) {
+//                                        Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
+//                                        ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+//                                        ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+//                                        Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
+//                                        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
+//                                        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+//                                    }
+//
+//                                });
+//
+//                    }
+//
+//
+//
+//                }
+//            });
 
 
 
@@ -479,8 +480,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
     }
     private void getAdvPdf(RecyclerView.ViewHolder holder,int index){
-        ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(false);
-        ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(false);
+        ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
         boolean b = false;
         for(int i =0;i<new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).size();i++){
             //directory.getPdfModels().get(position).getPointingDir();
@@ -503,8 +503,8 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 //                        }
             sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
             context.startActivity(new Intent(context, PDFDisplay.class));
-            ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-            ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
+
         }else{
             //download the file. add it to storage
             Log.d("sba pdf onclick", "onClick: not downloaded! initiating download");
@@ -551,7 +551,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                             int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
                             Log.d("sba", "onProgress: "+String.valueOf(prog));
                             ((PDFVIewHolder) holder).seekBar.setProgress(prog);
-                            ((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
+                            //((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
 
                         }
                     })
@@ -565,8 +565,9 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                             ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
                             new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
                             Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
-                            ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                            ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+                            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
+                            sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
+                            context.startActivity(new Intent(context, PDFDisplay.class));
 
 
 //                                        Log.d("sba", "basic pdf view onClick at: "+directory.getPdfModels().get(index).getName());
@@ -661,7 +662,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         TextView advancedPDFViewer, basicPDFViewer;
         CardView relativeLayoutBG;
         SeekBar seekBar;
-        TextView downloadPercentTV;
+        ProgressBar downloadPercentTV;
         ImageView bookMarkImg;
         LinearLayout llBG;
         AppCompatButton downloadBTN;
@@ -669,8 +670,8 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         public PDFVIewHolder(View itemView){
             super(itemView);
             pdfNamepdfItem = itemView.findViewById(R.id.pdf_name_pdf_item);
-            advancedPDFViewer = itemView.findViewById(R.id.pdf_view_advance);
-            basicPDFViewer = itemView.findViewById(R.id.pdf_view_basic);
+//            advancedPDFViewer = itemView.findViewById(R.id.pdf_view_advance);
+//            basicPDFViewer = itemView.findViewById(R.id.pdf_view_basic);
             relativeLayoutBG = itemView.findViewById(R.id.pdf_item_background);
             seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
             downloadPercentTV = itemView.findViewById(R.id.download_percent);

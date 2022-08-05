@@ -20,7 +20,7 @@ public class BannerPagerAdapter extends FragmentPagerAdapter {
     BannerFragment fragment;
 
 
-    public BannerPagerAdapter(@NonNull FragmentManager fm, ArrayList<Banner> banners, Context context) {
+    public BannerPagerAdapter(@NonNull FragmentManager fm, ArrayList<Banner> banners) {
         super(fm);
         fragmentManager = fm;
         this.banners = banners;
@@ -43,16 +43,10 @@ public class BannerPagerAdapter extends FragmentPagerAdapter {
             return null;
         }
     }
-    public void updateImage(){
-        fragment.loadImage();
-    }
 
     public void update(ArrayList<Banner> newList){
         this.banners = newList;
         notifyDataSetChanged();
     }
 
-    public void addBanner(Banner newBanner){
-        banners.add(newBanner);
-    }
 }

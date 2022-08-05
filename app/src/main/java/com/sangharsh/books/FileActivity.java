@@ -61,6 +61,7 @@ public class FileActivity extends AppCompatActivity implements DirectoryChangeLi
         });
 
         heading.setText(sangharshBooks.getLatestDir());
+        sangharshBooks.setAdCount(sangharshBooks.getAdCount()+1);
 
 //        floatingActionButton.setOnClickListener(new View.OnClickListener() {
 //            @Override

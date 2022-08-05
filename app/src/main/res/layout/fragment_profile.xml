@@ -1,51 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".NotificationActivity"
+    android:orientation="vertical">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
+<!--    <ImageView-->
+<!--        android:id="@+id/back_noti"-->
+<!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_margin="12dp">-->
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="12dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:fontFamily="@font/poppinsbold"-->
-<!--            android:textColor="?attr/textColorTheme"-->
-<!--            android:textSize="20sp"-->
-<!--            android:text="@string/night_mode"/>-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:tint="?attr/textColorTheme"/>-->
 
-<!--        <com.google.android.material.switchmaterial.SwitchMaterial-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/active_mode_theme"-->
-<!--            android:layout_margin="10dp"-->
-<!--            />-->
-<!--    </LinearLayout>-->
     <TextView
+        android:id="@+id/notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="12dp"
         android:fontFamily="@font/poppinsbold"
+        android:text="@string/notifications"
         android:textColor="?attr/textColorTheme"
-        android:textSize="20sp"
-        android:text="@string/privacy_policy"
-        android:id="@+id/privacy_policy"/>
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification_rv"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintTop_toBottomOf="@+id/notification" />
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/ic_baseline_add_24"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        android:layout_margin="12dp"-->
+    <!--        android:id="@+id/add_noti"/>-->
     <TextView
+        android:id="@+id/text_nothing_available_noti_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="13dp"
         android:fontFamily="@font/poppinsbold"
+        android:text="@string/nothing_available"
         android:textColor="?attr/textColorTheme"
-        android:textSize="20sp"
-        android:text="@string/about_us"
-        android:id="@+id/about_us"/>
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
 
+    <ProgressBar
+        android:id="@+id/progress_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>

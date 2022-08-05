@@ -17,5 +17,6 @@
         <item name="bottom_bar">#173535</item>
         <item name="bottom_bar_indicator">#86727878</item>
         <item name="image_background">#B1BDBD</item>
+        <item name="test_color_sub">#4F5555</item>
     </style>
 </resources>

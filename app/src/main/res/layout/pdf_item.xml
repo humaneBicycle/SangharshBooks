@@ -2,30 +2,29 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="124dp"
+    android:layout_height="74dp"
     android:id="@+id/pdf_item_background"
     android:layout_marginTop="8dp"
     app:circularflow_radiusInDP="16dp"
     android:background="@drawable/tiny_stroke">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:id="@+id/ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
             android:background="@drawable/circle"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="8dp">
-
-            i
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/img_pdf"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:backgroundTint="?attr/textColorTheme"
@@ -33,119 +32,45 @@
                 android:src="@drawable/ic_baseline_picture_as_pdf_24" />
 
 
-
         </LinearLayout>
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/download_pdf_item"-->
-<!--            android:layout_width="25dp"-->
-<!--            android:layout_height="25dp"-->
-<!--            android:layout_margin="12dp"-->
-<!--            android:background="@drawable/ic_baseline_arrow_circle_down_24"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/text_ll"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            android:backgroundTint="?attr/textColorTheme"/>-->
 
         <TextView
             android:id="@+id/pdf_name_pdf_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/add"
+            android:layout_marginLeft="9dp"
             android:fontFamily="@font/poppinsregular"
+            android:text="@string/add"
             android:textColor="?attr/textColorTheme"
             android:textSize="28sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginLeft="9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ll"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/text_ll"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/ll"
-            app:layout_constraintTop_toBottomOf="@+id/ll"
-            android:layout_marginRight="6dp"
-            android:layout_marginTop="14dp">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="?attr/bottom_bar">
-
-            <TextView
-                android:id="@+id/pdf_view_advance"
-                android:layout_width="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsregular"
-                android:text="@string/advanced_pdf_viewer"
-                android:textColor="?attr/backgroundColorTheme"
-                android:textSize="13sp"
-                android:textAlignment="center"/>
-            </androidx.cardview.widget.CardView>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="?attr/backgroundColorTheme"
-                android:layout_weight="1">
-            <TextView
-                android:id="@+id/pdf_view_basic"
-                android:layout_width="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsregular"
-                android:text="@string/basic_pdf_viewer"
-                android:textColor="?attr/textColorTheme"
-                android:textSize="13sp"
-
-                android:textAlignment="center"/>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
+        <SeekBar
+            android:id="@+id/pdf_item_download_seekbar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_ll"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/text_ll">
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:thumbTint="?attr/textColorTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/download_percent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <SeekBar
-                android:id="@+id/pdf_item_download_seekbar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:thumbTint="?attr/textColorTheme"
-                android:visibility="gone"/>
+        <ProgressBar
+            android:id="@+id/download_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="16dp"
+            android:layout_toRightOf="@id/pdf_item_download_seekbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/download_percent"
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_toRightOf="@id/pdf_item_download_seekbar"
-                android:fontFamily="@font/poppinsregular"
-                android:text="@string/add"
-                android:textColor="?attr/textColorTheme"
-                android:textSize="18sp"
-                android:visibility="gone"/>
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

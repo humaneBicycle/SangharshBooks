@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -21,7 +22,6 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sangharsh.books.BuildConfig;
 import com.sangharsh.books.PDFDisplay;
 import com.sangharsh.books.R;
 import com.sangharsh.books.SangharshBooks;
@@ -69,38 +69,48 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
             inflateColors();
         }
 
-        holder.basicViewTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String dirPath = context.getFilesDir().getAbsolutePath()+"/"+pdfModels.get(position).getPointingDir()+".pdf";
-                //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf";
-                File file = new File(dirPath);
-                //Log.d("sba adapter", dirPath);
-//                        if(!file.exists()){
-//                            file.mkdir();
-//                        }
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                Uri uri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider",file);
-                intent.setDataAndType(uri, "application/pdf");
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                context.startActivity(intent);
-            }
-        });
+//        holder.basicViewTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String dirPath = context.getFilesDir().getAbsolutePath()+"/"+pdfModels.get(position).getPointingDir()+".pdf";
+//                //String dirPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/"+directory.getPdfModels().get(index).getName()+".pdf";
+//                File file = new File(dirPath);
+//                //Log.d("sba adapter", dirPath);
+////                        if(!file.exists()){
+////                            file.mkdir();
+////                        }
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                Uri uri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".provider",file);
+//                intent.setDataAndType(uri, "application/pdf");
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                context.startActivity(intent);
+//            }
+//        });
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sangharshBooks.setActivePdfModel(pdfModels.get(position));
                 context.startActivity(new Intent(context, PDFDisplay.class));
+
+//                context.startActivity(PdfViewerActivity.Companion.launchPdfFromPath(
+//                        context,
+//                        pdfModels.get(position).getName()+".pdf",
+//                        pdfModels.get(position).getName(),
+//                        "assets",
+//                        false,
+//                        true
+//                    )
+//                );
             }
         });
-        holder.advancedViewTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sangharshBooks.setActivePdfModel(pdfModels.get(position));
-                context.startActivity(new Intent(context, PDFDisplay.class));
-            }
-        });
+//        holder.advancedViewTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                sangharshBooks.setActivePdfModel(pdfModels.get(position));
+//                context.startActivity(new Intent(context, PDFDisplay.class));
+//            }
+//        });
         if(mode.equals("bookmarks")){
             holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -230,7 +240,7 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
         ImageView igmPdf;
         AppCompatButton appCompatButton;
         SeekBar seekBar;
-        TextView downloadPercentTV;
+        ProgressBar downloadPercentTV;
 
         LinearLayout llBG;
 
@@ -238,8 +248,8 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
             super(itemView);
 
             pdfName = itemView.findViewById(R.id.pdf_name_pdf_item);
-            advancedViewTV = itemView.findViewById(R.id.pdf_view_advance);
-            basicViewTV = itemView.findViewById(R.id.pdf_view_basic);
+//            advancedViewTV = itemView.findViewById(R.id.pdf_view_advance);
+//            basicViewTV = itemView.findViewById(R.id.pdf_view_basic);
             cardView = itemView.findViewById(R.id.pdf_item_background);
             backgroundLL = itemView.findViewById(R.id.ll);
             igmPdf=itemView.findViewById(R.id.img_pdf);

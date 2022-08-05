@@ -7,19 +7,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.pdfview.PDFView;
+
 import com.sangharsh.books.model.PDFModel;
 
 import java.io.File;
 import java.util.ArrayList;
 
-public class PDFDisplay extends AppCompatActivity {
+public class PDFDisplay extends AppCompatActivity implements Callback {
     SangharshBooks sangharshBooks;
     PDFView pdfView;
     ImageView bookmarkButton,back;
     TextView heading;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class PDFDisplay extends AppCompatActivity {
         heading = findViewById(R.id.pdf_view_heading);
         bookmarkButton = findViewById(R.id.is_bookmarked_pdf_view);
         back = findViewById(R.id.back_pdf_view);
+        sangharshBooks.setAdCount(sangharshBooks.getAdCount()+1);
+        progressBar = findViewById(R.id.load_pdf_display);
 
         ArrayList<PDFModel> pdfModels = new StorageHelper(this).getArrayListOfPDFModel(StorageHelper.BOOKMARKS);
 
@@ -78,7 +82,8 @@ public class PDFDisplay extends AppCompatActivity {
 
         String dirPath = getFilesDir().getAbsolutePath()+"/"+sangharshBooks.getActivePdfModel().getPointingDir()+".pdf";
         File file = new File(dirPath);
-        pdfView.fromFile(file).show();
+
+        pdfView.fromFile(file, this).show();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,4 +101,13 @@ public class PDFDisplay extends AppCompatActivity {
     }
 
 
+    @Override
+    public void Callback() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+    }
 }

@@ -19,9 +19,6 @@
         android:theme="@style/Theme.Light"
         tools:targetApi="31">
         <activity
-            android:name=".BannerDeleteActivity"
-            android:exported="false" />
-        <activity
             android:name=".NotificationActivity"
             android:exported="false" />
 
