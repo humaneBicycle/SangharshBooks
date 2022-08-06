@@ -34,6 +34,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.sangharsh.books.adapter.BannerPagerAdapter;
 import com.sangharsh.books.adapter.ViewPagerAdapter;
+import com.sangharsh.books.fragments.AboutFragment;
 import com.sangharsh.books.fragments.BookmarksFragment;
 import com.sangharsh.books.fragments.DownloadsFragment;
 import com.sangharsh.books.fragments.HomeFragment;
@@ -48,9 +49,6 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
     SmoothBottomBar smoothBottomBar;
     HomeFragment homeFragment;
     SangharshBooks sangharshBooks;
-    DownloadsFragment downloadsFragment;
-    ProfileFragment profileFragment;
-    BookmarksFragment bookmarksFragment;
     private InterstitialAd mInterstitialAd;
     private CardView cardView;
     ViewPager viewPager;
@@ -83,9 +81,18 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
         }
         cardView = findViewById(R.id.latestCard);
 
-        AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+
+        loadAd();
+
+
+
+        createviewPager();
+
+    }
+    private void loadAd(){
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(this,getString(R.string.admob_id_interstitial), adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -137,85 +144,6 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
                     }
                 });
 
-
-
-        createviewPager();
-
-
-//        FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
-//        ft1.replace(R.id.body_holder_main_activity, homeFragment, "home");
-//        ft1.commit();
-//        sangharshBooks.setActiveFragment("home");
-
-//        smoothBottomBar.setOnItemSelectedListener(new OnItemSelectedListener() {
-//            @Override
-//            public boolean onItemSelect(int i) {
-//                if(i==0) {
-//                    viewPager.setCurrentItem(0);
-////                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-////                    if(homeFragment==null) {
-////                        homeFragment = new HomeFragment();
-////                    }
-////                    fragmentTransaction.replace(R.id.body_holder_main_activity, new HomeFragment(), "home");
-////                    sangharshBooks.setActiveFragment("home");
-////                    fragmentTransaction.commit();
-////                    try{
-////                        if(sangharshBooks.getActiveFragment().equals("home")) {
-////                            cardView.setVisibility(View.VISIBLE);
-////                        }
-////                    }catch (Exception e){
-////                        e.printStackTrace();
-////                    }
-//
-//                }else if(i==1){
-////                    if(downloadsFragment == null){
-////                        downloadsFragment = new DownloadsFragment();
-////                        Log.d("sba ", "onItemSelect: downloads reloaded");
-////                    }
-////                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-////                    fragmentTransaction.replace(R.id.body_holder_main_activity,downloadsFragment, "downloads").commit();
-////                    sangharshBooks.setActiveFragment("downloads");
-////                    try{
-////                        cardView.setVisibility(View.GONE);
-////                    }catch (Exception e){
-////                        e.printStackTrace();
-////                    }
-//                    viewPager.setCurrentItem(1);
-//
-//                }else if(i==2){
-////                    try{
-////                        cardView.setVisibility(View.GONE);
-////                    }catch (Exception e){
-////                        e.printStackTrace();
-////                    }
-////                    if(bookmarksFragment ==null){
-////                        bookmarksFragment = new BookmarksFragment();
-////
-////                    }
-////                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-////                    fragmentTransaction.replace(R.id.body_holder_main_activity, bookmarksFragment, "bookmarks");
-////                    sangharshBooks.setActiveFragment("bookmarks");
-////                    fragmentTransaction.commit();
-//                    viewPager.setCurrentItem(2);
-//                }else if(i==3){
-////                    try{
-////                        cardView.setVisibility(View.GONE);
-////                    }catch (Exception e){
-////                        e.printStackTrace();
-////                    };
-////                    if(profileFragment ==null){
-////                        profileFragment = new ProfileFragment();
-////                    }
-////                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-////                    fragmentTransaction.replace(R.id.body_holder_main_activity, profileFragment, "profile");
-////                    sangharshBooks.setActiveFragment("profile");
-////                    fragmentTransaction.commit();
-//                }
-//                    viewPager.setCurrentItem(3);
-//
-//                return false;
-//            }
-//        });
     }
 
     private void createviewPager() {
@@ -229,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
         viewPagerAdapter.add(new DownloadsFragment(),"downloads");
         viewPagerAdapter.add(new BookmarksFragment(),"bookmarks");
         viewPagerAdapter.add(new ProfileFragment(),"profile");
+        viewPagerAdapter.add(new AboutFragment(),"about");
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(0);
 
@@ -259,16 +188,19 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
             }
         });
 
-        viewPager.setOffscreenPageLimit(4);
+        viewPager.setOffscreenPageLimit(5);
     }
 
 
     @Override
     protected void onResume() {
-        if (mInterstitialAd != null && sangharshBooks.getAdCount()%3==0) {
+        if (mInterstitialAd != null && sangharshBooks.getAdCount()%2==0) {
             mInterstitialAd.show(MainActivity.this);
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.");
+        }
+        if(sangharshBooks.getAdCount()%2!=0){
+            loadAd();
         }
         super.onResume();
     }

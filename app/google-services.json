@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "872228368319",
+    "firebase_url": "https://sangharsh-books-default-rtdb.firebaseio.com",
     "project_id": "sangharsh-books",
     "storage_bucket": "sangharsh-books.appspot.com"
   },
@@ -10,6 +11,35 @@
         "mobilesdk_app_id": "1:872228368319:android:99db00bfa179367eb37b0a",
         "android_client_info": {
           "package_name": "com.sangharsh.books"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFuj170Xz3SNrtswG-IvcmDfZWx1FOvns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872228368319:android:9f21c1fd855a3354b37b0a",
+        "android_client_info": {
+          "package_name": "com.sangharsh.books.rrb"
         }
       },
       "oauth_client": [

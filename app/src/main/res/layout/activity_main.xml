@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         ads:layout_constraintBottom_toTopOf="@id/bottomBar"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="@string/admob_id_banner">
     </com.google.android.gms.ads.AdView>
 
     <me.ibrahimsn.lib.SmoothBottomBar

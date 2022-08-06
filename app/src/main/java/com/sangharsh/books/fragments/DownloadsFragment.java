@@ -21,6 +21,9 @@ public class DownloadsFragment extends Fragment {
 
     RecyclerView recyclerView;
     //LinearLayout linearLayout;
+    ArrayList<PDFModel> pdfModels;
+    PDFAdapter pdfAdapter;
+
 
     public DownloadsFragment() {
         // Required empty public constructor
@@ -35,11 +38,20 @@ public class DownloadsFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.rv_downloads);
         //linearLayout = view.findViewById(R.id.linerlayout_download_frag);
-        ArrayList<PDFModel> pdfModels = new StorageHelper(getActivity()).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
-        PDFAdapter pdfAdapter = new PDFAdapter(getActivity().getApplication(),getActivity(),pdfModels,"downloads");
+        pdfModels = new StorageHelper(getActivity()).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
+        pdfAdapter = new PDFAdapter(getActivity().getApplication(),getActivity(),pdfModels,"downloads");
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(pdfAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        pdfModels.clear();
+        pdfModels.addAll(new StorageHelper(getContext()).getArrayListOfPDFModel(StorageHelper.DOWNLOADED));
+        pdfAdapter.notifyDataSetChanged();
+        super.onResume();
+
     }
 }
