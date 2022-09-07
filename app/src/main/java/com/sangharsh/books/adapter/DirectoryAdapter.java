@@ -501,9 +501,9 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 //                        if(!file.exists()){
 //                            file.mkdir();
 //                        }
+            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
             sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
             context.startActivity(new Intent(context, PDFDisplay.class));
-            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
 
         }else{
             //download the file. add it to storage
@@ -565,7 +565,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                             ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
                             new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
                             Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
-                            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
+                            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
                             sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
                             context.startActivity(new Intent(context, PDFDisplay.class));
 
@@ -593,23 +593,16 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                             Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
                             ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
                             ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+
                             Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
-                            ((PDFVIewHolder) holder).basicPDFViewer.setEnabled(true);
-                            ((PDFVIewHolder) holder).advancedPDFViewer.setEnabled(true);
+                            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
+
                         }
 
                     });
-
         }
-
-
-
     }
 
-
-//    private void downloadPDFDoesNotExist(){
-//
-//    }
 
     @Override
     public int getItemCount() {

@@ -63,14 +63,6 @@ public class FileActivity extends AppCompatActivity implements DirectoryChangeLi
         heading.setText(sangharshBooks.getLatestDir());
         sangharshBooks.setAdCount(sangharshBooks.getAdCount()+1);
 
-//        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AddDirectoryBottomSheetAdapter bottomSheet = new AddDirectoryBottomSheetAdapter(FileActivity.this,(SangharshBooks) getApplication(),FileActivity.this,FileActivity.this);
-//                bottomSheet.show(getSupportFragmentManager(), "addBottomSheet");
-//            }
-//        });
-
         FirebaseFirestore.getInstance().collection("directory").whereEqualTo("path",sangharshBooks.getPath()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {

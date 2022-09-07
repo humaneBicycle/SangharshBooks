@@ -97,6 +97,7 @@ public class PDFDisplay extends AppCompatActivity implements Callback {
     @Override
     public void onBackPressed() {
         sangharshBooks.clearRecentPDFModel();
+        finish();
         super.onBackPressed();
     }
 
@@ -110,4 +111,5 @@ public class PDFDisplay extends AppCompatActivity implements Callback {
             }
         });
     }
+
 }
