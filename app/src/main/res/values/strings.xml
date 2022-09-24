@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bihar Board 12th previous year question bank</string>
+    <string name="app_name">Railway Group D previous year question and question bank</string>
     <string name="good">Good</string>
     <string name="morning">Morning!</string>
     <string name="evening">Evening!</string>
@@ -10,7 +10,7 @@
     <string name="bookmarks">Bookmarks</string>
     <string name="night_mode">Night Mode</string>
     <string name="privacy_policy">Privacy Policy</string>
-    <string name="privacy_policy_link">https://privacypolicy5684.blogspot.com/2022/09/privacy-policy-for-bihar-board-12th.html</string>
+    <string name="privacy_policy_link">https://privacypolicy5684.blogspot.com/2022/09/privacy-policy-for-railway-group-d.html</string>
     <string name="about_us">About Us</string>
     <string name="advanced_pdf_viewer">Advanced PDF Viewer</string>
     <string name="basic_pdf_viewer">Basic PDF Viewer</string>
@@ -26,10 +26,9 @@
     <string name="enter_pdf_url">Enter PDF URL</string>
     <string name="bookmark">Bookmark</string>
     <string name="rate_us">Rate Us</string>
-    <string name="admob_id_banner">ca-app-pub-6764809003226506/3051204018</string>
-    <string name="admob_id_interstitial">ca-app-pub-6764809003226506/8025803873</string>
+    <string name="admob_id_banner">ca-app-pub-6764809003226506/3162410184</string>
+    <string name="admob_id_interstitial">ca-app-pub-6764809003226506/5100525429</string>
     <string name="version">1.0.0</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 
