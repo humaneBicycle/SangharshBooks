@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "626654687695",
-    "project_id": "ctet-sangarsh",
-    "storage_bucket": "ctet-sangarsh.appspot.com"
+    "project_number": "66089042391",
+    "project_id": "bihar-12th",
+    "storage_bucket": "bihar-12th.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626654687695:android:de1b752dd3a15428d522ba",
+        "mobilesdk_app_id": "1:66089042391:android:335951d30ed39a94210b92",
         "android_client_info": {
-          "package_name": "com.pdf.questions"
+          "package_name": "com.sangharshAdmin.book.bihar12"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+          "client_id": "66089042391-3hghgrhcdvkns09i0elqjlr4kgof49kq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
+          "current_key": "AIzaSyCi6AziGVBVQFmto-hWJZZwQZZ5gjenA5Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+              "client_id": "66089042391-3hghgrhcdvkns09i0elqjlr4kgof49kq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -36,27 +36,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626654687695:android:65728893cfc8b8d9d522ba",
+        "mobilesdk_app_id": "1:66089042391:android:ab816eb3a2ad5611210b92",
         "android_client_info": {
-          "package_name": "com.sangharsh.books.ctet"
+          "package_name": "io.kodular.harsh6202960665.biharboard"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+          "client_id": "66089042391-3hghgrhcdvkns09i0elqjlr4kgof49kq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
+          "current_key": "AIzaSyCi6AziGVBVQFmto-hWJZZwQZZ5gjenA5Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+              "client_id": "66089042391-3hghgrhcdvkns09i0elqjlr4kgof49kq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -65,27 +65,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626654687695:android:d2f283c9d3db7732d522ba",
+        "mobilesdk_app_id": "1:66089042391:android:64e2159544b63b46210b92",
         "android_client_info": {
-          "package_name": "com.sangharshAdmin.book.ctet"
+          "package_name": "io.kodular.harsh6202960665.biharboard12th"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+          "client_id": "66089042391-3hghgrhcdvkns09i0elqjlr4kgof49kq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
+          "current_key": "AIzaSyCi6AziGVBVQFmto-hWJZZwQZZ5gjenA5Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+              "client_id": "66089042391-3hghgrhcdvkns09i0elqjlr4kgof49kq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
