@@ -9,9 +9,11 @@ import android.os.Bundle;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.sangharsh.books.R;
 public class AboutFragment extends Fragment {
@@ -47,16 +49,10 @@ public class AboutFragment extends Fragment {
     }
     public void rateApp()
     {
-        try
-        {
-            Intent rateIntent = rateIntentForUrl("market://details");
-            startActivity(rateIntent);
-        }
-        catch (ActivityNotFoundException e)
-        {
-            Intent rateIntent = rateIntentForUrl("https://play.google.com/store/apps/details");
-            startActivity(rateIntent);
-        }
+
+        String url = "https://play.google.com/store/apps/details?id=" + getActivity().getPackageName();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
     private Intent rateIntentForUrl(String url)
     {

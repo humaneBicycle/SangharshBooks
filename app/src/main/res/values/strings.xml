@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">RRB Group D 2022</string>
+    <string name="app_name">RRB Group D 2022 </string>
+    <string name="admob_id_banner">ca-app-pub-6764809003226506/3162410184</string>
+    <string name="admob_id_interstitial">ca-app-pub-6764809003226506/5100525429</string>
     <string name="good">Good</string>
     <string name="morning">Morning!</string>
     <string name="evening">Evening!</string>
@@ -26,8 +28,6 @@
     <string name="enter_pdf_url">Enter PDF URL</string>
     <string name="bookmark">Bookmark</string>
     <string name="rate_us">Rate Us</string>
-    <string name="admob_id_banner">ca-app-pub-6764809003226506/3051204018</string>
-    <string name="admob_id_interstitial">ca-app-pub-6764809003226506/8025803873</string>
     <string name="version">1.0.0</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

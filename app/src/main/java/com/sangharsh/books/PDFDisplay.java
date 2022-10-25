@@ -1,5 +1,7 @@
 package com.sangharsh.books;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Configuration;
@@ -11,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.sangharsh.books.model.PDFModel;
 
 import java.io.File;
@@ -36,6 +40,7 @@ public class PDFDisplay extends AppCompatActivity implements Callback {
                 ((SangharshBooks)getApplication()).setDarkMode(false);
                 break;
         }
+
         setContentView(R.layout.activity_pdfdisplay);
         sangharshBooks = (SangharshBooks)getApplication();
         pdfView =  findViewById(R.id.pdf_viewer);
@@ -46,6 +51,7 @@ public class PDFDisplay extends AppCompatActivity implements Callback {
         progressBar = findViewById(R.id.load_pdf_display);
 
         ArrayList<PDFModel> pdfModels = new StorageHelper(this).getArrayListOfPDFModel(StorageHelper.BOOKMARKS);
+        loadBanner();
 
         for(int i =0;i<pdfModels.size();i++){
             if(pdfModels.get(i).getPointingDir().equals(sangharshBooks.getActivePdfModel().getPointingDir())){
@@ -110,6 +116,15 @@ public class PDFDisplay extends AppCompatActivity implements Callback {
                 progressBar.setVisibility(View.GONE);
             }
         });
+    }
+    private void loadBanner() {
+        try {
+            AdView mAdView = findViewById(R.id.myAdViewPDFDisplay);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }catch (Exception e){
+            Log.d(TAG, "loadBanner: "+e.toString());
+        }
     }
 
 }
