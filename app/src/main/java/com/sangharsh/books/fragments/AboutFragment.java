@@ -1,6 +1,7 @@
 package com.sangharsh.books.fragments;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -13,8 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.review.model.ReviewErrorCode;
+import com.google.gson.Gson;
 import com.sangharsh.books.R;
 public class AboutFragment extends Fragment {
 
@@ -47,12 +53,46 @@ public class AboutFragment extends Fragment {
 
         return v;
     }
-    public void rateApp()
+
+
+    public void rateApp(){
+        if (getActivity().getSharedPreferences("MY_PREF", Context.MODE_PRIVATE).getBoolean("is_rev", false)){
+            rateApp(0);
+            return;
+        }
+        getActivity().getSharedPreferences("MY_PREF", Context.MODE_PRIVATE).edit()
+                .putBoolean("is_rev", true).commit();
+        ReviewManager manager = ReviewManagerFactory.create(getActivity());
+        Task<ReviewInfo> request = manager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.isComplete()) {
+                ReviewInfo reviewInfo = task.getResult();
+                Task<Void> flow = manager.launchReviewFlow(getActivity(), reviewInfo);
+                flow.addOnCompleteListener((Task<Void> newTask) -> {
+                   if (!newTask.isSuccessful()){
+                       rateApp(0);
+                   }
+                });
+            } else {
+                rateApp(0);
+            }
+        });
+    }
+
+    public void rateApp(int error)
     {
 
-        String url = "https://play.google.com/store/apps/details?id=" + getActivity().getPackageName();
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
+
+        try
+        {
+            Intent rateIntent = rateIntentForUrl("market://details");
+            startActivity(rateIntent);
+        }
+        catch (ActivityNotFoundException e)
+        {
+            Intent rateIntent = rateIntentForUrl("https://play.google.com/store/apps/details");
+            startActivity(rateIntent);
+        }
     }
     private Intent rateIntentForUrl(String url)
     {

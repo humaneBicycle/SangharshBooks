@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "872228368319",
-    "firebase_url": "https://sangharsh-books-default-rtdb.firebaseio.com",
-    "project_id": "sangharsh-books",
-    "storage_bucket": "sangharsh-books.appspot.com"
+    "project_number": "626654687695",
+    "project_id": "ctet-sangarsh",
+    "storage_bucket": "ctet-sangarsh.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:872228368319:android:99db00bfa179367eb37b0a",
+        "mobilesdk_app_id": "1:626654687695:android:de1b752dd3a15428d522ba",
         "android_client_info": {
-          "package_name": "com.sangharsh.books"
+          "package_name": "com.pdf.questions"
         }
       },
       "oauth_client": [
         {
-          "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBFuj170Xz3SNrtswG-IvcmDfZWx1FOvns"
+          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -37,27 +36,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:872228368319:android:9f21c1fd855a3354b37b0a",
+        "mobilesdk_app_id": "1:626654687695:android:65728893cfc8b8d9d522ba",
         "android_client_info": {
-          "package_name": "com.sangharsh.books.rrb"
+          "package_name": "com.sangharsh.books.ctet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBFuj170Xz3SNrtswG-IvcmDfZWx1FOvns"
+          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -66,35 +65,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:872228368319:android:93ecf0788fd4f4c8b37b0a",
+        "mobilesdk_app_id": "1:626654687695:android:d2f283c9d3db7732d522ba",
         "android_client_info": {
-          "package_name": "com.sangharshAdmin.book"
+          "package_name": "com.sangharshAdmin.book.ctet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "872228368319-19239jmtoldqd0vfld0pl09l2p1ff28a.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.sangharshAdmin.book",
-            "certificate_hash": "8bf4c45cac51243d100fca13b7a0c3d7b78d7e77"
-          }
-        },
-        {
-          "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBFuj170Xz3SNrtswG-IvcmDfZWx1FOvns"
+          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com",
+              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
