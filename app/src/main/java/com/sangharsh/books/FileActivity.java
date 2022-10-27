@@ -15,18 +15,18 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.sangharsh.books.adapter.AddDirectoryBottomSheetAdapter;
 import com.sangharsh.books.adapter.DirectoryAdapter;
 import com.sangharsh.books.model.Directory;
 import com.sangharsh.books.model.FileModel;
 import com.sangharsh.books.model.PDFModel;
+import com.sangharsh.books.interfaces.DirectoryChangeListener;
+import com.sangharsh.books.interfaces.UIUpdateHomeFrag;
 
 import java.util.ArrayList;
 
-public class FileActivity extends AppCompatActivity implements DirectoryChangeListener,UIUpdateHomeFrag {
+public class FileActivity extends AppCompatActivity implements DirectoryChangeListener, UIUpdateHomeFrag {
     ProgressBar progressBar;
     TextView nothingAvailableTV, heading;
     SangharshBooks sangharshBooks;

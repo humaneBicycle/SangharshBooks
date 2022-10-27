@@ -1,91 +1,33 @@
 {
   "project_info": {
-    "project_number": "626654687695",
-    "project_id": "ctet-sangarsh",
-    "storage_bucket": "ctet-sangarsh.appspot.com"
+    "project_number": "887077090310",
+    "project_id": "sangharsh-test",
+    "storage_bucket": "sangharsh-test.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626654687695:android:de1b752dd3a15428d522ba",
+        "mobilesdk_app_id": "1:887077090310:android:dd4e3387102b720eeebf87",
         "android_client_info": {
-          "package_name": "com.pdf.questions"
+          "package_name": "com.sangharshbooks.test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+          "client_id": "887077090310-9jjjaoco55er4ps5m7n579phbaf70pib.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
+          "current_key": "AIzaSyBQMy634vD84RT6vyjzLQWJPnKWp0v7lUo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:626654687695:android:65728893cfc8b8d9d522ba",
-        "android_client_info": {
-          "package_name": "com.sangharsh.books.ctet"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:626654687695:android:d2f283c9d3db7732d522ba",
-        "android_client_info": {
-          "package_name": "com.sangharshAdmin.book.ctet"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA-2W7saerUKv96cziy-Nv_3gu26HeqIyQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "626654687695-40mjf04sa28u7hq69v4b6l1tnj3shjs4.apps.googleusercontent.com",
+              "client_id": "887077090310-9jjjaoco55er4ps5m7n579phbaf70pib.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

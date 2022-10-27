@@ -19,27 +19,26 @@
     <string name="about_us">About Us</string>
     <string name="add">Add</string>
     <string name="adding_to_path">Adding to Path</string>
-    <string name="admob_id_banner">ca-app-pub-6764809003226506/3162410184</string>
-    <string name="admob_id_interstitial">ca-app-pub-6764809003226506/5100525429</string>
+    <string name="admob_id_banner">ca-app-pub-6764809003226506/3721076717</string>
+    <string name="admob_id_interstitial">ca-app-pub-6764809003226506/5240944462</string>
     <string name="advanced_pdf_viewer">Advanced PDF Viewer</string>
-    <string name="app_name">RRB Group D 2022 </string>
+    <string name="app_name">CTET previous year question bank with answers key</string>
     <string name="basic_pdf_viewer">Basic PDF Viewer</string>
     <string name="bookmark">Bookmark</string>
     <string name="bookmarks">Bookmarks</string>
-    <string name="default_web_client_id" translatable="false">872228368319-003asetk12032hcipfl3abc122kr8iro.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">887077090310-9jjjaoco55er4ps5m7n579phbaf70pib.apps.googleusercontent.com</string>
     <string name="delete">Delete</string>
     <string name="downloads">Downloads</string>
     <string name="enter_file_name">Enter File Name</string>
     <string name="enter_pdf_name">Enter PDF Name</string>
     <string name="enter_pdf_url">Enter PDF URL</string>
     <string name="evening">Evening!</string>
-    <string name="firebase_database_url" translatable="false">https://sangharsh-books-default-rtdb.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">872228368319</string>
+    <string name="gcm_defaultSenderId" translatable="false">887077090310</string>
     <string name="good">Good</string>
-    <string name="google_api_key" translatable="false">AIzaSyBFuj170Xz3SNrtswG-IvcmDfZWx1FOvns</string>
-    <string name="google_app_id" translatable="false">1:872228368319:android:9f21c1fd855a3354b37b0a</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBFuj170Xz3SNrtswG-IvcmDfZWx1FOvns</string>
-    <string name="google_storage_bucket" translatable="false">sangharsh-books.appspot.com</string>
+    <string name="google_api_key" translatable="false">AIzaSyBQMy634vD84RT6vyjzLQWJPnKWp0v7lUo</string>
+    <string name="google_app_id" translatable="false">1:887077090310:android:dd4e3387102b720eeebf87</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBQMy634vD84RT6vyjzLQWJPnKWp0v7lUo</string>
+    <string name="google_storage_bucket" translatable="false">sangharsh-test.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="morning">Morning!</string>
@@ -48,9 +47,9 @@
     <string name="nothing_available">Nothing Available</string>
     <string name="notifications">Notifications</string>
     <string name="privacy_policy">Privacy Policy</string>
-    <string name="privacy_policy_link">https://privacypolicy5684.blogspot.com/2022/08/privacy-policy-for-railway-group-d.html?m=1</string>
+    <string name="privacy_policy_link">https://privacypolicy5684.blogspot.com/2022/09/privacy-policy-for-ctet-previous-year.html</string>
     <string name="profile">Profile</string>
-    <string name="project_id" translatable="false">sangharsh-books</string>
+    <string name="project_id" translatable="false">sangharsh-test</string>
     <string name="rate_us">Rate Us</string>
     <string name="select_mode">Select Mode</string>
     <string name="select_type">Select Type</string>

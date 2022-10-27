@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.sangharsh.books.PdfView.PDFView;
 import com.sangharsh.books.model.PDFModel;
+import com.sangharsh.books.interfaces.Callback;
 
 import java.io.File;
 import java.util.ArrayList;

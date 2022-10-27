@@ -4,20 +4,17 @@ import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -27,37 +24,29 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.sangharsh.books.adapter.BannerPagerAdapter;
 import com.sangharsh.books.adapter.ViewPagerAdapter;
 import com.sangharsh.books.fragments.AboutFragment;
 import com.sangharsh.books.fragments.BookmarksFragment;
 import com.sangharsh.books.fragments.DownloadsFragment;
 import com.sangharsh.books.fragments.HomeFragment;
-import com.sangharsh.books.fragments.ProfileFragment;
-import com.sangharsh.books.model.HomeDocument;
+import com.sangharsh.books.interfaces.UIUpdateHomeFrag;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
-public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
+public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag {
 
     SmoothBottomBar smoothBottomBar;
     HomeFragment homeFragment;
     SangharshBooks sangharshBooks;
     private InterstitialAd mInterstitialAd;
-    private CardView cardView;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MobileAds.initialize(this);
-
             switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
                 case Configuration.UI_MODE_NIGHT_YES:
                     setTheme(R.style.Theme_Dark);
@@ -79,17 +68,18 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
-        cardView = findViewById(R.id.latestCard);
 
-
+        findViewById(R.id.notification_main_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
+            }
+        });
 
         loadAd();
-
-
-
         createviewPager();
-
     }
+
     private void loadAd(){
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(this,getString(R.string.admob_id_interstitial), adRequest,
@@ -156,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
         viewPagerAdapter.add(homeFragment,"home");
         viewPagerAdapter.add(new DownloadsFragment(),"downloads");
         viewPagerAdapter.add(new BookmarksFragment(),"bookmarks");
-        viewPagerAdapter.add(new ProfileFragment(),"profile");
         viewPagerAdapter.add(new AboutFragment(),"about");
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(0);
@@ -215,12 +204,4 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag{
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }
-
-
-
-
-
-
-
-
 }

@@ -6,8 +6,7 @@ import android.graphics.pdf.PdfRenderer
 import android.net.Uri
 import android.os.ParcelFileDescriptor
 import androidx.annotation.ColorInt
-import com.sangharsh.books.Callback
-import com.sangharsh.books.PDFView
+import com.sangharsh.books.interfaces.Callback
 import com.sangharsh.books.PdfView.subsamplincscaleimageview.SubsamplingScaleImageView.SCALE_TYPE_CENTER_INSIDE
 import com.sangharsh.books.PdfView.subsamplincscaleimageview.decoder.ImageRegionDecoder
 import java.io.File

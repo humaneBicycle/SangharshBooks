@@ -15,12 +15,11 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.sangharsh.books.adapter.AddNotificationBottomSheetAdapter;
 import com.sangharsh.books.adapter.NotificationAdapter;
 import com.sangharsh.books.model.Notification;
+import com.sangharsh.books.interfaces.UIUpdateHomeFrag;
 
 import java.util.ArrayList;
 
@@ -39,17 +38,14 @@ public class NotificationActivity extends AppCompatActivity implements UIUpdateH
 
         switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
             case Configuration.UI_MODE_NIGHT_YES:
-                //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 setTheme(R.style.Theme_Dark);
                 ((SangharshBooks)getApplication()).setDarkMode(true);
                 Log.d("sba", "onCreate: 21");
                 break;
             case Configuration.UI_MODE_NIGHT_NO:
-                //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 setTheme(R.style.Theme_Light);
                 ((SangharshBooks)getApplication()).setDarkMode(false);
                 Log.d("sba", "onCreate: 22");
-                // process
                 break;
         }
 
@@ -58,7 +54,6 @@ public class NotificationActivity extends AppCompatActivity implements UIUpdateH
         isEmptyTC = findViewById(R.id.text_nothing_available_noti_activity);
         progressBar = findViewById(R.id.progress_noti);
         recyclerView = findViewById(R.id.notification_rv);
-//        fab = findViewById(R.id.add_noti);
         back = findViewById(R.id.back_noti);
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -69,15 +64,6 @@ public class NotificationActivity extends AppCompatActivity implements UIUpdateH
         });
 
         fetchNotifications();
-
-
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AddNotificationBottomSheetAdapter sheet = new AddNotificationBottomSheetAdapter(NotificationActivity.this,(SangharshBooks)getApplication(),NotificationActivity.this,notifications,notificationAdapter);
-//                sheet.show(getSupportFragmentManager(),"addNotificationSheet");
-//            }
-//        });
     }
 
     @Override
@@ -88,8 +74,6 @@ public class NotificationActivity extends AppCompatActivity implements UIUpdateH
         if(notifications.size()==1){
             isEmptyTC.setVisibility(View.INVISIBLE);
         }
-       //fetchNotifications();
-        //isEmptyTC.setVisibility(View.INVISIBLE);
     }
 
     private void fetchNotifications(){
@@ -99,14 +83,10 @@ public class NotificationActivity extends AppCompatActivity implements UIUpdateH
                 if(task.isSuccessful()){
                     if(!task.getResult().isEmpty()){
                         notifications = (ArrayList<Notification>) task.getResult().toObjects(Notification.class);
-                        //Log.d("sba", "notification fetch size "+ notifications.size());
-
-                            notificationAdapter = new NotificationAdapter(NotificationActivity.this, notifications, NotificationActivity.this);
-                            recyclerView.setLayoutManager(new LinearLayoutManager(NotificationActivity.this));
-                            recyclerView.setAdapter(notificationAdapter);
-                            progressBar.setVisibility(View.GONE);
-
-
+                        notificationAdapter = new NotificationAdapter(NotificationActivity.this, notifications, NotificationActivity.this);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(NotificationActivity.this));
+                        recyclerView.setAdapter(notificationAdapter);
+                        progressBar.setVisibility(View.GONE);
                     }else{
                         progressBar.setVisibility(View.GONE);
                         isEmptyTC.setVisibility(View.VISIBLE);

@@ -15,13 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.tasks.Task;
+
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
-import com.google.android.play.core.review.model.ReviewErrorCode;
-import com.google.gson.Gson;
+import com.google.android.play.core.tasks.Task;
 import com.sangharsh.books.R;
+
 public class AboutFragment extends Fragment {
 
     public AboutFragment() {
@@ -35,7 +35,6 @@ public class AboutFragment extends Fragment {
         v.findViewById(R.id.rate_us).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=PackageName")));
                 rateApp();
             }
 
@@ -53,7 +52,6 @@ public class AboutFragment extends Fragment {
 
         return v;
     }
-
 
     public void rateApp(){
         if (getActivity().getSharedPreferences("MY_PREF", Context.MODE_PRIVATE).getBoolean("is_rev", false)){
@@ -81,8 +79,6 @@ public class AboutFragment extends Fragment {
 
     public void rateApp(int error)
     {
-
-
         try
         {
             Intent rateIntent = rateIntentForUrl("market://details");
@@ -94,6 +90,7 @@ public class AboutFragment extends Fragment {
             startActivity(rateIntent);
         }
     }
+
     private Intent rateIntentForUrl(String url)
     {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format("%s?id=%s", url, getContext().getPackageName())));

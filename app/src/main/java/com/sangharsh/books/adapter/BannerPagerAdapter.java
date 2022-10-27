@@ -1,14 +1,11 @@
 package com.sangharsh.books.adapter;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.sangharsh.books.fragments.BannerFragment;
-import com.sangharsh.books.fragments.GreetingFragment;
 import com.sangharsh.books.model.Banner;
 
 import java.util.ArrayList;

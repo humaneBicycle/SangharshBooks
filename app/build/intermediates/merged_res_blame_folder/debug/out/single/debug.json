@@ -8,10 +8,6 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_downloads.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ctet_logo_one.jpeg.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ctet_logo_one.jpeg"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_home.xml"
     },
@@ -28,10 +24,6 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_home_icon.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_about.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_about.xml"
     },
@@ -42,10 +34,6 @@
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_pdf_item.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\pdf_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_notification.xml.flat",
@@ -64,10 +52,6 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_bookmarks.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_profile.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_profile.xml"
     },
@@ -80,16 +64,8 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\blur_blue.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_bookmark_24.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_bookmark_24.xml"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_long_click_options.xml.flat",
@@ -100,16 +76,8 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_arrow_back_ios_new_24.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_arrow_back_ios_new_24.xml"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_pdfdisplay.xml.flat",
@@ -120,24 +88,12 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\main_item.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_bookmark_border_24.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_bookmark_border_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_layer_3.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_layer_3.xml"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_add_24.xml.flat",
@@ -148,24 +104,12 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.sangharsh.books.app-merged_res-6:/layout_activity_main.xml.flat",
-        "source": "com.sangharsh.books.app-main-8:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_sangharsh.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_sangharsh.xml"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_profile.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_profile.xml"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_menu_24.xml.flat",
@@ -200,10 +144,6 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_file.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-mdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_picture_as_pdf_24.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_picture_as_pdf_24.xml"
     },
@@ -228,12 +168,12 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_arrow_circle_down_24.xml"
     },
     {
-        "merged": "com.sangharsh.books.app-merged_res-6:/layout_activity_pdfdisplay.xml.flat",
-        "source": "com.sangharsh.books.app-main-8:/layout/activity_pdfdisplay.xml"
+        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-mdpi_ic_launcher.jpeg.flat",
+        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-mdpi\\ic_launcher.jpeg"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "com.sangharsh.books.app-merged_res-6:/layout_activity_pdfdisplay.xml.flat",
+        "source": "com.sangharsh.books.app-main-8:/layout/activity_pdfdisplay.xml"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-v24_notification_bell.png.flat",
@@ -246,10 +186,6 @@
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_home_24.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_home_24.xml"
-    },
-    {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_launcher_background.xml.flat",

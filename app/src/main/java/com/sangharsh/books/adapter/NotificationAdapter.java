@@ -9,12 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sangharsh.books.R;
-import com.sangharsh.books.UIUpdateHomeFrag;
+import com.sangharsh.books.interfaces.UIUpdateHomeFrag;
 import com.sangharsh.books.model.Notification;
 
 import java.util.ArrayList;
@@ -45,14 +44,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
         holder.titleTV.setText(notifications.get(position).getTitle());
         holder.bodyTV.setText(notifications.get(position).getBody());
-        holder.itemBody.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                NotificationLongPressOptions notificationLongPressOptions = new NotificationLongPressOptions(context,notifications.get(position),callback,NotificationAdapter.this,position,notifications);
-                notificationLongPressOptions.show(((AppCompatActivity)context).getSupportFragmentManager(),"deleteNotification");
-                return true;
-            }
-        });
+
         int randForColor = new Random().nextInt(colors.size());
         Drawable drawable=context.getResources().getDrawable(R.drawable.tiny_stroke);
         drawable.setTint(context.getResources().getColor(colors.get(randForColor)));

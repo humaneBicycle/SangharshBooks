@@ -5,9 +5,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class PreferenceGetter {
-
-    //public static final String IS_DARK_MODE_ENABLED = "is_dark_mode_enabled";
-
     Context context;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
