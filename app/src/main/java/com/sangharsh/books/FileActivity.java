@@ -75,13 +75,13 @@ public class FileActivity extends AppCompatActivity implements DirectoryChangeLi
                         recyclerView.setAdapter(directoryAdapter);
                         recyclerView.setLayoutManager(new LinearLayoutManager(FileActivity.this));
                         progressBar.setVisibility(View.GONE);
-                        if(!(directory.getFiles().size()>0) && !(directory.getPdfModels().size()>0)){
+                        if(!(directory.getFiles().size()>0) && !(directory.getPdfModels().size()>0) && !(directory.getTests().size()>0)){
                             nothingAvailableTV.setVisibility(View.VISIBLE);
                         }
                     }else{
                         //new directory created.
                         hotFixDontAsk=1;
-                        directory = new Directory(1,new ArrayList<>(),new ArrayList<>(),sangharshBooks.getPath());
+                        directory = new Directory(1,new ArrayList<>(),new ArrayList<>(),sangharshBooks.getPath(),new ArrayList<>());
                         directoryAdapter = new DirectoryAdapter(FileActivity.this,directory,(SangharshBooks) getApplication(),FileActivity.this);
                         FirebaseFirestore.getInstance().collection("directory").document().set(directory).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

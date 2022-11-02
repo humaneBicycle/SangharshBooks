@@ -4,7 +4,7 @@
             "outputFile": "com.sangharsh.books.app-mergeDebugResources-4:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\850d12e307b1eac63550ff36d8c3f9c1\\transformed\\appcompat-1.4.2\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\e1aa22b9b5258d9cfb34103051fa4440\\transformed\\appcompat-1.4.2\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

@@ -119,6 +119,7 @@ id text_nothing_available_noti_activity
 id type_selector_bottom_style_spinner
 id upload_progress
 id viewPager
+layout activity_attempt_test
 layout activity_file
 layout activity_main
 layout activity_notification

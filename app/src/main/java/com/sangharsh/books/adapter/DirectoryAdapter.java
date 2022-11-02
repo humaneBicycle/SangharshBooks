@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +30,7 @@ import com.downloader.OnProgressListener;
 import com.downloader.OnStartOrResumeListener;
 import com.downloader.PRDownloader;
 import com.downloader.Progress;
+import com.sangharsh.books.AttemptTest;
 import com.sangharsh.books.FileActivity;
 import com.sangharsh.books.PDFDisplay;
 import com.sangharsh.books.R;
@@ -40,7 +40,6 @@ import com.sangharsh.books.interfaces.UIUpdateHomeFrag;
 import com.sangharsh.books.model.Directory;
 import com.sangharsh.books.model.PDFModel;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -49,13 +48,13 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     Context context;
     Directory directory;
     SangharshBooks sangharshBooks;
-    ArrayList<Directory> directories;
     ArrayList<Integer> colors;
     ArrayList<Integer> layers;
     UIUpdateHomeFrag uiUpdaterHomeFrag;
 
     final int TYPE_FILE = 0;
     final int TYPE_PDF = 1;
+    final int TYPE_TEST = 2;
 
     public DirectoryAdapter(Context c, Directory directory, SangharshBooks sangharshBooks,UIUpdateHomeFrag uiUpdateHomeFrag){
         this.context=c;
@@ -94,10 +93,13 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if(viewType == TYPE_FILE){
             View view = LayoutInflater.from(context).inflate(R.layout.file_item,new LinearLayout(context),false);
             return new MyViewHolder(view);
-        }else{
+        }else if(viewType==TYPE_PDF){
             View view = LayoutInflater.from(context).inflate(R.layout.pdf_item,new LinearLayout(context),false);
             return new PDFVIewHolder(view);
 
+        }else{
+            View view = LayoutInflater.from(context).inflate(R.layout.file_item,new LinearLayout(context),false);
+            return new TestHolder(view);
         }
 
     }
@@ -163,6 +165,16 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((PDFVIewHolder) holder).pdfNamepdfItem.setText(directory.getPdfModels().get(index).getName());
             ((PDFVIewHolder) holder).seekBar.setEnabled(false);
 
+        }
+        if(holder instanceof TestHolder){
+            ((TestHolder)holder).fileNameTextView.setText(directory.getTests().get(position).getTitle());
+            ((TestHolder)holder).linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, AttemptTest.class));
+
+                }
+            });
         }
     }
     private void getAdvPdf(RecyclerView.ViewHolder holder,int index){
@@ -263,7 +275,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if(directory.getPdfModels()==null){
             return directory.getFiles().size();
         }
-       return directory.getFiles().size()+directory.getPdfModels().size();
+       return directory.getFiles().size()+directory.getPdfModels().size()+directory.getTests().size();
     }
 
     @Override
@@ -271,11 +283,11 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if(position < directory.getFiles().size()){
             return TYPE_FILE;
         }
-
         if(position - directory.getFiles().size() < directory.getPdfModels().size()){
             return TYPE_PDF;
+        }else{
+            return TYPE_TEST;
         }
-        return directories.size();
     }
 
 
@@ -308,6 +320,20 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             downloadPercentTV = itemView.findViewById(R.id.download_percent);
             llBG = itemView.findViewById(R.id.ll);
 
+        }
+    }
+    public class TestHolder extends RecyclerView.ViewHolder{
+        TextView fileNameTextView;
+        CardView fileBg;
+        LinearLayout linearLayout;
+        ImageView fileItemBG;
+
+        public TestHolder(View itemView){
+            super(itemView);
+            fileNameTextView = itemView.findViewById(R.id.book_item_name);
+            fileBg=itemView.findViewById(R.id.background_file_item);
+            linearLayout = itemView.findViewById(R.id.file_item_background);
+            fileItemBG = itemView.findViewById(R.id.book_item_holder_imageview);
         }
     }
 

@@ -4,7 +4,7 @@
             "outputFile": "com.sangharsh.books.app-mergeDebugResources-4:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\21039e6c517ed8f2297bc5b9b379f169\\transformed\\material-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\36962689b2a0ebd66f3b055087b6440c\\transformed\\material-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\850d12e307b1eac63550ff36d8c3f9c1\\transformed\\appcompat-1.4.2\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\e1aa22b9b5258d9cfb34103051fa4440\\transformed\\appcompat-1.4.2\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

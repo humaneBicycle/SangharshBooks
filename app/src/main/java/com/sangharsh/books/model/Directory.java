@@ -6,6 +6,7 @@ public class Directory {
     int depth;//used to fetch first screen list
     ArrayList<FileModel> files;
     ArrayList<PDFModel> pdfModels;
+    ArrayList<ShortTest> tests;
     String name;
     String path;
 
@@ -27,11 +28,12 @@ public class Directory {
 
     public Directory(){}
 
-    public Directory( int depth,ArrayList<FileModel> files, ArrayList<PDFModel> pdfModels,  String path) {
+    public Directory( int depth,ArrayList<FileModel> files, ArrayList<PDFModel> pdfModels,  String path,ArrayList<ShortTest> tests) {
         this.depth = depth;
         this.files = files;
         this.pdfModels = pdfModels;
         this.path = path;
+        this.tests = tests;
     }
 
     public String getName() {
@@ -42,7 +44,13 @@ public class Directory {
         this.name = name;
     }
 
+    public ArrayList<ShortTest> getTests() {
+        return tests;
+    }
 
+    public void setTests(ArrayList<ShortTest> tests) {
+        this.tests = tests;
+    }
 
     public ArrayList<FileModel> getFiles() {
         return files;
