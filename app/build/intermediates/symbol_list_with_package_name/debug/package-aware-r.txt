@@ -1842,6 +1842,7 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color redBtnBg
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2535,6 +2536,7 @@ drawable admob_close_button_black_circle_white_cross
 drawable admob_close_button_white_circle_black_cross
 drawable avd_hide_password
 drawable avd_show_password
+drawable backbtn
 drawable blur_blue
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2564,6 +2566,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable cross
 drawable default_gradient
 drawable design_fab_background
 drawable design_ic_visibility
@@ -2643,9 +2646,13 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable quesmark
+drawable redbg
 drawable studying_illustration
 drawable test_custom_background
 drawable test_level_drawable
+drawable testwelcomebannertemplate
+drawable timericon
 drawable tiny_stroke
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2822,6 +2829,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descriptionTV
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3010,6 +3018,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id noOfQuesTV
 id noScroll
 id noState
 id none
@@ -3124,6 +3133,7 @@ id src_over
 id standard
 id start
 id startHorizontal
+id startTestBtn
 id startToEnd
 id startVertical
 id staticLayout
@@ -3147,6 +3157,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id testTitleTV
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -3158,6 +3169,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textView2
 id textView3
 id text_input_end_icon
@@ -3173,6 +3185,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerTV
 id title
 id titleDividerNoCustom
 id title_template

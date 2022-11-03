@@ -16,4 +16,7 @@
     <color name="my_skyblue">#B4F1F1</color>
     <color name="my_purple">#585B9A</color>
     <color name="blue_bottom">#E2F8F8</color>
+
+
+    <color name="redBtnBg">#BB0B14</color>
 </resources>

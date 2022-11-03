@@ -30,7 +30,7 @@ import com.downloader.OnProgressListener;
 import com.downloader.OnStartOrResumeListener;
 import com.downloader.PRDownloader;
 import com.downloader.Progress;
-import com.sangharsh.books.AttemptTest;
+import com.sangharsh.books.StartTest;
 import com.sangharsh.books.FileActivity;
 import com.sangharsh.books.PDFDisplay;
 import com.sangharsh.books.R;
@@ -167,11 +167,12 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         }
         if(holder instanceof TestHolder){
-            ((TestHolder)holder).fileNameTextView.setText(directory.getTests().get(position).getTitle());
+            int index = position-directory.getFiles().size()-directory.getPdfModels().size();
+            ((TestHolder)holder).fileNameTextView.setText(directory.getTests().get(index).getTitle());
             ((TestHolder)holder).linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    context.startActivity(new Intent(context, AttemptTest.class));
+                    context.startActivity(new Intent(context, StartTest.class).putExtra("testId",directory.getTests().get(position).getId()));
 
                 }
             });
@@ -280,6 +281,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemViewType(int position){
+            Log.i("abh", "getItemViewType: pos: "+position);
         if(position < directory.getFiles().size()){
             return TYPE_FILE;
         }
