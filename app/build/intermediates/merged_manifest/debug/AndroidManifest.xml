@@ -55,7 +55,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.Light" >
         <activity
-            android:name="com.sangharsh.books.AttemptTest"
+            android:name="com.sangharsh.books.AttemptTestActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.sangharsh.books.StartTest"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

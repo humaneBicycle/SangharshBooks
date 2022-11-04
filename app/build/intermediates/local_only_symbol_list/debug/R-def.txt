@@ -34,6 +34,7 @@ drawable blur_blue
 drawable circle
 drawable cross
 drawable default_gradient
+drawable graybg
 drawable ic_back_arrow
 drawable ic_baseline_add_24
 drawable ic_baseline_arrow_back_ios_new_24
@@ -55,6 +56,7 @@ drawable ic_layer_3
 drawable ic_profile
 drawable ic_sangharsh
 drawable notification_bell
+drawable optionwhitbg
 drawable quesmark
 drawable redbg
 drawable studying_illustration
@@ -64,6 +66,7 @@ drawable tiny_stroke
 font poppinsbold
 font poppinsregular
 id add_pdf_local_storage
+id backBtn
 id back_file
 id back_noti
 id back_pdf_view
@@ -97,6 +100,7 @@ id ll
 id load_pdf_display
 id myAdView
 id myAdViewPDFDisplay
+id nextBtn
 id noOfQuesTV
 id notification
 id notification_item_background
@@ -104,6 +108,10 @@ id notification_item_body
 id notification_item_title
 id notification_main_activity
 id notification_rv
+id optionATV
+id optionBTV
+id optionCTV
+id optionDTV
 id path_bottom_sheet
 id pdf_item_background
 id pdf_item_download_seekbar
@@ -115,6 +123,7 @@ id privacy_policy
 id progress_file_activity
 id progress_home_frag
 id progress_noti
+id questionTV
 id rate_us
 id rv_bookmarks
 id rv_downloads
@@ -133,6 +142,8 @@ id type_selector_bottom_style_spinner
 id upload_progress
 id viewPager
 layout activity_attempt_test
+layout activity_attempt_test2
+layout activity_attempt_test3
 layout activity_file
 layout activity_main
 layout activity_notification
