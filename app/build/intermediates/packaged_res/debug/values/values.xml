@@ -4,6 +4,9 @@
     <color name="blue_bottom">#E2F8F8</color>
     <color name="greenPrimary">#337585</color>
     <color name="ic_launcher_background">#3DDC84</color>
+    <color name="m_bg">#1E1E1E</color>
+    <color name="m_red">#F44336</color>
+    <color name="m_yellow">#FFEB3B</color>
     <color name="my_blue">#4C84B9</color>
     <color name="my_green">#6CEA31</color>
     <color name="my_purple">#585B9A</color>

@@ -1,26 +1,27 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:38:9-46:20
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:46:9-54:20
 	android:grantUriPermissions
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:42:13-47
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:50:13-47
 	android:authorities
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:40:13-60
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:48:13-60
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:41:13-37
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:49:13-37
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:39:13-62
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:47:13-62
 manifest
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
 MERGED from [com.github.ibrahimsn98:SmoothBottomBar:1.7.9] C:\Users\adity\.gradle\caches\transforms-3\cd5e995f33e95416f3dd58c9eed2a94e\transformed\jetified-SmoothBottomBar-1.7.9\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] C:\Users\adity\.gradle\caches\transforms-3\2cd5b58c02e57c4c9b143d563b8d24bc\transformed\navigation-ui-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\adity\.gradle\caches\transforms-3\137f7acecd6dd394dbf5350fb86be631\transformed\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\adity\.gradle\caches\transforms-3\36962689b2a0ebd66f3b055087b6440c\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\adity\.gradle\caches\transforms-3\508a2fba6a05ddbd466c5eb0e3ce4708\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\adity\.gradle\caches\transforms-3\e1aa22b9b5258d9cfb34103051fa4440\transformed\appcompat-1.4.2\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\adity\.gradle\caches\transforms-3\3b3aeabfd53f2c7a28237827b62915d3\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.firebase:firebase-firestore:24.2.1] C:\Users\adity\.gradle\caches\transforms-3\9d66a58aa5bca3f21be56a4687a942ac\transformed\jetified-firebase-firestore-24.2.1\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-messaging:23.0.6] C:\Users\adity\.gradle\caches\transforms-3\0f1bec2dd3e8b63226cbe895efe001a8\transformed\jetified-firebase-messaging-23.0.6\AndroidManifest.xml:17:1-62:12
 MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\adity\.gradle\caches\transforms-3\4d4b7b843b89182f882f491666240001\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:15:1-39:12
@@ -111,22 +112,22 @@ MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\adity\.gradle\cach
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\adity\.gradle\caches\transforms-3\72e8b159ca75196bdca1c74e2423402f\transformed\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\adity\.gradle\caches\transforms-3\049574236031d3bd4199c6e0b5b44a0a\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\adity\.gradle\caches\transforms-3\29bb728a73b9f4a79feedad8179dbd4c\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
 	package
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:1-86:12
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:2:11-69
@@ -149,7 +150,7 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.6] C:\Us
 	android:name
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:8:5-76:19
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:8:5-84:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\adity\.gradle\caches\transforms-3\36962689b2a0ebd66f3b055087b6440c\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\adity\.gradle\caches\transforms-3\36962689b2a0ebd66f3b055087b6440c\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\adity\.gradle\caches\transforms-3\508a2fba6a05ddbd466c5eb0e3ce4708\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -238,78 +239,84 @@ MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\adity\.gradle\caches\tra
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:11:9-65
 	android:name
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:9:9-39
-activity#com.sangharsh.books.AttemptTestActivity
+activity#com.sangharsh.books.ResultActivity
 ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:20:9-26:20
 	android:exported
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:21:13-48
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:21:13-43
 meta-data#android.app.lib_name
 ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:23:13-25:36
 	android:value
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:25:17-33
 	android:name
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:24:17-52
+activity#com.sangharsh.books.AttemptTestActivity
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:28:9-34:20
+	android:exported
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:29:13-48
 activity#com.sangharsh.books.StartTest
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:27:9-33:20
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:35:9-41:20
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:29:13-37
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:28:13-38
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:36:13-38
 activity#com.sangharsh.books.NotificationActivity
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:34:9-36:40
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:42:9-44:40
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:36:13-37
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:44:13-37
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:35:13-49
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:43:13-49
 activity#com.sangharsh.books.PDFDisplay
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:48:9-50:40
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:56:9-58:40
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:50:13-37
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:58:13-37
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:49:13-39
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:57:13-39
 activity#com.sangharsh.books.FileActivity
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:51:9-53:40
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:59:9-61:40
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:53:13-37
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:61:13-37
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:52:13-41
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:60:13-41
 activity#com.sangharsh.books.MainActivity
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:54:9-62:20
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:62:9-70:20
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:56:13-36
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:64:13-36
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:55:13-41
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:63:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:57:13-61:29
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:65:13-69:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:58:17-69
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:66:17-69
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:58:25-66
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:66:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:60:17-77
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:68:17-77
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:60:27-74
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:68:27-74
 service#com.sangharsh.books.NotificationMessagingService
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:64:9-71:19
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:72:9-79:19
 	android:enabled
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:66:13-35
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:74:13-35
 	android:exported
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:67:13-36
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:75:13-36
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:65:13-57
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:73:13-57
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:68:13-70:29
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:76:13-78:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:69:17-78
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:77:17-78
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:69:25-75
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:77:25-75
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:73:9-75:70
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:81:9-83:70
 	android:value
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:75:13-67
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:83:13-67
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:74:13-69
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:82:13-69
 uses-sdk
 INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
@@ -326,6 +333,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\adity\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\adity\.gradle\caches\transforms-3\508a2fba6a05ddbd466c5eb0e3ce4708\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\adity\.gradle\caches\transforms-3\e1aa22b9b5258d9cfb34103051fa4440\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\adity\.gradle\caches\transforms-3\e1aa22b9b5258d9cfb34103051fa4440\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\adity\.gradle\caches\transforms-3\3b3aeabfd53f2c7a28237827b62915d3\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\adity\.gradle\caches\transforms-3\3b3aeabfd53f2c7a28237827b62915d3\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
 MERGED from [com.google.firebase:firebase-firestore:24.2.1] C:\Users\adity\.gradle\caches\transforms-3\9d66a58aa5bca3f21be56a4687a942ac\transformed\jetified-firebase-firestore-24.2.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:24.2.1] C:\Users\adity\.gradle\caches\transforms-3\9d66a58aa5bca3f21be56a4687a942ac\transformed\jetified-firebase-firestore-24.2.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-messaging:23.0.6] C:\Users\adity\.gradle\caches\transforms-3\0f1bec2dd3e8b63226cbe895efe001a8\transformed\jetified-firebase-messaging-23.0.6\AndroidManifest.xml:21:5-23:41
@@ -519,11 +528,11 @@ INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\A
 		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:43:13-45:58
+ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:51:13-53:58
 	android:resource
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:45:17-55
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:53:17-55
 	android:name
-		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:44:17-67
+		ADDED from C:\Users\adity\AndroidStudioProjects\SangharshBooks\app\src\main\AndroidManifest.xml:52:17-67
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-firestore:24.2.1] C:\Users\adity\.gradle\caches\transforms-3\9d66a58aa5bca3f21be56a4687a942ac\transformed\jetified-firebase-firestore-24.2.1\AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-messaging:23.0.6] C:\Users\adity\.gradle\caches\transforms-3\0f1bec2dd3e8b63226cbe895efe001a8\transformed\jetified-firebase-messaging-23.0.6\AndroidManifest.xml:25:5-79

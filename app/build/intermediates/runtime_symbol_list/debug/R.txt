@@ -1666,6 +1666,9 @@ int color m3_timepicker_display_text_color 0x7f0501ab
 int color m3_timepicker_secondary_text_button_ripple_color 0x7f0501ac
 int color m3_timepicker_secondary_text_button_text_color 0x7f0501ad
 int color m3_tonal_button_ripple_color_selector 0x7f0501ae
+int color m_bg 0x7f050275
+int color m_red 0x7f050273
+int color m_yellow 0x7f050274
 int color material_blue_grey_800 0x7f0501af
 int color material_blue_grey_900 0x7f0501b0
 int color material_blue_grey_950 0x7f0501b1
@@ -2649,6 +2652,8 @@ int drawable notify_panel_notification_icon_bg 0x7f0700cd
 int drawable optionwhitbg 0x7f0700ce
 int drawable quesmark 0x7f0700cf
 int drawable redbg 0x7f0700d0
+int drawable resultbg 0x7f0700da
+int drawable selctedoptionbg 0x7f0700d9
 int drawable studying_illustration 0x7f0700d1
 int drawable test_custom_background 0x7f0700d2
 int drawable test_level_drawable 0x7f0700d3
@@ -2750,6 +2755,8 @@ int id autoComplete 0x7f090057
 int id autoCompleteToEnd 0x7f090058
 int id autoCompleteToStart 0x7f090059
 int id backBtn 0x7f09005a
+int id backBtnImg 0x7f09024c
+int id backCrossIV 0x7f090244
 int id back_file 0x7f09005b
 int id back_noti 0x7f09005c
 int id back_pdf_view 0x7f09005d
@@ -2816,6 +2823,7 @@ int id contentPanel 0x7f090099
 int id contiguous 0x7f09009a
 int id continuousVelocity 0x7f09009b
 int id coordinator 0x7f09009c
+int id correctAnswerTV 0x7f09024d
 int id cos 0x7f09009d
 int id counter 0x7f09009e
 int id counterclockwise 0x7f09009f
@@ -2919,6 +2927,7 @@ int id imageView2 0x7f090100
 int id img_pdf 0x7f090101
 int id immediateStop 0x7f090102
 int id included 0x7f090103
+int id incorrectAnswerTV 0x7f09024e
 int id info 0x7f090104
 int id invisible 0x7f090105
 int id inward 0x7f090106
@@ -2943,6 +2952,7 @@ int id light 0x7f090118
 int id line1 0x7f090119
 int id line3 0x7f09011a
 int id linear 0x7f09011b
+int id linearLayout 0x7f09024f
 int id linearLayout2 0x7f09011c
 int id linerlayout_download_frag 0x7f09011d
 int id listMode 0x7f09011e
@@ -3020,11 +3030,12 @@ int id navigation_header_container 0x7f090165
 int id never 0x7f090166
 int id neverCompleteToEnd 0x7f090167
 int id neverCompleteToStart 0x7f090168
-int id nextBtn 0x7f090169
+int id nextBtnTV 0x7f090247
 int id noOfQuesTV 0x7f09016a
 int id noScroll 0x7f09016b
 int id noState 0x7f09016c
 int id none 0x7f09016d
+int id noofQuesTV 0x7f090243
 int id normal 0x7f09016e
 int id north 0x7f09016f
 int id notification 0x7f090170
@@ -3064,6 +3075,7 @@ int id pdf_view_heading 0x7f090191
 int id pdf_viewer 0x7f090192
 int id peekHeight 0x7f090193
 int id percent 0x7f090194
+int id pieChart 0x7f090252
 int id pin 0x7f090195
 int id position 0x7f090196
 int id postLayout 0x7f090197
@@ -3073,6 +3085,7 @@ int id progress_file_activity 0x7f09019a
 int id progress_home_frag 0x7f09019b
 int id progress_horizontal 0x7f09019c
 int id progress_noti 0x7f09019d
+int id quesDrawerGrid 0x7f090253
 int id questionTV 0x7f09019e
 int id radio 0x7f09019f
 int id rate_us 0x7f0901a0
@@ -3141,6 +3154,7 @@ int id src_over 0x7f0901de
 int id standard 0x7f0901df
 int id start 0x7f0901e0
 int id startHorizontal 0x7f0901e1
+int id startTestActivityFinishBtn 0x7f090249
 int id startTestBtn 0x7f0901e2
 int id startToEnd 0x7f0901e3
 int id startVertical 0x7f0901e4
@@ -3170,6 +3184,7 @@ int id test_checkbox_android_button_tint 0x7f0901fb
 int id test_checkbox_app_button_tint 0x7f0901fc
 int id test_radiobutton_android_button_tint 0x7f0901fd
 int id test_radiobutton_app_button_tint 0x7f0901fe
+int id testll 0x7f090254
 int id text 0x7f0901ff
 int id text2 0x7f090200
 int id textEnd 0x7f090201
@@ -3194,12 +3209,15 @@ int id textinput_prefix_text 0x7f090213
 int id textinput_suffix_text 0x7f090214
 int id time 0x7f090215
 int id timerTV 0x7f090216
+int id timertv 0x7f090245
 int id title 0x7f090217
 int id titleDividerNoCustom 0x7f090218
+int id titleTV 0x7f090250
 int id title_template 0x7f090219
 int id toggle 0x7f09021a
 int id top 0x7f09021b
 int id topPanel 0x7f09021c
+int id topTitleTV 0x7f090242
 int id top_left 0x7f09021d
 int id top_right 0x7f09021e
 int id touch_outside 0x7f09021f
@@ -3212,6 +3230,7 @@ int id transition_scene_layoutid_cache 0x7f090225
 int id transition_transform 0x7f090226
 int id triangle 0x7f090227
 int id type_selector_bottom_style_spinner 0x7f090228
+int id unattemptedTV 0x7f090251
 int id unchecked 0x7f090229
 int id uniform 0x7f09022a
 int id unlabeled 0x7f09022b
@@ -3338,6 +3357,7 @@ int layout activity_file 0x7f0c001f
 int layout activity_main 0x7f0c0020
 int layout activity_notification 0x7f0c0021
 int layout activity_pdfdisplay 0x7f0c0022
+int layout activity_result 0x7f0c008b
 int layout add_bottom_sheet 0x7f0c0023
 int layout browser_actions_context_menu_page 0x7f0c0024
 int layout browser_actions_context_menu_row 0x7f0c0025
@@ -3421,6 +3441,7 @@ int layout notification_template_icon_group 0x7f0c0072
 int layout notification_template_part_chronometer 0x7f0c0073
 int layout notification_template_part_time 0x7f0c0074
 int layout pdf_item 0x7f0c0075
+int layout question_testbox 0x7f0c008c
 int layout select_dialog_item_material 0x7f0c0076
 int layout select_dialog_multichoice_material 0x7f0c0077
 int layout select_dialog_singlechoice_material 0x7f0c0078

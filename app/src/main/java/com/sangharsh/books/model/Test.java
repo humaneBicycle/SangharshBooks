@@ -1,12 +1,13 @@
 package com.sangharsh.books.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Test {
+public class Test implements Serializable {
     String testTitle;
     String testDescription;
     String id;
-    int noOfQues;
+    int noOfQuestion;
     int timeAllowed;
 
     public int getTimeAllowed() {
@@ -17,12 +18,12 @@ public class Test {
         this.timeAllowed = timeAllowed;
     }
 
-    public int getNoOfQues() {
-        return noOfQues;
+    public int getNoOfQuestion() {
+        return noOfQuestion;
     }
 
-    public void setNoOfQues(int noOfQues) {
-        this.noOfQues = noOfQues;
+    public void setNoOfQuestion(int noOfQuestion) {
+        this.noOfQuestion = noOfQuestion;
     }
 
     public String getId() {

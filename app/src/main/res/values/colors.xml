@@ -19,4 +19,8 @@
 
 
     <color name="redBtnBg">#BB0B14</color>
+
+    <color name="m_yellow">#FFEB3B</color>
+    <color name="m_red">#F44336</color>
+    <color name="m_bg">#1E1E1E</color>
 </resources>

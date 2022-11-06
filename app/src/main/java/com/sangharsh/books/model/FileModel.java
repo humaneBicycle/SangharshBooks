@@ -1,8 +1,11 @@
 package com.sangharsh.books.model;
 
+import java.util.HashMap;
+
 public class FileModel {
     String name;
     String pointingDirId;
+
 
     public FileModel(){}
 
@@ -10,6 +13,8 @@ public class FileModel {
         this.name = name;
         this.pointingDirId = pointingDirId;
     }
+
+
 
     public String getName() {
         return name;

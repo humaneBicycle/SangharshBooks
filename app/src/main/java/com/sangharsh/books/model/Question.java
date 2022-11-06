@@ -1,6 +1,8 @@
 package com.sangharsh.books.model;
+import java.io.Serializable;
 
-public class Question {
+
+public class Question implements Serializable {
     String question;
     String quesImgUrl;
     String option1;
@@ -11,12 +13,14 @@ public class Question {
     String option3ImgUrl;
     String option4;
     String option4ImgUrl;
-    String correctOption;
+    int correctOption;
+
 
     public Question() {
+
     }
 
-    public Question(String question, String option1, String option2, String option3, String option4, String correctOption) {
+    public Question(String question, String option1, String option2, String option3, String option4, int correctOption) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -25,7 +29,7 @@ public class Question {
         this.correctOption = correctOption;
     }
 
-    public Question(String question, String quesImgUrl, String option1, String option1ImgUrl, String option2, String option2ImgUrl, String option3, String option3ImgUrl, String option4, String option4ImgUrl, String correctOption) {
+    public Question(String question, String quesImgUrl, String option1, String option1ImgUrl, String option2, String option2ImgUrl, String option3, String option3ImgUrl, String option4, String option4ImgUrl, int correctOption) {
         this.question = question;
         this.quesImgUrl = quesImgUrl;
         this.option1 = option1;
@@ -121,11 +125,14 @@ public class Question {
         this.option4ImgUrl = option4ImgUrl;
     }
 
-    public String getCorrectOption() {
+
+    public int getCorrectOption() {
         return correctOption;
     }
 
-    public void setCorrectOption(String correctOption) {
+    public void setCorrectOption(int correctOption) {
         this.correctOption = correctOption;
+
+
     }
 }

@@ -1667,6 +1667,9 @@ color m3_timepicker_display_text_color
 color m3_timepicker_secondary_text_button_ripple_color
 color m3_timepicker_secondary_text_button_text_color
 color m3_tonal_button_ripple_color_selector
+color m_bg
+color m_red
+color m_yellow
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -2650,6 +2653,8 @@ drawable notify_panel_notification_icon_bg
 drawable optionwhitbg
 drawable quesmark
 drawable redbg
+drawable resultbg
+drawable selctedoptionbg
 drawable studying_illustration
 drawable test_custom_background
 drawable test_level_drawable
@@ -2751,6 +2756,8 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id backBtn
+id backBtnImg
+id backCrossIV
 id back_file
 id back_noti
 id back_pdf_view
@@ -2817,6 +2824,7 @@ id contentPanel
 id contiguous
 id continuousVelocity
 id coordinator
+id correctAnswerTV
 id cos
 id counter
 id counterclockwise
@@ -2920,6 +2928,7 @@ id imageView2
 id img_pdf
 id immediateStop
 id included
+id incorrectAnswerTV
 id info
 id invisible
 id inward
@@ -2944,6 +2953,7 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id linearLayout2
 id linerlayout_download_frag
 id listMode
@@ -3021,11 +3031,12 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
-id nextBtn
+id nextBtnTV
 id noOfQuesTV
 id noScroll
 id noState
 id none
+id noofQuesTV
 id normal
 id north
 id notification
@@ -3065,6 +3076,7 @@ id pdf_view_heading
 id pdf_viewer
 id peekHeight
 id percent
+id pieChart
 id pin
 id position
 id postLayout
@@ -3074,6 +3086,7 @@ id progress_file_activity
 id progress_home_frag
 id progress_horizontal
 id progress_noti
+id quesDrawerGrid
 id questionTV
 id radio
 id rate_us
@@ -3142,6 +3155,7 @@ id src_over
 id standard
 id start
 id startHorizontal
+id startTestActivityFinishBtn
 id startTestBtn
 id startToEnd
 id startVertical
@@ -3171,6 +3185,7 @@ id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
+id testll
 id text
 id text2
 id textEnd
@@ -3195,12 +3210,15 @@ id textinput_prefix_text
 id textinput_suffix_text
 id time
 id timerTV
+id timertv
 id title
 id titleDividerNoCustom
+id titleTV
 id title_template
 id toggle
 id top
 id topPanel
+id topTitleTV
 id top_left
 id top_right
 id touch_outside
@@ -3213,6 +3231,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id type_selector_bottom_style_spinner
+id unattemptedTV
 id unchecked
 id uniform
 id unlabeled
@@ -3339,6 +3358,7 @@ layout activity_file
 layout activity_main
 layout activity_notification
 layout activity_pdfdisplay
+layout activity_result
 layout add_bottom_sheet
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3422,6 +3442,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout pdf_item
+layout question_testbox
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
