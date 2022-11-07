@@ -38,6 +38,9 @@ drawable circle
 drawable cross
 drawable default_gradient
 drawable graybg
+drawable gridtvbg
+drawable gridtvbggreen
+drawable gridtvbgred
 drawable ic_back_arrow
 drawable ic_baseline_add_24
 drawable ic_baseline_arrow_back_ios_new_24
@@ -62,6 +65,7 @@ drawable notification_bell
 drawable optionwhitbg
 drawable quesmark
 drawable redbg
+drawable redbgforbtn
 drawable resultbg
 drawable selctedoptionbg
 drawable studying_illustration
@@ -73,6 +77,7 @@ font poppinsregular
 id add_pdf_local_storage
 id backBtn
 id backBtnImg
+id backBtnduringGrid
 id backCrossIV
 id back_file
 id back_noti
@@ -83,6 +88,8 @@ id book_item_holder_imageview
 id book_item_name
 id bookmark_long_click_options
 id bottomBar
+id bottomBtnLinearLayoutDuringGrid
+id bottomBtnsLinearLayout
 id bottom_sheet_add_button
 id cardView
 id correctAnswerTV
@@ -92,6 +99,7 @@ id download_percent
 id file_activity_heading
 id file_item_background
 id file_name_edittext
+id gridTV
 id imageView
 id imageView2
 id img_pdf
@@ -105,6 +113,7 @@ id latestCard
 id latestTitle
 id linearLayout
 id linearLayout2
+id linearLayout3
 id linerlayout_download_frag
 id ll
 id load_pdf_display

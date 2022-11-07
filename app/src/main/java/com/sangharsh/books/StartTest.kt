@@ -42,16 +42,10 @@ class StartTest : AppCompatActivity() {
         timerTV = findViewById(R.id.timerTV)
         topTitleTV = findViewById(R.id.topTitleTV)
         startTestActivityFinish = findViewById(R.id.startTestActivityFinishBtn)
-
-
         question = Question()
-
         startTestActivityFinish.setOnClickListener(View.OnClickListener {
             finish()
         })
-
-
-
         pd = ProgressDialog(this)
         pd.setTitle("Loading Test")
         pd.setMessage("Please Wait..")
@@ -100,16 +94,9 @@ class StartTest : AppCompatActivity() {
                         timerTV.text = timeAllowed
                     }
                     pd.dismiss()
-
-
-
-
                 }
-
             }
         }
-
-
 
     //TODO hide loading screen --> done
     // startTest test obj->

@@ -2578,6 +2578,9 @@ int drawable design_snackbar_background 0x7f070083
 int drawable googleg_disabled_color_18 0x7f070084
 int drawable googleg_standard_color_18 0x7f070085
 int drawable graybg 0x7f070086
+int drawable gridtvbg 0x7f0700dc
+int drawable gridtvbggreen 0x7f0700dd
+int drawable gridtvbgred 0x7f0700de
 int drawable ic_back_arrow 0x7f070087
 int drawable ic_baseline_add_24 0x7f070088
 int drawable ic_baseline_arrow_back_ios_new_24 0x7f070089
@@ -2652,6 +2655,7 @@ int drawable notify_panel_notification_icon_bg 0x7f0700cd
 int drawable optionwhitbg 0x7f0700ce
 int drawable quesmark 0x7f0700cf
 int drawable redbg 0x7f0700d0
+int drawable redbgforbtn 0x7f0700db
 int drawable resultbg 0x7f0700da
 int drawable selctedoptionbg 0x7f0700d9
 int drawable studying_illustration 0x7f0700d1
@@ -2756,6 +2760,7 @@ int id autoCompleteToEnd 0x7f090058
 int id autoCompleteToStart 0x7f090059
 int id backBtn 0x7f09005a
 int id backBtnImg 0x7f09024c
+int id backBtnduringGrid 0x7f090256
 int id backCrossIV 0x7f090244
 int id back_file 0x7f09005b
 int id back_noti 0x7f09005c
@@ -2773,6 +2778,8 @@ int id book_item_name 0x7f090067
 int id bookmark_long_click_options 0x7f090068
 int id bottom 0x7f090069
 int id bottomBar 0x7f09006a
+int id bottomBtnLinearLayoutDuringGrid 0x7f090257
+int id bottomBtnsLinearLayout 0x7f090258
 int id bottom_left 0x7f09006b
 int id bottom_right 0x7f09006c
 int id bottom_sheet_add_button 0x7f09006d
@@ -2905,6 +2912,7 @@ int id ghost_view_holder 0x7f0900ea
 int id gone 0x7f0900eb
 int id graph 0x7f0900ec
 int id graph_wrap 0x7f0900ed
+int id gridTV 0x7f090255
 int id group_divider 0x7f0900ee
 int id grouping 0x7f0900ef
 int id groups 0x7f0900f0
@@ -2954,6 +2962,7 @@ int id line3 0x7f09011a
 int id linear 0x7f09011b
 int id linearLayout 0x7f09024f
 int id linearLayout2 0x7f09011c
+int id linearLayout3 0x7f090259
 int id linerlayout_download_frag 0x7f09011d
 int id listMode 0x7f09011e
 int id list_item 0x7f09011f

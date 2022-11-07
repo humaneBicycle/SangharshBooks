@@ -2579,6 +2579,9 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable graybg
+drawable gridtvbg
+drawable gridtvbggreen
+drawable gridtvbgred
 drawable ic_back_arrow
 drawable ic_baseline_add_24
 drawable ic_baseline_arrow_back_ios_new_24
@@ -2653,6 +2656,7 @@ drawable notify_panel_notification_icon_bg
 drawable optionwhitbg
 drawable quesmark
 drawable redbg
+drawable redbgforbtn
 drawable resultbg
 drawable selctedoptionbg
 drawable studying_illustration
@@ -2757,6 +2761,7 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id backBtn
 id backBtnImg
+id backBtnduringGrid
 id backCrossIV
 id back_file
 id back_noti
@@ -2774,6 +2779,8 @@ id book_item_name
 id bookmark_long_click_options
 id bottom
 id bottomBar
+id bottomBtnLinearLayoutDuringGrid
+id bottomBtnsLinearLayout
 id bottom_left
 id bottom_right
 id bottom_sheet_add_button
@@ -2906,6 +2913,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id gridTV
 id group_divider
 id grouping
 id groups
@@ -2955,6 +2963,7 @@ id line3
 id linear
 id linearLayout
 id linearLayout2
+id linearLayout3
 id linerlayout_download_frag
 id listMode
 id list_item

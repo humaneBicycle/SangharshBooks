@@ -62,7 +62,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.8"
                 android:orientation="vertical">
 
                 <com.github.mikephil.charting.charts.PieChart
@@ -180,7 +180,7 @@
                             android:text="Unattempted"
                             android:fontFamily="@font/poppinsregular"
                             android:textColor="@color/white"
-                            android:textSize="18sp" />
+                            android:textSize="17sp" />
 
                     </LinearLayout>
 
@@ -188,6 +188,19 @@
 
             </LinearLayout>
         </LinearLayout>
+        <GridLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="3dp"
+            android:id="@+id/quesDrawerGrid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alignmentMode="alignBounds"
+            android:columnCount="7"
+            android:rowOrderPreserved="false"
+            android:useDefaultMargins="true"
+            android:gravity="center"
+            android:visibility="visible" />
 
     </LinearLayout>
 

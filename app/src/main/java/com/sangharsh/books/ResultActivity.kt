@@ -6,9 +6,12 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.GridLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
@@ -29,11 +32,16 @@ class ResultActivity : AppCompatActivity() {
     lateinit var incorrectAnswerTV :TextView
     lateinit var unattemptedTV :TextView
     lateinit var backBtnImg :ImageView
+    lateinit var gridL: GridLayout
+    lateinit var tv : View
     lateinit var selectedOptions:HashMap<String,Int>
     var correctAnswers :Int =0
     var incorrectAnswers :Int =0
     var unattemptedQuestions :Int =0
+    private lateinit var test: Test
     lateinit var pieChart: PieChart
+    private var answers = java.util.HashMap<Int, Int>()
+
 //    override fun onBackPressed() {
 //        val intent = Intent(applicationContext, StartTest::class.java)
 //        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -48,6 +56,9 @@ class ResultActivity : AppCompatActivity() {
         incorrectAnswerTV = findViewById(R.id.incorrectAnswerTV)
         unattemptedTV = findViewById(R.id.unattemptedTV)
         backBtnImg = findViewById(R.id.backBtnImg)
+        gridL = findViewById(R.id.quesDrawerGrid)
+        test = Gson().fromJson(intent.getStringExtra("TEST"), Test::class.java)
+
 
         backBtnImg.setOnClickListener(View.OnClickListener {
             onBackPressed()
@@ -63,10 +74,18 @@ class ResultActivity : AppCompatActivity() {
                 compareCorrectOption(index)
         }
 
+
         correctAnswerTV.text = correctAnswers.toString()
         incorrectAnswerTV.text = incorrectAnswers.toString()
-
         unattemptedTV.text = unattemptedQuestions.toString()
+
+
+        for(index in 1..test.questions.size){
+            tv = layoutInflater.inflate(R.layout.question_testbox,null)
+            tv.tag = index
+            gridL.addView(tv)
+            gridL.findViewWithTag<TextView>(index).text= index.toString()
+        }
 
         Log.i("compare",currTest.questions[0].correctOption.toString() )
         Log.i("compare",currTest.questions[0].correctOption.toString() )
@@ -75,33 +94,28 @@ class ResultActivity : AppCompatActivity() {
         Log.i("result","Unattempted : ${unattemptedQuestions}" )
         Log.i("result","Correct : ${correctAnswers}" )
         Log.i("result","Incorrect : ${incorrectAnswers}" )
+        Log.i("result","selected : $selectedOptions" )
 
         pieChart()
+        showGridLayout()
 
     }
 
-
-
     private fun compareCorrectOption(index:Int){
-        Log.i("Comparison", "starting")
         if (selectedOptions.containsKey("$index" as String)) {
-            Log.i("Comparison", "contains")
             if (selectedOptions["$index" as String]!!.toInt() == -1){
-                Log.i("Comparison", "una")
                 unattemptedQuestions++
             } else if (currTest.questions[index - 1].correctOption.toInt() == selectedOptions["$index" as String]!!.toInt()) {
-                Log.i("Comparison", "correct")
                 correctAnswers++
             } else {
-                Log.i("Comparison", "incorrect")
                 incorrectAnswers++
             }
         } else {
-            Log.i("Comparison", "Does not contains")
             unattemptedQuestions++
         }
-
     }
+
+
     fun pieChart(){
         val correctAnswersForPieChart = correctAnswers.toFloat()
         val incorrectAnswersForPieChart = incorrectAnswers.toFloat()
@@ -148,6 +162,20 @@ class ResultActivity : AppCompatActivity() {
 
         // loading chart
         pieChart.invalidate()
+    }
+
+    fun showGridLayout(){
+        for(index in 1 .. test.questions.size){
+            if (!selectedOptions.containsKey("$index" as String)
+                || selectedOptions["$index" as String]!!.toInt() == -1 ){
+            } else if(selectedOptions["$index" as String]!!.toInt()==currTest.questions[index-1].correctOption){
+                gridL.findViewWithTag<TextView>(index).background = ContextCompat.getDrawable(this,R.drawable.gridtvbggreen)
+            }
+            else{
+                gridL.findViewWithTag<TextView>(index).background = ContextCompat.getDrawable(this,R.drawable.gridtvbgred)
+
+            }
+        }
     }
 
 }

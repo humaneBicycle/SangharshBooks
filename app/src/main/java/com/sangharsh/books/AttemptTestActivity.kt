@@ -1,6 +1,7 @@
 package com.sangharsh.books
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
@@ -12,6 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.marginEnd
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
@@ -24,22 +26,28 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     lateinit var optionCTV : TextView
     lateinit var optionDTV : TextView
     lateinit var noofQuesTV : TextView
+    lateinit var tv : View
     lateinit var timerTV : TextView
     lateinit var backTestCrossIV : ImageView
     lateinit var nextBtn: TextView
+    lateinit var backBtnduringGrid: TextView
     lateinit var backBtn: TextView
     lateinit var testll:LinearLayout
+    lateinit var bottomBtnLinearLayoutDuringGrid:LinearLayout
+    lateinit var bottomBtnsLinearLayout:LinearLayout
+    lateinit var gridTV:TextView
     lateinit var gridL:GridLayout
     val options = ArrayList<TextView>()
      var  noOfQues:Int =0
     private lateinit var currentQuestion: Question
     private var timeAllowed :Long =0
-    private var mselectedOptionPosition: Int =0
-
-    private lateinit var questionsList: List<Question>
+    private var mselectedOptionPosition: Int =-1
     private lateinit var test: Test
     private var currentQuestionNo:Int =1
      var isLastQuestionreached:Boolean = false
+     var isGridVisible:Boolean = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attempt_test3)
@@ -53,20 +61,20 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         timerTV = findViewById(R.id.timertv)
         nextBtn = findViewById(R.id.nextBtnTV)
         backBtn = findViewById(R.id.backBtn)
+        backBtnduringGrid = findViewById(R.id.backBtnduringGrid)
         backTestCrossIV = findViewById(R.id.backCrossIV)
         gridL = findViewById(R.id.quesDrawerGrid)
+        bottomBtnsLinearLayout = findViewById(R.id.bottomBtnsLinearLayout)
+        bottomBtnLinearLayoutDuringGrid = findViewById(R.id.bottomBtnLinearLayoutDuringGrid)
         currentQuestion = Question()
         testll = findViewById(R.id.testll)
         val testDes = intent.getStringExtra("TEST")
         Log.i("testDes", testDes!!)
-
-
-
+//        gridTV = findViewById(R.id.gridTV)
 
         test = Gson().fromJson(intent.getStringExtra("TEST"), Test::class.java)
         Log.i("test", intent.getStringExtra("TEST").toString())
         Log.i("adi noques attempt",(test.questions.size+1).toString())
-
 
         options.add(0,optionATV)
         options.add(1,optionBTV)
@@ -77,20 +85,12 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         optionBTV.setOnClickListener(this)
         optionCTV.setOnClickListener(this)
         optionDTV.setOnClickListener(this)
-
         updateQuestion(ques = currentQuestion,0)
-        noofQuesTV.setOnClickListener(View.OnClickListener {
-//            val intent = Intent(this,QuestionDrawerActivity::class.java)
-//            startActivity(intent)
-        })
         backTestCrossIV.setOnClickListener(View.OnClickListener {
             showAlert()
         })
-
-        val noOfQuestion= intent.getStringExtra("noOfQues")
         val timer= intent.getStringExtra("timeAllowed")
         timeAllowed = timer!!.toLong()
-
         object : CountDownTimer(timeAllowed*60*1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 var minutes:Long = millisUntilFinished/1000/60
@@ -101,20 +101,15 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             override fun onFinish() {
                 launchResultActivity()
             }
-
         }.start()
-
         noOfQues = test.questions.size.toInt()
         setQuesNoinTV()
-
-
         nextBtn.setOnClickListener(View.OnClickListener {
             if (isLastQuestionreached)
                 launchResultActivity()
             else
                 nextQuestion()
         })
-
         backBtn.setOnClickListener(View.OnClickListener {
             if (currentQuestionNo>1){
                 currentQuestionNo--
@@ -123,20 +118,37 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             }
             setButtonUI()
         })
-
-        noofQuesTV.setOnClickListener(View.OnClickListener {
-            showGridLayout()
+        backBtnduringGrid.setOnClickListener(View.OnClickListener {
+            showTestLayout()
         })
 
-        for(index in 0..test.noOfQuestion){
-            val tv = layoutInflater.inflate(R.layout.question_testbox,null)
-//            tv.setTag(index,index)
+
+        noofQuesTV.setOnClickListener(View.OnClickListener {
+            if(!isGridVisible)
+            showGridLayout()
+            else
+                showTestLayout()
+        })
+
+        for(index in 1..test.questions.size){
+             tv = layoutInflater.inflate(R.layout.question_testbox,null)
+            tv.tag = index
             gridL.addView(tv)
-//            gridL.findViewWithTag<TextView>(index).setBackgroundColor(Color.RED)
+            gridL.findViewWithTag<TextView>(index).text= index.toString()
+            onClickEventInGrid(index)
         }
     }
 
-    fun nextQuestion(){
+    private fun onClickEventInGrid(index:Int){
+        tv.setOnClickListener(View.OnClickListener {
+            showTestLayout()
+            currentQuestionNo = index
+            setQuesNoinTV()
+            updateQuestion(ques = currentQuestion,index-1)
+        })
+    }
+
+    private fun nextQuestion(){
         if (mselectedOptionPosition == -1){
             addAnswers()
         }
@@ -211,6 +223,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         }
     }
 
+
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.optionATV->{
@@ -228,11 +241,8 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         }
     }
     override fun onBackPressed() {
-        // Create the object of AlertDialog Builder class
         showAlert()
     }
-
-
     fun setOptionUI(){
         setDefaultOptionsUI()
         if (mselectedOptionPosition == -1)
@@ -241,10 +251,8 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         tv.background = ContextCompat.getDrawable(this, R.drawable.selctedoptionbg)
         tv.setTextColor(android.graphics.Color.parseColor("#BB0B14"))
     }
-
-
     fun selectOption(o: Int){
-        if (mselectedOptionPosition == o)
+        if(mselectedOptionPosition == o)
             mselectedOptionPosition = -1;
         else
             mselectedOptionPosition = o
@@ -268,12 +276,30 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     }
 
     fun showTestLayout(){
-        testll.setVisibility(View.VISIBLE)
+        testll.visibility = View.VISIBLE
         gridL.visibility = View.GONE
+        bottomBtnsLinearLayout.visibility = View.VISIBLE
+        bottomBtnLinearLayoutDuringGrid.visibility = View.GONE
+        isGridVisible = false
     }
     fun showGridLayout(){
         testll.visibility = View.GONE
         gridL.visibility = View.VISIBLE
+        bottomBtnLinearLayoutDuringGrid.visibility = View.VISIBLE
+        bottomBtnsLinearLayout.visibility = View.GONE
+        isGridVisible = true
+        for(index in 1 .. test.questions.size){
+            if (answers[index] == -1){
+                Log.i("color", "$index is -1 no selected")
+                gridL.findViewWithTag<TextView>(index).background = ContextCompat.getDrawable(this,R.drawable.gridtvbgred)
+
+            }
+            else if(answers[index]==0||answers[index]==1||answers[index]==2||answers[index]==3){
+                Log.i("color", "$index is selected")
+
+                gridL.findViewWithTag<TextView>(index).background = ContextCompat.getDrawable(this,R.drawable.gridtvbggreen)
+            }
+        }
     }
 }
 
