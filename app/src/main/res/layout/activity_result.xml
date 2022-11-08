@@ -8,12 +8,12 @@
     tools:context=".ResultActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/resultLL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -190,194 +190,33 @@
         </LinearLayout>
 
         <ScrollView
+            android:layout_weight="10"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <GridLayout
-            android:id="@+id/quesDrawerGrid"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="3dp"
-            android:alignmentMode="alignBounds"
-            android:columnCount="7"
-            android:gravity="center"
-            android:rowOrderPreserved="false"
-            android:useDefaultMargins="true"
-            android:visibility="visible" />
+            <GridLayout
+                android:id="@+id/quesDrawerGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="3dp"
+                android:alignmentMode="alignBounds"
+                android:columnCount="7"
+                android:gravity="center"
+                android:rowOrderPreserved="false"
+                android:useDefaultMargins="true"
+                android:visibility="visible" />
         </ScrollView>
 
 
-        <LinearLayout
-            android:id="@+id/testll"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-
-
-            <ScrollView
-                android:id="@+id/resultScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="invisible">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:id="@+id/questionIV"
-                        android:layout_width="match_parent"
-                        android:layout_height="125dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/testwelcomebannertemplate"
-                        android:visibility="gone"/>
-
-                    <TextView
-                        android:id="@+id/questionTVResult"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/poppinsregular"
-                        android:text="Question isGridVisible isGridVisible"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-                    <LinearLayout
-                        android:id="@+id/optionAResultLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/optionwhitbg"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/optionATVResult"
-                            android:layout_width="match_parent"
-                            android:paddingHorizontal="15dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppinsregular"
-                            android:layout_marginVertical="10dp"
-                            android:text="OptionA"
-                            android:textSize="18sp" />
-                        <ImageView
-                            android:id="@+id/optionAIV"
-                            android:padding="20dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/testwelcomebannertemplate"
-                            android:scaleType="centerCrop"
-                            android:visibility="gone"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/optionBResultLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingBottom="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/optionwhitbg"
-                        >
-                        <TextView
-                            android:id="@+id/optionBTVResult"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
-                            android:fontFamily="@font/poppinsregular"
-                            android:paddingHorizontal="15dp"
-                            android:text="OptionB"
-                            android:textSize="18sp" />
-                        <ImageView
-                            android:id="@+id/optionBIV"
-                            android:layout_width="match_parent"
-                            android:padding="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/testwelcomebannertemplate"
-                            android:visibility="gone"
-                            android:scaleType="centerCrop"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/optionCResultLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:paddingBottom="10dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/optionwhitbg">
-                        <TextView
-                            android:id="@+id/optionCTVResult"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppinsregular"
-                            android:paddingHorizontal="15dp"
-                            android:layout_marginVertical="10dp"
-                            android:text="OptionC"
-                            android:textSize="18sp" />
-                        <ImageView
-                            android:id="@+id/optionCIV"
-                            android:padding="20dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/testwelcomebannertemplate"
-                            android:visibility="gone"
-                            android:scaleType="centerCrop"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/optionDResultLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:orientation="vertical"
-                        android:paddingBottom="10dp"
-                        android:background="@drawable/optionwhitbg">
-                        <TextView
-                            android:id="@+id/optionDTVResult"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
-                            android:fontFamily="@font/poppinsregular"
-                            android:paddingHorizontal="15dp"
-                            android:text="OptionD"
-                            android:textSize="18sp" />
-                        <ImageView
-                            android:id="@+id/optionDIV"
-                            android:padding="20dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/testwelcomebannertemplate"
-                            android:visibility="gone"
-                            android:scaleType="centerCrop"/>
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </ScrollView>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
+        android:id="@+id/adView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         app:adSize="LARGE_BANNER"
         app:adUnitId="ca-app-pub-3940256099942544/6300978111"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -386,4 +225,227 @@
         android:layout_marginBottom="12dp">
 
     </com.google.android.gms.ads.AdView>
+
+
+</LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/questionsResultLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ScrollView
+            android:id="@+id/resultScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/questionIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/testwelcomebannertemplate"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/questionTVResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Question isGridVisible isGridVisible"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/optionAResultLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/optionwhitbg"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/optionATVResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="15dp"
+                        android:text="OptionA"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/optionAIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/testwelcomebannertemplate"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/optionBResultLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/optionwhitbg"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/optionBTVResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="15dp"
+                        android:text="OptionB"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/optionBIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/testwelcomebannertemplate"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/optionCResultLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/optionwhitbg"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/optionCTVResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="15dp"
+                        android:text="OptionC"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/optionCIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/testwelcomebannertemplate"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/optionDResultLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/optionwhitbg"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/optionDTVResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:paddingHorizontal="15dp"
+                        android:text="OptionD"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/optionDIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/testwelcomebannertemplate"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    app:adSize="LARGE_BANNER"
+                    app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </com.google.android.gms.ads.AdView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/backBtnLL"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="bottom"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/optionwhitbg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

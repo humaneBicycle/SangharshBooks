@@ -2549,6 +2549,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cardviewblackbg
 drawable circle
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -2742,6 +2743,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id adView
+id adView2
 id add
 id add_pdf_local_storage
 id adjust_height
@@ -2764,6 +2766,7 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id backBtn
 id backBtnImg
+id backBtnLL
 id backBtnduringGrid
 id backCrossIV
 id back_file
@@ -2967,7 +2970,6 @@ id linear
 id linearLayout
 id linearLayout2
 id linearLayout3
-id linearLayout4
 id linerlayout_download_frag
 id listMode
 id list_item
@@ -3124,10 +3126,12 @@ id questionIV
 id questionTV
 id questionTVResult
 id questionTestIV
+id questionsResultLL
 id radio
 id rate_us
 id ratio
 id rectangles
+id resultLL
 id resultScrollView
 id reverseSawtooth
 id right
@@ -3425,7 +3429,6 @@ layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
-layout main_item
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -3488,6 +3491,7 @@ layout test_chip_zero_corner_radius
 layout test_design_checkbox
 layout test_design_radiobutton
 layout test_exposed_dropdown_menu
+layout test_item
 layout test_navigation_bar_item_layout
 layout test_reflow_chipgroup
 layout test_toolbar

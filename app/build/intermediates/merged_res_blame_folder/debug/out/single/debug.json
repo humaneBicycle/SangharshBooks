@@ -20,6 +20,10 @@
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\ic_baseline_notifications_24.xml"
     },
     {
+        "merged": "com.sangharsh.books.app-merged_res-41:/layout_test_item.xml.flat",
+        "source": "com.sangharsh.books.app-main-43:/layout/test_item.xml"
+    },
+    {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\menu_bottom_nav.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\menu\\bottom_nav.xml"
     },
@@ -46,10 +50,6 @@
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_notification_item.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\notification_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_activity_attempt_test2.xml.flat",
-        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\activity_attempt_test2.xml"
     },
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_ic_downloads.xml.flat",
@@ -116,6 +116,10 @@
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable-nodpi\\testwelcomebannertemplate.png"
     },
     {
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_test_item.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\test_item.xml"
+    },
+    {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\fragment_home.xml"
     },
@@ -164,20 +168,20 @@
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\pdf_item.xml"
     },
     {
-        "merged": "com.sangharsh.books.app-merged_res-41:/layout_activity_attempt_test3.xml.flat",
-        "source": "com.sangharsh.books.app-main-43:/layout/activity_attempt_test3.xml"
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_question_testbox.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\question_testbox.xml"
     },
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_ic_home_icon.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\ic_home_icon.xml"
     },
     {
-        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_question_testbox.xml.flat",
-        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\question_testbox.xml"
-    },
-    {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_greenoptionbg.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\greenoptionbg.xml"
+    },
+    {
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_cardviewblackbg.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\cardviewblackbg.xml"
     },
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_fragment_about.xml.flat",
@@ -224,16 +228,20 @@
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable-nodpi_backbtn.png.flat",
-        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable-nodpi\\backbtn.png"
-    },
-    {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_resultbg.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\resultbg.xml"
     },
     {
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable-nodpi_backbtn.png.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable-nodpi\\backbtn.png"
+    },
+    {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_ic_back_arrow.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\ic_back_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_activity_start_test.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\activity_start_test.xml"
     },
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_fragment_bookmarks.xml.flat",
@@ -246,6 +254,10 @@
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_activity_notification.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\activity_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_light_bell.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\light_bell.xml"
     },
     {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_tiny_stroke.xml.flat",
@@ -264,19 +276,15 @@
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\ic_baseline_menu_24.xml"
     },
     {
-        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_gridtvbgred.xml.flat",
-        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\gridtvbgred.xml"
-    },
-    {
         "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_fragment_downloads.xml.flat",
         "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\fragment_downloads.xml"
     },
     {
-        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_activity_attempt_test3.xml.flat",
-        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\activity_attempt_test3.xml"
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\drawable_gridtvbgred.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\drawable\\gridtvbgred.xml"
     },
     {
-        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_activity_question_drawer.xml.flat",
-        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\activity_question_drawer.xml"
+        "merged": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-41:\\layout_activity_attempt_test3.xml.flat",
+        "source": "C:\\Users\\adity\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-43:\\layout\\activity_attempt_test3.xml"
     }
 ]

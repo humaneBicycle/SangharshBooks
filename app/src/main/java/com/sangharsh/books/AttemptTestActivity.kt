@@ -21,6 +21,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
+import com.squareup.picasso.Picasso
 import java.util.*
 
 class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
@@ -51,6 +52,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     lateinit var gridTV:TextView
     lateinit var gridL:GridLayout
     val options = ArrayList<LinearLayout>()
+    val optionsTV = ArrayList<TextView>()
      var  noOfQues:Int =0
     private lateinit var currentQuestion: Question
     private var timeAllowed :Long =0
@@ -106,19 +108,22 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         options.add(1,optionBTestLL)
         options.add(2,optionCTestLL)
         options.add(3,optionDTestLL)
+        optionsTV.add(0,optionATV)
+        optionsTV.add(1,optionBTV)
+        optionsTV.add(2,optionCTV)
+        optionsTV.add(3,optionDTV)
 
-
-        questionTV.setOnClickListener(this)
-        optionATV.setOnClickListener(this)
-        optionBTV.setOnClickListener(this)
-        optionCTV.setOnClickListener(this)
-        optionDTV.setOnClickListener(this)
+        optionATestLL.setOnClickListener(this)
+        optionBTestLL.setOnClickListener(this)
+        optionCTestLL.setOnClickListener(this)
+        optionDTestLL.setOnClickListener(this)
         updateQuestion(ques = currentQuestion,0)
         backTestCrossIV.setOnClickListener(View.OnClickListener {
             showAlert()
         })
         val timer= intent.getStringExtra("timeAllowed")
         timeAllowed = timer!!.toLong()
+
         object : CountDownTimer(timeAllowed*60*1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 var minutes:Long = millisUntilFinished/1000/60
@@ -130,6 +135,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
                 launchResultActivity()
             }
         }.start()
+
         noOfQues = test.questions.size.toInt()
         setQuesNoinTV()
         nextBtn.setOnClickListener(View.OnClickListener {
@@ -252,26 +258,28 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     }
 
     private fun setDefaultOptionsUI() {
-        for (option in options){
-
-//            option.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+        for (option in options ){
             option.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
         }
+        for(optionTV in optionsTV){
+            optionTV.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+        }
+
     }
 
 
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.optionATV->{
+            R.id.optionATestLL->{
                 selectOption(0)
             }
-            R.id.optionBTV->{
+            R.id.optionBTestLL->{
                 selectOption(1)
             }
-            R.id.optionCTV->{
+            R.id.optionCTestLL->{
                 selectOption(2)
             }
-            R.id.optionDTV->{
+            R.id.optionDTestLL->{
                 selectOption(3)
             }
         }
@@ -283,9 +291,10 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         setDefaultOptionsUI()
         if (mselectedOptionPosition == -1)
             return
-        val tv = options[mselectedOptionPosition];
-        tv.background = ContextCompat.getDrawable(this, R.drawable.selctedoptionbg)
-//        tv.setTextColor(android.graphics.Color.parseColor("#BB0B14"))
+        val tvLL= options[mselectedOptionPosition]
+        val tv = optionsTV[mselectedOptionPosition]
+        tvLL.background = ContextCompat.getDrawable(this, R.drawable.selctedoptionbg)
+        tv.setTextColor(resources.getColor(R.color.m_red))
     }
     fun selectOption(o: Int){
         if(mselectedOptionPosition == o)
@@ -343,17 +352,33 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             ||test.questions[index-1].option2ImgUrl!= null
             ||test.questions[index-1].option3ImgUrl!=null
             ||test.questions[index-1].option4ImgUrl!= null){
-            if(test.questions[index-1].quesImgUrl!= null)
+            if(test.questions[index-1].quesImgUrl!= null){
                 questionTestIV.visibility = View.VISIBLE
-            //TODO set the images from the link
-            if(test.questions[index-1].option1ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].quesImgUrl).into(questionTestIV)
+            }
+
+            if(test.questions[index-1].option1ImgUrl!= null){
                 optionATestIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option2ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option1ImgUrl).into(optionATestIV)
+            }
+
+            if(test.questions[index-1].option2ImgUrl!= null){
                 optionBTestIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option3ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option2ImgUrl).into(optionBTestIV)
+
+            }
+
+            if(test.questions[index-1].option3ImgUrl!= null){
                 optionCTestIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option4ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option3ImgUrl).into(optionCTestIV)
+            }
+
+            if(test.questions[index-1].option4ImgUrl!= null){
                 optionDTestIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option4ImgUrl).into(optionDTestIV)
+
+            }
+
         }
         else{
             Log.i("images", "images adresses are null")

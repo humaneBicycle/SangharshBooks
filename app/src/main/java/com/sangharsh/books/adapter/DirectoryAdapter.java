@@ -98,7 +98,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             return new PDFVIewHolder(view);
 
         }else{
-            View view = LayoutInflater.from(context).inflate(R.layout.file_item,new LinearLayout(context),false);
+            View view = LayoutInflater.from(context).inflate(R.layout.test_item,new LinearLayout(context),false);
             return new TestHolder(view);
         }
 

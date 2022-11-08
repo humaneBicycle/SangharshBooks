@@ -34,6 +34,7 @@ color teal_700
 color white
 drawable backbtn
 drawable blur_blue
+drawable cardviewblackbg
 drawable circle
 drawable cross
 drawable default_gradient
@@ -77,9 +78,11 @@ drawable tiny_stroke
 font poppinsbold
 font poppinsregular
 id adView
+id adView2
 id add_pdf_local_storage
 id backBtn
 id backBtnImg
+id backBtnLL
 id backBtnduringGrid
 id backCrossIV
 id back_file
@@ -117,7 +120,6 @@ id latestTitle
 id linearLayout
 id linearLayout2
 id linearLayout3
-id linearLayout4
 id linerlayout_download_frag
 id ll
 id load_pdf_display
@@ -173,7 +175,9 @@ id questionIV
 id questionTV
 id questionTVResult
 id questionTestIV
+id questionsResultLL
 id rate_us
+id resultLL
 id resultScrollView
 id rv_bookmarks
 id rv_downloads
@@ -212,10 +216,10 @@ layout fragment_bookmarks
 layout fragment_downloads
 layout fragment_home
 layout long_click_options
-layout main_item
 layout notification_item
 layout pdf_item
 layout question_testbox
+layout test_item
 menu bottom_nav
 mipmap ic_launcher
 string about_us

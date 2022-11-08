@@ -232,6 +232,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -262,6 +263,7 @@
                     android:text="Start test"
                     app:cornerRadius="10dp" />
             </LinearLayout>
+
 
 
         </LinearLayout>

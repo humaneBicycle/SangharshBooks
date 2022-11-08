@@ -20,6 +20,9 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.MPPointF
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 import com.sangharsh.books.model.Test
 import java.lang.String
@@ -49,6 +52,9 @@ class ResultActivity : AppCompatActivity() {
     lateinit var optionBResultLL : LinearLayout
     lateinit var optionCResultLL : LinearLayout
     lateinit var optionDResultLL : LinearLayout
+    lateinit var questionsResultLL : LinearLayout
+    lateinit var resultLL : LinearLayout
+    lateinit var backBtnLL : LinearLayout
     private lateinit var tv : View
     lateinit var selectedOptions:HashMap<String,Int>
     var correctAnswers :Int =0
@@ -56,6 +62,9 @@ class ResultActivity : AppCompatActivity() {
     var unattemptedQuestions :Int =0
     private lateinit var test: Test
     lateinit var pieChart: PieChart
+    lateinit var mAdView : AdView
+    lateinit var mAdView2 : AdView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,6 +91,9 @@ class ResultActivity : AppCompatActivity() {
         optionBResultLL = findViewById(R.id.optionBResultLL)
         optionCResultLL = findViewById(R.id.optionCResultLL)
         optionDResultLL = findViewById(R.id.optionDResultLL)
+        questionsResultLL = findViewById(R.id.questionsResultLL)
+        resultLL = findViewById(R.id.resultLL)
+        backBtnLL = findViewById(R.id.backBtnLL)
 
 
 
@@ -121,7 +133,10 @@ class ResultActivity : AppCompatActivity() {
             gridL.addView(tv)
             gridL.findViewWithTag<TextView>(index).text= index.toString()
             tv.setOnClickListener(View.OnClickListener {
+                resultLL.visibility= View.GONE
+                questionsResultLL.visibility = View.VISIBLE
                 resultScrollView.visibility = View.VISIBLE
+                backBtnLL.visibility = View.VISIBLE
                 setQuestionInLayout(index)
                 setOptionsUI(index)
                 setCorrectOptionUI(index)
@@ -129,17 +144,23 @@ class ResultActivity : AppCompatActivity() {
         }
 
 
-        Log.i("compare",currTest.questions[0].correctOption.toString() )
-        Log.i("compare",currTest.questions[0].correctOption.toString() )
-        Log.i("compare",currTest.noOfQuestion.toString() )
-        Log.i("compare",correctAnswers.toString() )
-        Log.i("result","Unattempted : ${unattemptedQuestions}" )
-        Log.i("result","Correct : ${correctAnswers}" )
-        Log.i("result","Incorrect : ${incorrectAnswers}" )
-        Log.i("result","selected : $selectedOptions" )
-
         pieChart()
         showGridLayout()
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        mAdView2 = findViewById(R.id.adView2)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        mAdView2.loadAd(adRequest)
+
+        backBtnLL.setOnClickListener(View.OnClickListener {
+            resultLL.visibility = View.VISIBLE
+            questionsResultLL.visibility = View.GONE
+            backBtnLL.visibility = View.GONE
+
+        })
+
 
     }
 
