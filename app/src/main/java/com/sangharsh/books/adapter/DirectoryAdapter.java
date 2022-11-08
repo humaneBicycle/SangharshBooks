@@ -127,7 +127,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 public void onClick(View view) {
                     Intent intent = new Intent(context, FileActivity.class);
                     sangharshBooks.addToPath(directory.getFiles().get(position).getName());
-                    //sangharshBooks.addStack(directory.getFiles().get(position).getPointingDirId());
                     context.startActivity(intent);
                 }
             });
@@ -172,7 +171,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((TestHolder)holder).linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    context.startActivity(new Intent(context, StartTest.class).putExtra("testId",directory.getTests().get(position).getId()));
+                    context.startActivity(new Intent(context, StartTest.class).putExtra("testId",directory.getTests().get(index).getId()));
 
                 }
             });
@@ -189,12 +188,9 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             }
         }
         if(b){
-            String dirPath = context.getFilesDir().getAbsolutePath()+"/"+directory.getPdfModels().get(index).getPointingDir()+".pdf";
-
             ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
             sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
             context.startActivity(new Intent(context, PDFDisplay.class));
-
         }else{
             Log.i("sba pdf onclick", "onClick: not downloaded! initiating download");
             ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
@@ -266,15 +262,18 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemCount() {
-        if(directory.getFiles()==null && directory.getPdfModels()==null){
+        if(directory.getFiles()==null && directory.getPdfModels()==null && directory.getTests()==null){
             return 0;
         }
 
         if(directory.getFiles()==null){
-            return directory.getPdfModels().size();
+            return directory.getPdfModels().size()+directory.getTests().size();
         }
         if(directory.getPdfModels()==null){
-            return directory.getFiles().size();
+            return directory.getFiles().size()+directory.getTests().size();
+        }
+        if(directory.getTests()==null){
+            return directory.getFiles().size()+directory.getPdfModels().size();
         }
        return directory.getFiles().size()+directory.getPdfModels().size()+directory.getTests().size();
     }

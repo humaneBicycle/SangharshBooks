@@ -14,6 +14,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginEnd
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
@@ -44,13 +47,14 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     private var mselectedOptionPosition: Int =-1
     private lateinit var test: Test
     private var currentQuestionNo:Int =1
-     var isLastQuestionreached:Boolean = false
+    lateinit var mAdView : AdView
+    var isLastQuestionreached:Boolean = false
      var isGridVisible:Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_attempt_test3)
+        setContentView(R.layout.activity_attempt_test)
 
         questionTV = findViewById(R.id.questionTV)
         optionATV = findViewById(R.id.optionATV)
@@ -137,6 +141,11 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             gridL.findViewWithTag<TextView>(index).text= index.toString()
             onClickEventInGrid(index)
         }
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 
     private fun onClickEventInGrid(index:Int){

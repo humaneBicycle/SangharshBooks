@@ -1,20 +1,23 @@
 package com.sangharsh.books
 
 import android.app.ProgressDialog
+import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.downloader.Progress
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
-import java.util.Objects
 
 class StartTest : AppCompatActivity() {
     lateinit var test: Test
@@ -24,6 +27,7 @@ class StartTest : AppCompatActivity() {
     lateinit var currentTestDescription:String
      var noOfQues:Int =0
     lateinit var timeAllowed:String
+    lateinit var mAdView : AdView
     lateinit var testTitleTV:TextView
     lateinit var descriptionTV:TextView
     lateinit var noOfQuesTV:TextView
@@ -31,10 +35,11 @@ class StartTest : AppCompatActivity() {
     lateinit var topTitleTV:TextView
     lateinit var question: Question
     lateinit var startTestActivityFinish : ImageView
+    private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_attempt_test)
+        setContentView(R.layout.activity_start_test)
         val testId = intent.getStringExtra("testId")
         testTitleTV = findViewById(R.id.testTitleTV)
         descriptionTV = findViewById(R.id.descriptionTV)
@@ -98,8 +103,19 @@ class StartTest : AppCompatActivity() {
             }
         }
 
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
+
     //TODO hide loading screen --> done
     // startTest test obj->
     // attemptTest (serializable)
 
-}}
+}
+
+
+}

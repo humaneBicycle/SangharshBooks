@@ -1,6 +1,5 @@
 package com.sangharsh.books
 
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -8,7 +7,6 @@ import android.util.Log
 import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -19,10 +17,13 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.MPPointF
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.gson.Gson
 import com.sangharsh.books.model.Test
 import java.lang.String
-
 
 class ResultActivity : AppCompatActivity() {
     lateinit var currTest:Test
@@ -41,12 +42,8 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var test: Test
     lateinit var pieChart: PieChart
     private var answers = java.util.HashMap<Int, Int>()
+    lateinit var mAdView:AdView
 
-//    override fun onBackPressed() {
-//        val intent = Intent(applicationContext, StartTest::class.java)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//        startActivity(intent)
-//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +95,12 @@ class ResultActivity : AppCompatActivity() {
 
         pieChart()
         showGridLayout()
+
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
     }
 
