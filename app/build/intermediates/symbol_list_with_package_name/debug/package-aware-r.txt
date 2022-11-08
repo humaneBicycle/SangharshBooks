@@ -2612,6 +2612,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_profile
 drawable ic_sangharsh
+drawable light_bell
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2740,6 +2741,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id adView
 id add
 id add_pdf_local_storage
 id adjust_height
@@ -2965,6 +2967,7 @@ id linear
 id linearLayout
 id linearLayout2
 id linearLayout3
+id linearLayout4
 id linerlayout_download_frag
 id listMode
 id list_item
@@ -3386,13 +3389,12 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attempt_test
-layout activity_attempt_test2
-layout activity_attempt_test3
 layout activity_file
 layout activity_main
 layout activity_notification
 layout activity_pdfdisplay
 layout activity_result
+layout activity_start_test
 layout add_bottom_sheet
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

@@ -62,6 +62,7 @@ drawable ic_layer_2
 drawable ic_layer_3
 drawable ic_profile
 drawable ic_sangharsh
+drawable light_bell
 drawable notification_bell
 drawable optionwhitbg
 drawable quesmark
@@ -75,6 +76,7 @@ drawable timericon
 drawable tiny_stroke
 font poppinsbold
 font poppinsregular
+id adView
 id add_pdf_local_storage
 id backBtn
 id backBtnImg
@@ -115,6 +117,7 @@ id latestTitle
 id linearLayout
 id linearLayout2
 id linearLayout3
+id linearLayout4
 id linerlayout_download_frag
 id ll
 id load_pdf_display
@@ -195,13 +198,12 @@ id unattemptedTV
 id upload_progress
 id viewPager
 layout activity_attempt_test
-layout activity_attempt_test2
-layout activity_attempt_test3
 layout activity_file
 layout activity_main
 layout activity_notification
 layout activity_pdfdisplay
 layout activity_result
+layout activity_start_test
 layout add_bottom_sheet
 layout file_item
 layout fragment_about

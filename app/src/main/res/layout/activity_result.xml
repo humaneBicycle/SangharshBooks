@@ -8,16 +8,16 @@
     tools:context=".ResultActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
 
+        android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -41,8 +41,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:text="Title"
                 android:fontFamily="@font/poppinsbold"
+                android:text="Title"
 
                 android:textColor="@color/white"
                 android:textSize="24sp" />
@@ -84,8 +84,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="15dp"
                     android:fontFamily="@font/poppinsbold"
+                    android:paddingTop="15dp"
                     android:paddingBottom="10dp"
                     android:text="Test Results"
                     android:textColor="@color/white"
@@ -107,8 +107,8 @@
                             android:id="@+id/correctAnswerTV"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:fontFamily="@font/poppinsregular"
                             android:layout_weight="2"
+                            android:fontFamily="@font/poppinsregular"
                             android:gravity="end"
                             android:text="0"
                             android:textColor="@color/white"
@@ -137,9 +137,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:fontFamily="@font/poppinsregular"
                             android:gravity="end"
                             android:text="0"
-                            android:fontFamily="@font/poppinsregular"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -147,9 +147,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/poppinsregular"
                             android:paddingStart="10dp"
                             android:text="Incorrect"
-                            android:fontFamily="@font/poppinsregular"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -166,9 +166,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:fontFamily="@font/poppinsregular"
                             android:gravity="end"
                             android:text="0"
-                            android:fontFamily="@font/poppinsregular"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -176,9 +176,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/poppinsregular"
                             android:paddingStart="10dp"
                             android:text="Unattempted"
-                            android:fontFamily="@font/poppinsregular"
                             android:textColor="@color/white"
                             android:textSize="17sp" />
 
@@ -188,19 +188,25 @@
 
             </LinearLayout>
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <GridLayout
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginEnd="3dp"
             android:id="@+id/quesDrawerGrid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="3dp"
             android:alignmentMode="alignBounds"
             android:columnCount="7"
+            android:gravity="center"
             android:rowOrderPreserved="false"
             android:useDefaultMargins="true"
-            android:gravity="center"
             android:visibility="visible" />
+        </ScrollView>
 
 
         <LinearLayout
@@ -366,4 +372,18 @@
     </LinearLayout>
 
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="LARGE_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="12dp">
+
+    </com.google.android.gms.ads.AdView>
 </androidx.constraintlayout.widget.ConstraintLayout>
