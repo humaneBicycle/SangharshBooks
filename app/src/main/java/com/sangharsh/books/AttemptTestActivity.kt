@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import androidx.core.view.marginEnd
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
@@ -29,15 +30,24 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     lateinit var tv : View
     lateinit var timerTV : TextView
     lateinit var backTestCrossIV : ImageView
+    lateinit var questionTestIV : ImageView
+    lateinit var optionATestIV : ImageView
+    lateinit var optionBTestIV : ImageView
+    lateinit var optionCTestIV : ImageView
+    lateinit var optionDTestIV : ImageView
     lateinit var nextBtn: TextView
     lateinit var backBtnduringGrid: TextView
     lateinit var backBtn: TextView
+    lateinit var optionATestLL:LinearLayout
+    lateinit var optionBTestLL:LinearLayout
+    lateinit var optionCTestLL:LinearLayout
+    lateinit var optionDTestLL:LinearLayout
     lateinit var testll:LinearLayout
     lateinit var bottomBtnLinearLayoutDuringGrid:LinearLayout
     lateinit var bottomBtnsLinearLayout:LinearLayout
     lateinit var gridTV:TextView
     lateinit var gridL:GridLayout
-    val options = ArrayList<TextView>()
+    val options = ArrayList<LinearLayout>()
      var  noOfQues:Int =0
     private lateinit var currentQuestion: Question
     private var timeAllowed :Long =0
@@ -68,6 +78,18 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         bottomBtnLinearLayoutDuringGrid = findViewById(R.id.bottomBtnLinearLayoutDuringGrid)
         currentQuestion = Question()
         testll = findViewById(R.id.testll)
+        optionATestLL = findViewById(R.id.optionATestLL)
+        optionBTestLL = findViewById(R.id.optionBTestLL)
+        optionCTestLL = findViewById(R.id.optionCTestLL)
+        optionDTestLL = findViewById(R.id.optionDTestLL)
+        optionATestIV = findViewById(R.id.optionATestIV)
+        optionBTestIV = findViewById(R.id.optionBTestIV)
+        optionCTestIV = findViewById(R.id.optionCTestIV)
+        optionDTestIV = findViewById(R.id.optionDTestIV)
+        questionTestIV = findViewById(R.id.questionTestIV)
+
+
+
         val testDes = intent.getStringExtra("TEST")
         Log.i("testDes", testDes!!)
 //        gridTV = findViewById(R.id.gridTV)
@@ -76,10 +98,12 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         Log.i("test", intent.getStringExtra("TEST").toString())
         Log.i("adi noques attempt",(test.questions.size+1).toString())
 
-        options.add(0,optionATV)
-        options.add(1,optionBTV)
-        options.add(2,optionCTV)
-        options.add(3,optionDTV)
+        options.add(0,optionATestLL)
+        options.add(1,optionBTestLL)
+        options.add(2,optionCTestLL)
+        options.add(3,optionDTestLL)
+
+
         questionTV.setOnClickListener(this)
         optionATV.setOnClickListener(this)
         optionBTV.setOnClickListener(this)
@@ -145,6 +169,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             currentQuestionNo = index
             setQuesNoinTV()
             updateQuestion(ques = currentQuestion,index-1)
+
         })
     }
 
@@ -188,6 +213,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             setOptionUI()
         }
         setButtonUI()
+        showImageViews(currentQuestionNo)
         Log.i("currentQues", currentQuestionNo.toString())
     }
 
@@ -218,7 +244,8 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
 
     private fun setDefaultOptionsUI() {
         for (option in options){
-            option.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+
+//            option.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
             option.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
         }
     }
@@ -249,7 +276,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             return
         val tv = options[mselectedOptionPosition];
         tv.background = ContextCompat.getDrawable(this, R.drawable.selctedoptionbg)
-        tv.setTextColor(android.graphics.Color.parseColor("#BB0B14"))
+//        tv.setTextColor(android.graphics.Color.parseColor("#BB0B14"))
     }
     fun selectOption(o: Int){
         if(mselectedOptionPosition == o)
@@ -301,6 +328,28 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             }
         }
     }
+    private  fun showImageViews(index: Int){
+        if(test.questions[index-1].quesImgUrl!= null
+            ||test.questions[index-1].option1ImgUrl!=null
+            ||test.questions[index-1].option2ImgUrl!= null
+            ||test.questions[index-1].option3ImgUrl!=null
+            ||test.questions[index-1].option4ImgUrl!= null){
+            if(test.questions[index-1].quesImgUrl!= null)
+                questionTestIV.visibility = View.VISIBLE
+            //TODO set the images from the link
+            if(test.questions[index-1].option1ImgUrl!= null)
+                optionATestIV.visibility = View.VISIBLE
+            if(test.questions[index-1].option2ImgUrl!= null)
+                optionBTestIV.visibility = View.VISIBLE
+            if(test.questions[index-1].option3ImgUrl!= null)
+                optionCTestIV.visibility = View.VISIBLE
+            if(test.questions[index-1].option4ImgUrl!= null)
+                optionDTestIV.visibility = View.VISIBLE
+        }
+        else{
+            Log.i("images", "images adresses are null")
+    }
+}
 }
 
 

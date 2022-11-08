@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -28,25 +29,34 @@ class ResultActivity : AppCompatActivity() {
     lateinit var currTest:Test
     var settingOptionNo:Int = 0
     lateinit var titleTV :TextView
-    lateinit var correctAnswerTV :TextView
-    lateinit var incorrectAnswerTV :TextView
-    lateinit var unattemptedTV :TextView
-    lateinit var backBtnImg :ImageView
+    private lateinit var correctAnswerTV :TextView
+    private lateinit var incorrectAnswerTV :TextView
+    private lateinit var unattemptedTV :TextView
+    private lateinit var backBtnImg :ImageView
+    private lateinit var questionIV :ImageView
+    private lateinit var optionAIV :ImageView
+    private lateinit var optionBIV :ImageView
+    private lateinit var optionCIV :ImageView
+    lateinit var optionDIV :ImageView
     lateinit var gridL: GridLayout
-    lateinit var tv : View
+    lateinit var resultScrollView: ScrollView
+    lateinit var questionTVResult: TextView
+    lateinit var optionATVResult: TextView
+    lateinit var optionBTVResult: TextView
+    lateinit var optionCTVResult: TextView
+    lateinit var optionDTVResult: TextView
+    lateinit var optionAResultLL : LinearLayout
+    lateinit var optionBResultLL : LinearLayout
+    lateinit var optionCResultLL : LinearLayout
+    lateinit var optionDResultLL : LinearLayout
+    private lateinit var tv : View
     lateinit var selectedOptions:HashMap<String,Int>
     var correctAnswers :Int =0
     var incorrectAnswers :Int =0
     var unattemptedQuestions :Int =0
     private lateinit var test: Test
     lateinit var pieChart: PieChart
-    private var answers = java.util.HashMap<Int, Int>()
 
-//    override fun onBackPressed() {
-//        val intent = Intent(applicationContext, StartTest::class.java)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//        startActivity(intent)
-//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +67,32 @@ class ResultActivity : AppCompatActivity() {
         unattemptedTV = findViewById(R.id.unattemptedTV)
         backBtnImg = findViewById(R.id.backBtnImg)
         gridL = findViewById(R.id.quesDrawerGrid)
+        questionIV = findViewById(R.id.questionIV)
+        optionAIV = findViewById(R.id.optionAIV)
+        optionBIV = findViewById(R.id.optionBIV)
+        optionCIV = findViewById(R.id.optionCIV)
+        optionDIV = findViewById(R.id.optionDIV)
+        resultScrollView = findViewById(R.id.resultScrollView)
+        questionTVResult = findViewById(R.id.questionTVResult)
+        optionATVResult = findViewById(R.id.optionATVResult)
+        optionBTVResult = findViewById(R.id.optionBTVResult)
+        optionCTVResult = findViewById(R.id.optionCTVResult)
+        optionDTVResult = findViewById(R.id.optionDTVResult)
+        optionAResultLL = findViewById(R.id.optionAResultLL)
+        optionBResultLL = findViewById(R.id.optionBResultLL)
+        optionCResultLL = findViewById(R.id.optionCResultLL)
+        optionDResultLL = findViewById(R.id.optionDResultLL)
+
+
+
+
+
+
         test = Gson().fromJson(intent.getStringExtra("TEST"), Test::class.java)
+
+        for(index in 1..test.questions.size) {
+            showImages(index)
+        }
 
 
         backBtnImg.setOnClickListener(View.OnClickListener {
@@ -71,7 +106,7 @@ class ResultActivity : AppCompatActivity() {
         titleTV.text = currTest.testTitle
 
         for (index in 1 .. currTest.questions.size) {
-                compareCorrectOption(index)
+            compareCorrectOption(index)
         }
 
 
@@ -85,7 +120,14 @@ class ResultActivity : AppCompatActivity() {
             tv.tag = index
             gridL.addView(tv)
             gridL.findViewWithTag<TextView>(index).text= index.toString()
+            tv.setOnClickListener(View.OnClickListener {
+                resultScrollView.visibility = View.VISIBLE
+                setQuestionInLayout(index)
+                setOptionsUI(index)
+                setCorrectOptionUI(index)
+            })
         }
+
 
         Log.i("compare",currTest.questions[0].correctOption.toString() )
         Log.i("compare",currTest.questions[0].correctOption.toString() )
@@ -98,6 +140,47 @@ class ResultActivity : AppCompatActivity() {
 
         pieChart()
         showGridLayout()
+
+    }
+
+
+
+    private fun setQuestionInLayout(index: Int) {
+
+//        if(isQuestionsRequested){
+            resultScrollView.visibility = View.VISIBLE
+            questionTVResult.text = test.questions[index-1].question
+            optionATVResult.text = test.questions[index-1].option1
+            optionBTVResult.text = test.questions[index-1].option2
+            optionCTVResult.text = test.questions[index-1].option3
+            optionDTVResult.text = test.questions[index-1].option4
+//        }
+
+    }
+
+    private fun showImages(index:Int) {
+        if(test.questions[index-1].quesImgUrl!= null
+            ||test.questions[index-1].option1ImgUrl!=null
+            ||test.questions[index-1].option2ImgUrl!= null
+            ||test.questions[index-1].option3ImgUrl!=null
+            ||test.questions[index-1].option4ImgUrl!= null){
+
+            if(test.questions[index-1].quesImgUrl!= null)
+                questionIV.visibility = View.VISIBLE
+            //TODO set the images from the link
+            if(test.questions[index-1].option1ImgUrl!= null)
+                optionAIV.visibility = View.VISIBLE
+            if(test.questions[index-1].option2ImgUrl!= null)
+                optionBIV.visibility = View.VISIBLE
+            if(test.questions[index-1].option3ImgUrl!= null)
+                optionCIV.visibility = View.VISIBLE
+            if(test.questions[index-1].option4ImgUrl!= null)
+                optionDIV.visibility = View.VISIBLE
+        }
+        else{
+            Log.i("images", "images adresses are null")
+        }
+
 
     }
 
@@ -116,7 +199,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
 
-    fun pieChart(){
+    private fun pieChart(){
         val correctAnswersForPieChart = correctAnswers.toFloat()
         val incorrectAnswersForPieChart = incorrectAnswers.toFloat()
         val unattemptedForPieChart = unattemptedQuestions.toFloat()
@@ -164,10 +247,70 @@ class ResultActivity : AppCompatActivity() {
         pieChart.invalidate()
     }
 
-    fun showGridLayout(){
+
+    private fun setOptionsUI(index: Int){
+        if (!selectedOptions.containsKey("$index" as String)
+            || selectedOptions["$index" as String]!!.toInt() == -1 ){
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+
+        }
+        else if(selectedOptions["$index" as String]!!.toInt()==0
+            ){
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+        }
+        else if (selectedOptions["$index" as String]!!.toInt()==1){
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+        }
+        else if (selectedOptions["$index" as String]!!.toInt()==2){
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+        }
+        else if (selectedOptions["$index" as String]!!.toInt()==3){
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+        }
+    }
+
+    private fun setCorrectOptionUI(index: Int) {
+        if(test.questions[index-1].correctOption == 0){
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+        else if(test.questions[index-1].correctOption == 1){
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+        else if(test.questions[index-1].correctOption == 2){
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+        else if(test.questions[index-1].correctOption == 3){
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+
+    }
+
+    private fun showGridLayout(){
         for(index in 1 .. test.questions.size){
             if (!selectedOptions.containsKey("$index" as String)
                 || selectedOptions["$index" as String]!!.toInt() == -1 ){
+
             } else if(selectedOptions["$index" as String]!!.toInt()==currTest.questions[index-1].correctOption){
                 gridL.findViewWithTag<TextView>(index).background = ContextCompat.getDrawable(this,R.drawable.gridtvbggreen)
             }

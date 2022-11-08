@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textColor="@color/white"
+    android:id="@+id/gridTV"
+    android:tag="1"
+    android:text="1"
+    android:textSize="20sp"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="10dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/gridtvbg"
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    />
