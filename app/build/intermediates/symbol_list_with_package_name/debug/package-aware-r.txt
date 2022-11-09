@@ -2594,6 +2594,7 @@ drawable ic_baseline_home_24
 drawable ic_baseline_menu_24
 drawable ic_baseline_notifications_24
 drawable ic_baseline_picture_as_pdf_24
+drawable ic_bell
 drawable ic_bookmarks
 drawable ic_clock_black_24dp
 drawable ic_downloads
@@ -2611,6 +2612,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notificationn
 drawable ic_profile
 drawable ic_sangharsh
 drawable light_bell
@@ -2744,6 +2746,9 @@ id actions
 id activity_chooser_view_content
 id adView
 id adView2
+id ad_desc_rv
+id ad_image
+id ad_title_rv
 id add
 id add_pdf_local_storage
 id adjust_height
@@ -2772,6 +2777,7 @@ id backCrossIV
 id back_file
 id back_noti
 id back_pdf_view
+id background_ad_item
 id background_file_item
 id barrier
 id baseline
@@ -2841,6 +2847,7 @@ id correctAnswerTV
 id cos
 id counter
 id counterclockwise
+id cta_ad_view
 id currentState
 id custom
 id customPanel
@@ -2867,7 +2874,6 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
-id download_percent
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2939,7 +2945,6 @@ id ignoreRequest
 id image
 id imageView
 id imageView2
-id img_pdf
 id immediateStop
 id included
 id incorrectAnswerTV
@@ -2973,7 +2978,6 @@ id linearLayout3
 id linerlayout_download_frag
 id listMode
 id list_item
-id ll
 id load_pdf_display
 id masked
 id match_constraint
@@ -3034,6 +3038,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id myAdView
 id myAdViewPDFDisplay
+id native_ad_layout
 id nav_controller_view_tag
 id nav_host_fragment_container
 id navigation_bar_item_active_indicator_view
@@ -3103,8 +3108,6 @@ id password_toggle
 id path
 id pathRelative
 id path_bottom_sheet
-id pdf_item_background
-id pdf_item_download_seekbar
 id pdf_name_edittext
 id pdf_name_pdf_item
 id pdf_view_heading
@@ -3221,6 +3224,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id testBannerIV
 id testTitleTV
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
@@ -3399,6 +3403,7 @@ layout activity_notification
 layout activity_pdfdisplay
 layout activity_result
 layout activity_start_test
+layout ad_layout
 layout add_bottom_sheet
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

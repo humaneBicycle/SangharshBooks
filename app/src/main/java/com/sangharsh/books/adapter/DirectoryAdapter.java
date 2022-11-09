@@ -1,18 +1,16 @@
 package com.sangharsh.books.adapter;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +28,13 @@ import com.downloader.OnProgressListener;
 import com.downloader.OnStartOrResumeListener;
 import com.downloader.PRDownloader;
 import com.downloader.Progress;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.nativead.NativeAd;
+import com.google.android.gms.ads.nativead.NativeAdOptions;
+import com.google.android.gms.ads.nativead.NativeAdView;
 import com.sangharsh.books.StartTest;
 import com.sangharsh.books.FileActivity;
 import com.sangharsh.books.PDFDisplay;
@@ -38,54 +43,89 @@ import com.sangharsh.books.SangharshBooks;
 import com.sangharsh.books.StorageHelper;
 import com.sangharsh.books.interfaces.UIUpdateHomeFrag;
 import com.sangharsh.books.model.Directory;
+import com.sangharsh.books.model.FileModel;
 import com.sangharsh.books.model.PDFModel;
+import com.sangharsh.books.model.ShortTest;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder  > {
 
     Context context;
     Directory directory;
     SangharshBooks sangharshBooks;
-    ArrayList<Integer> colors;
-    ArrayList<Integer> layers;
+//    ArrayList<Integer> colors;
+//    ArrayList<Integer> layers;
     UIUpdateHomeFrag uiUpdaterHomeFrag;
+    ArrayList<NativeAd> nativeAds;
+    boolean isAdLoading=false;
 
     final int TYPE_FILE = 0;
     final int TYPE_PDF = 1;
     final int TYPE_TEST = 2;
+    final int AD_TYPE = 3;
 
     public DirectoryAdapter(Context c, Directory directory, SangharshBooks sangharshBooks,UIUpdateHomeFrag uiUpdateHomeFrag){
+
+
         this.context=c;
         this.directory=directory;
+        nativeAds=new ArrayList<>();
+        loadNativeAds();
+        ArrayList<PDFModel> pdfModels = directory.getPdfModels();
+        ArrayList<ShortTest> tests = directory.getTests();
+        ArrayList<FileModel> files = directory.getFiles();
+        ArrayList<PDFModel> newPdfModels=new ArrayList<PDFModel>();
+        for(int i =0;i<pdfModels.size();i++){
+            if(i%3==0 && i!=0){
+                newPdfModels.add(null);
+            }
+            newPdfModels.add(pdfModels.get(i));
+        }
+        ArrayList<ShortTest> newShortTestModel=new ArrayList<>();
+        for(int i =newPdfModels.size();i<newPdfModels.size()+tests.size();i++){
+            if(i%3==0 && i!=0){
+                newShortTestModel.add(null);
+            }
+            newShortTestModel.add(tests.get(i-newPdfModels.size()));
+        }
+        ArrayList<FileModel> newFiles=new ArrayList<>();
+        for(int i =newPdfModels.size()+tests.size();i<newPdfModels.size()+tests.size()+files.size();i++){
+            if(i%3==0 && i!=0){
+                newFiles.add(null);
+            }
+            newFiles.add(files.get(i-newPdfModels.size()-tests.size()));
+        }
+        this.directory.setPdfModels(newPdfModels);
+        this.directory.setTests(newShortTestModel);
+        this.directory.setFiles(newFiles);
+
         this.sangharshBooks = sangharshBooks;
         this.uiUpdaterHomeFrag = uiUpdateHomeFrag;
-
-        inflateColors();
-        inflateLayers();
+//        inflateColors();
+//        inflateLayers();
     }
 
-    private void inflateColors(){
-        if(colors==null) {
-            colors = new ArrayList<>();
-        }
-        colors.add(R.color.my_green);
-        colors.add(R.color.my_blue);
-        colors.add(R.color.my_red);
-        colors.add(R.color.my_yellow);
-        colors.add(R.color.my_skyblue);
+//    private void inflateColors(){
+//        if(colors==null) {
+//            colors = new ArrayList<>();
+//        }
+//        colors.add(R.color.my_green);
+//        colors.add(R.color.my_blue);
+//        colors.add(R.color.my_red);
+//        colors.add(R.color.my_yellow);
+//        colors.add(R.color.my_skyblue);
+//
+//    }
 
-    }
-
-    private void inflateLayers(){
-        if(layers==null) {
-            layers = new ArrayList<>();
-        }
-        layers.add(R.drawable.ic_layer_1);
-        layers.add(R.drawable.ic_layer_2);
-        layers.add(R.drawable.ic_layer_3);
-    }
+//    private void inflateLayers(){
+//        if(layers==null) {
+//            layers = new ArrayList<>();
+//        }
+//        layers.add(R.drawable.ic_layer_1);
+//        layers.add(R.drawable.ic_layer_2);
+//        layers.add(R.drawable.ic_layer_3);
+//    }
 
     @NonNull
     @Override
@@ -97,9 +137,12 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             View view = LayoutInflater.from(context).inflate(R.layout.pdf_item,new LinearLayout(context),false);
             return new PDFVIewHolder(view);
 
-        }else{
+        }else if(viewType==TYPE_TEST){
             View view = LayoutInflater.from(context).inflate(R.layout.test_item,new LinearLayout(context),false);
             return new TestHolder(view);
+        }else{
+            View view = LayoutInflater.from(context).inflate(R.layout.ad_layout,new LinearLayout(context),false);
+            return new AdViewHolder(view);
         }
 
     }
@@ -109,18 +152,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if(holder instanceof MyViewHolder){
             //it is a file
             ((MyViewHolder) holder).fileNameTextView.setText(directory.getFiles().get(position).getName());
-            int randForColor = new Random().nextInt(colors.size());
-            ((MyViewHolder) holder).linearLayout.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(colors.get(randForColor))));
-            colors.remove(randForColor);
-            if(colors.size()==0){
-                inflateColors();
-            }
-            int randForLayer = new Random().nextInt(layers.size());
-            ((MyViewHolder) holder).fileItemBG.setBackground(context.getResources().getDrawable(layers.get(randForLayer)));
-            layers.remove(randForLayer);
-            if(layers.size()==0){
-                inflateLayers();
-            }
 
             ((MyViewHolder) holder).linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -146,15 +177,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
 
-            int randForColor = new Random().nextInt(colors.size());
-            ((PDFVIewHolder) holder).llBG.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(colors.get(randForColor))));
-            Drawable drawable=context.getResources().getDrawable(R.drawable.tiny_stroke);
-            drawable.setTint(context.getResources().getColor(colors.get(randForColor)));
-            ((PDFVIewHolder) holder).relativeLayoutBG.setBackgroundDrawable(drawable);
-            colors.remove(randForColor);
-            if(colors.size()==0){
-                inflateColors();
-            }
             ((PDFVIewHolder) holder).relativeLayoutBG.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -162,7 +184,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
             ((PDFVIewHolder) holder).pdfNamepdfItem.setText(directory.getPdfModels().get(index).getName());
-            ((PDFVIewHolder) holder).seekBar.setEnabled(false);
 
         }
         if(holder instanceof TestHolder){
@@ -176,7 +197,79 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
         }
+        if(holder instanceof AdViewHolder){
+            Log.i("loadNative", "Adview");
+            if(nativeAds.size()>0) {
+                populateNativeAdView(nativeAds.get(0), ((AdViewHolder) holder).nativeAdView,(AdViewHolder)holder);
+                nativeAds.remove(0);
+            }else{
+                prevIndexWithNoNative = position;
+                ((AdViewHolder) holder).root.setVisibility(View.GONE);
+            }
+            loadNativeAds();
+        }
     }
+
+    AdLoader adLoader;
+    private void loadNativeAds(){
+        Log.i(TAG, "loadNativeAds: abh nativeAdArrayListSize: "+nativeAds.size() );
+        if(nativeAds.size()<2 && !isAdLoading){
+            isAdLoading=true;
+            adLoader = new AdLoader.Builder(context, "ca-app-pub-3940256099942544/2247696110")
+                    .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+                        @Override
+                        public void onNativeAdLoaded(NativeAd nativeAd) {
+                            nativeAds.add(nativeAd);
+                            isAdLoading=adLoader.isLoading();
+                            if (prevIndexWithNoNative != -1){
+                                notifyItemChanged(prevIndexWithNoNative);
+                                prevIndexWithNoNative = -1;
+                            }
+                            Log.i("loadNative", "loaded");
+                            Log.i(TAG, "native ads loaded: abh nativeAdArrayListSize: "+nativeAds.size() );
+
+                        }
+                    })
+                    .withAdListener(new AdListener() {
+                        @Override
+                        public void onAdFailedToLoad(LoadAdError adError) {
+                            Log.i("loadNative", adError.getMessage());
+                        }
+                    })
+                    .withNativeAdOptions(new NativeAdOptions.Builder()
+                            // Methods in the NativeAdOptions.Builder class can be
+                            // used here to specify individual options settings.
+                            .build())
+                    .build();
+            adLoader.loadAds(new AdRequest.Builder().build(), 5);
+            Log.i("loadNative", "startedLoading");
+        }
+    }
+
+    int prevIndexWithNoNative = -1;
+    private void populateNativeAdView(NativeAd ad, NativeAdView adView, AdViewHolder holder){
+        Log.i("loadNative", "populated");
+        holder.root.setVisibility(View.VISIBLE);
+        //title
+        holder.title.setText(ad.getHeadline());
+        adView.setHeadlineView(holder.title);
+
+        //desc
+        holder.desc.setText(ad.getBody());
+        adView.setBodyView(holder.desc);
+
+        //icon
+        holder.icon.setBackgroundDrawable(ad.getIcon().getDrawable());
+        adView.setIconView(holder.icon);
+
+        //cta button
+        holder.cta.setText(ad.getCallToAction());
+        adView.setCallToActionView(holder.cta);
+
+
+        adView.setNativeAd(ad);
+    }
+
     private void getAdvPdf(RecyclerView.ViewHolder holder,int index){
         ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
         boolean b = false;
@@ -193,8 +286,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             context.startActivity(new Intent(context, PDFDisplay.class));
         }else{
             Log.i("sba pdf onclick", "onClick: not downloaded! initiating download");
-            ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
-            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
             PRDownloader.initialize(context);
             String url = directory.getPdfModels().get(index).getUrl();
             String dirPath = context.getFilesDir().getAbsolutePath();
@@ -224,7 +315,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
                             int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
                             Log.i("sba", "onProgress: "+String.valueOf(prog));
-                            ((PDFVIewHolder) holder).seekBar.setProgress(prog);
+//                            ((PDFVIewHolder) holder).seekBar.setProgress(prog);
 
                         }
                     })
@@ -234,8 +325,8 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
                             ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
                             pdfs.add(directory.getPdfModels().get(index));
-                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+//                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+//                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
                             new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
                             Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
                             ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
@@ -247,8 +338,8 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         @Override
                         public void onError(Error error) {
                             Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
-                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+//                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+//                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
 
                             Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
                             ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
@@ -280,13 +371,23 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemViewType(int position){
-            Log.i("abh", "getItemViewType: pos: "+position);
+        Log.i("abh", "getItemViewType: pos: "+position);
+
         if(position < directory.getFiles().size()){
+            if(directory.getFiles().get(position)==null){
+                return AD_TYPE;
+            }
             return TYPE_FILE;
         }
         if(position - directory.getFiles().size() < directory.getPdfModels().size()){
+            if(directory.getPdfModels().get(position - directory.getFiles().size())==null){
+                return AD_TYPE;
+            }
             return TYPE_PDF;
         }else{
+            if(directory.getTests().get(position - directory.getFiles().size()-directory.getPdfModels().size())==null){
+                return AD_TYPE;
+            }
             return TYPE_TEST;
         }
     }
@@ -309,17 +410,17 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public class PDFVIewHolder extends RecyclerView.ViewHolder{
         TextView pdfNamepdfItem;
         CardView relativeLayoutBG;
-        SeekBar seekBar;
-        ProgressBar downloadPercentTV;
-        LinearLayout llBG;
+//        SeekBar seekBar;
+//        ProgressBar downloadPercentTV;
+//        LinearLayout llBG;
 
         public PDFVIewHolder(View itemView){
             super(itemView);
             pdfNamepdfItem = itemView.findViewById(R.id.pdf_name_pdf_item);
-            relativeLayoutBG = itemView.findViewById(R.id.pdf_item_background);
-            seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
-            downloadPercentTV = itemView.findViewById(R.id.download_percent);
-            llBG = itemView.findViewById(R.id.ll);
+            relativeLayoutBG = itemView.findViewById(R.id.background_file_item);
+//            seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
+//            downloadPercentTV = itemView.findViewById(R.id.download_percent);
+//            llBG = itemView.findViewById(R.id.ll);
 
         }
     }
@@ -336,6 +437,27 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             linearLayout = itemView.findViewById(R.id.file_item_background);
             fileItemBG = itemView.findViewById(R.id.book_item_holder_imageview);
         }
+    }
+    public class AdViewHolder extends RecyclerView.ViewHolder{
+        NativeAdView nativeAdView;
+        CardView root;
+        TextView title, desc,cta;
+        CardView icon;
+
+
+
+
+        public AdViewHolder(@NonNull View itemView) {
+            super(itemView);
+            nativeAdView = itemView.findViewById(R.id.native_ad_layout);
+            root = itemView.findViewById(R.id.background_ad_item);
+            title=itemView.findViewById(R.id.ad_title_rv);
+            desc = itemView.findViewById(R.id.ad_desc_rv);
+            icon = itemView.findViewById(R.id.ad_image);
+            cta = itemView.findViewById(R.id.cta_ad_view);
+        }
+
+
     }
 
 }

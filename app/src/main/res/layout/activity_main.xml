@@ -36,8 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
-            android:src="@drawable/notification_bell"
-            app:tint="?attr/textColorTheme"
+            android:src="@drawable/ic_notificationn"
             android:layout_gravity="center"/>
 
 

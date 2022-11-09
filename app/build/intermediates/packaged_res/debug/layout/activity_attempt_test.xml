@@ -180,7 +180,7 @@
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/testwelcomebannertemplate"
                                 android:scaleType="centerCrop"
-                                android:visibility="visible"/>
+                                android:visibility="gone"/>
                         </LinearLayout>
 
 
