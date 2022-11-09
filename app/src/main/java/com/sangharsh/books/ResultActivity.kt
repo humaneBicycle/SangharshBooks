@@ -25,6 +25,7 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 import com.sangharsh.books.model.Test
+import com.squareup.picasso.Picasso
 import java.lang.String
 
 
@@ -40,7 +41,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var optionAIV :ImageView
     private lateinit var optionBIV :ImageView
     private lateinit var optionCIV :ImageView
-    lateinit var optionDIV :ImageView
+    private lateinit var optionDIV :ImageView
     lateinit var gridL: GridLayout
     lateinit var resultScrollView: ScrollView
     lateinit var questionTVResult: TextView
@@ -186,17 +187,32 @@ class ResultActivity : AppCompatActivity() {
             ||test.questions[index-1].option3ImgUrl!=null
             ||test.questions[index-1].option4ImgUrl!= null){
 
-            if(test.questions[index-1].quesImgUrl!= null)
+            if(test.questions[index-1].quesImgUrl!= null){
                 questionIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].quesImgUrl).into(questionIV)
+            }
             //TODO set the images from the link
-            if(test.questions[index-1].option1ImgUrl!= null)
+            if(test.questions[index-1].option1ImgUrl!= null){
                 optionAIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option2ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option1ImgUrl).into(optionAIV)
+            }
+            if(test.questions[index-1].option2ImgUrl!= null){
                 optionBIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option3ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option2ImgUrl).into(optionBIV)
+
+            }
+            if(test.questions[index-1].option3ImgUrl!= null){
                 optionCIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option4ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option3ImgUrl).into(optionCIV)
+            }
+
+            if(test.questions[index-1].option4ImgUrl!= null){
                 optionDIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option4ImgUrl).into(optionDIV)
+            }
+
+
+
         }
         else{
             Log.i("images", "images adresses are null")
@@ -341,5 +357,8 @@ class ResultActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
 
 }

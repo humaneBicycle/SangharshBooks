@@ -139,8 +139,10 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         noOfQues = test.questions.size.toInt()
         setQuesNoinTV()
         nextBtn.setOnClickListener(View.OnClickListener {
-            if (isLastQuestionreached)
-                launchResultActivity()
+            if (isLastQuestionreached) {
+                showAlertOfLastQuestion()
+            }
+
             else
                 nextQuestion()
         })
@@ -176,6 +178,20 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+    }
+
+    private fun showAlertOfLastQuestion() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Do you really want to submit")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Yes") {
+                dialog, which -> launchResultActivity()
+        }
+        builder.setNegativeButton("No") {
+                dialog, which -> dialog.cancel()
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
     private fun onClickEventInGrid(index:Int){
@@ -216,12 +232,47 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
 
     fun updateQuestion(ques: Question,currentQuesNo:Int){
         currentQuestion = test.questions[currentQuesNo]
-        questionTV.text = currentQuestion.question
-        optionATV.text = currentQuestion.option1
-        optionBTV.text = currentQuestion.option2
-        optionCTV.text = currentQuestion.option3
-        optionDTV.text = currentQuestion.option4
+
+        if(test.questions[currentQuesNo].question != null){
+            questionTV.text = currentQuestion.question
+        }
+        else{
+            questionTV.visibility = View.GONE
+        }
+
+        if(test.questions[currentQuesNo].option1!=null){
+            optionATV.text = currentQuestion.option1
+        }
+        else{
+            optionATV.text = "Option A"
+
+        }
+        if(test.questions[currentQuesNo].option2!=null){
+            optionBTV.text = currentQuestion.option2
+        }
+        else{
+            optionBTV.text = "Option B"
+
+        }
+        if(test.questions[currentQuesNo].option3!=null){
+            optionCTV.text = currentQuestion.option3
+        }
+        else{
+            optionCTV.text = "Option C"
+
+        }
+        if(test.questions[currentQuesNo].option4!=null){
+            optionDTV.text = currentQuestion.option4
+        }
+        else{
+            optionDTV.text = "Option D"
+
+        }
         setDefaultOptionsUI()
+
+
+
+
         if(answers.containsKey(currentQuestionNo)) {
             Log.i("FuncHit", "contains key ${answers[currentQuestionNo]}")
             mselectedOptionPosition = answers[currentQuestionNo]!!
@@ -263,6 +314,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         }
         for(optionTV in optionsTV){
             optionTV.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+
         }
 
     }
@@ -308,7 +360,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     fun showAlert(){
         val builder = AlertDialog.Builder(this)
         builder.setMessage("Do you really want to exit ?")
-        builder.setTitle("Your progress will be deleted!!!")
+        builder.setTitle("Your progress will be deleted!")
         builder.setCancelable(false)
         builder.setPositiveButton("Yes") {
                 dialog, which -> finish()

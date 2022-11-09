@@ -69,6 +69,7 @@ drawable optionwhitbg
 drawable quesmark
 drawable redbg
 drawable redbgforbtn
+drawable redbgstarttest
 drawable resultbg
 drawable selctedoptionbg
 drawable studying_illustration
@@ -185,6 +186,7 @@ id rv_file_activity
 id rv_home
 id startTestActivityFinishBtn
 id startTestBtn
+id testBannerIV
 id testTitleTV
 id testll
 id textView

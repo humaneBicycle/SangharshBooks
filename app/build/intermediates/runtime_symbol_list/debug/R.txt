@@ -2659,6 +2659,7 @@ int drawable optionwhitbg 0x7f0700d3
 int drawable quesmark 0x7f0700d4
 int drawable redbg 0x7f0700d5
 int drawable redbgforbtn 0x7f0700d6
+int drawable redbgstarttest 0x7f0700e2
 int drawable resultbg 0x7f0700d7
 int drawable selctedoptionbg 0x7f0700d8
 int drawable studying_illustration 0x7f0700d9
@@ -3220,6 +3221,7 @@ int id tag_transition_group 0x7f09021e
 int id tag_unhandled_key_event_manager 0x7f09021f
 int id tag_unhandled_key_listeners 0x7f090220
 int id tag_window_insets_animation_callback 0x7f090221
+int id testBannerIV 0x7f090274
 int id testTitleTV 0x7f090222
 int id test_checkbox_android_button_tint 0x7f090223
 int id test_checkbox_app_button_tint 0x7f090224

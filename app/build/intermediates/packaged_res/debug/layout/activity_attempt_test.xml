@@ -135,11 +135,12 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingBottom="90dp">
                         <ImageView
                             android:id="@+id/questionTestIV"
                             android:layout_width="match_parent"
-                            android:layout_height="150dp"
+                            android:layout_height="200dp"
                             android:scaleType="centerCrop"
                             android:visibility="gone"
                             android:src="@drawable/testwelcomebannertemplate" />
@@ -177,10 +178,10 @@
                                 android:id="@+id/optionATestIV"
                                 android:padding="20dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="200dp"
                                 android:src="@drawable/testwelcomebannertemplate"
                                 android:scaleType="centerCrop"
-                                android:visibility="visible"/>
+                                android:visibility="gone"/>
                         </LinearLayout>
 
 
@@ -207,9 +208,9 @@
                                 android:id="@+id/optionBTestIV"
                                 android:layout_width="match_parent"
                                 android:padding="20dp"
-                                android:layout_height="wrap_content"
                                 android:src="@drawable/testwelcomebannertemplate"
                                 android:visibility="gone"
+                                android:layout_height="200dp"
                                 android:scaleType="centerCrop"/>
 
                         </LinearLayout>
@@ -237,7 +238,7 @@
                                 android:id="@+id/optionCTestIV"
                                 android:padding="20dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="200dp"
                                 android:src="@drawable/testwelcomebannertemplate"
                                 android:visibility="gone"
                                 android:scaleType="centerCrop"/>
@@ -267,7 +268,7 @@
                                 android:id="@+id/optionDTestIV"
                                 android:padding="20dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="200dp"
                                 android:src="@drawable/testwelcomebannertemplate"
                                 android:visibility="gone"
                                 android:scaleType="centerCrop"/>
