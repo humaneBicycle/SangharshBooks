@@ -217,7 +217,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         Log.i(TAG, "loadNativeAds: abh nativeAdArrayListSize: "+nativeAds.size() );
         if(nativeAds.size()<2 && !isAdLoading){
             isAdLoading=true;
-            adLoader = new AdLoader.Builder(context, "ca-app-pub-3940256099942544/2247696110")
+            adLoader = new AdLoader.Builder(context, context.getString(R.string.admob_id_native))
                     .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                         @Override
                         public void onNativeAdLoaded(NativeAd nativeAd) {
