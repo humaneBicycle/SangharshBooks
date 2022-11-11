@@ -48,6 +48,7 @@ import com.sangharsh.books.model.Directory;
 import com.sangharsh.books.model.FileModel;
 import com.sangharsh.books.model.PDFModel;
 import com.sangharsh.books.model.ShortTest;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -202,11 +203,12 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if(holder instanceof AdViewHolder){
             Log.i("loadNative", "Adview");
             if(nativeAds.size()>0) {
-                populateNativeAdView(nativeAds.get(0), ((AdViewHolder) holder).nativeAdView,(AdViewHolder)holder);
+                populateNativeAdView(nativeAds.get(0), ((AdViewHolder) holder).nativeAdView,(AdViewHolder)holder, position);
                 nativeAds.remove(0);
             }else{
                 prevIndexWithNoNative = position;
                 ((AdViewHolder) holder).root.setVisibility(View.GONE);
+                holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
             }
             loadNativeAds();
         }
@@ -249,7 +251,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     int prevIndexWithNoNative = -1;
-    private void populateNativeAdView(NativeAd ad, NativeAdView adView, AdViewHolder holder){
+    private void populateNativeAdView(NativeAd ad, NativeAdView adView, AdViewHolder holder, int pos){
         Log.i("loadNative", "populated");
         holder.root.setVisibility(View.VISIBLE);
         //title
@@ -261,15 +263,30 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         adView.setBodyView(holder.desc);
 
         //icon
-        holder.icon.setBackgroundDrawable(ad.getIcon().getDrawable());
-        adView.setIconView(holder.icon);
+        if (ad.getIcon() != null){
+            if (ad.getIcon().getDrawable() != null) {
+                ((ImageView) holder.icon).setImageDrawable(ad.getIcon().getDrawable());
+                adView.setIconView(holder.icon);
+            } else if (ad.getIcon().getUri() != null){
+                Picasso.get()
+                        .load(ad.getIcon().getUri())
+                        .into(holder.icon);
+                adView.setIconView(holder.icon);
+            } else {
+                holder.icon.setVisibility(View.GONE);
+                holder.imageCard.setVisibility(View.GONE);
+            }
+        } else {
+            holder.imageCard.setVisibility(View.GONE);
+        }
+
 
         //cta button
         holder.cta.setText(ad.getCallToAction());
         adView.setCallToActionView(holder.cta);
 
-
         adView.setNativeAd(ad);
+
     }
 
     private void getAdvPdf(RecyclerView.ViewHolder holder,int index){
@@ -445,9 +462,9 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
     public class AdViewHolder extends RecyclerView.ViewHolder{
         NativeAdView nativeAdView;
-        CardView root;
+        CardView root, imageCard;
         TextView title, desc,cta;
-        CardView icon;
+        ImageView icon;
 
 
 
@@ -460,6 +477,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             desc = itemView.findViewById(R.id.ad_desc_rv);
             icon = itemView.findViewById(R.id.ad_image);
             cta = itemView.findViewById(R.id.cta_ad_view);
+            imageCard = itemView.findViewById(R.id.imageCard);
         }
 
 

@@ -114,6 +114,7 @@ id file_activity_heading
 id file_item_background
 id file_name_edittext
 id gridTV
+id imageCard
 id imageView
 id imageView2
 id incorrectAnswerTV
