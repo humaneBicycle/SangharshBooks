@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
+import com.squareup.picasso.Picasso
 
 class StartTest : AppCompatActivity() {
     lateinit var test: Test
@@ -93,6 +94,9 @@ class StartTest : AppCompatActivity() {
                     }
                     if (timeAllowed.isNotEmpty()){
                         timerTV.text = timeAllowed
+                    }
+                    if(test.testBannerUrl != null){
+                        Picasso.get().load(test.testBannerUrl).into(testBannerIV)
                     }
                     pd.dismiss()
                 }

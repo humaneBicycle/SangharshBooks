@@ -87,23 +87,23 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
 //                context.startActivity(intent);
 //            }
 //        });
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                sangharshBooks.setActivePdfModel(pdfModels.get(position));
-//                context.startActivity(new Intent(context, PDFDisplay.class));
-//
-////                context.startActivity(PdfViewerActivity.Companion.launchPdfFromPath(
-////                        context,
-////                        pdfModels.get(position).getName()+".pdf",
-////                        pdfModels.get(position).getName(),
-////                        "assets",
-////                        false,
-////                        true
-////                    )
-////                );
-//            }
-//        });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sangharshBooks.setActivePdfModel(pdfModels.get(position));
+                context.startActivity(new Intent(context, PDFDisplay.class));
+
+//                context.startActivity(PdfViewerActivity.Companion.launchPdfFromPath(
+//                        context,
+//                        pdfModels.get(position).getName()+".pdf",
+//                        pdfModels.get(position).getName(),
+//                        "assets",
+//                        false,
+//                        true
+//                    )
+//                );
+            }
+        });
 //        holder.advancedViewTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -250,7 +250,7 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
             pdfName = itemView.findViewById(R.id.pdf_name_pdf_item);
 //            advancedViewTV = itemView.findViewById(R.id.pdf_view_advance);
 //            basicViewTV = itemView.findViewById(R.id.pdf_view_basic);
-//            cardView = itemView.findViewById(R.id.pdf_item_background);
+            cardView = itemView.findViewById(R.id.pdf_item_background);
 //            backgroundLL = itemView.findViewById(R.id.ll);
 //            igmPdf=itemView.findViewById(R.id.img_pdf);
 //            appCompatButton = itemView.findViewById(R.id.download_pdf_item);

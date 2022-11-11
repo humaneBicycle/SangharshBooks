@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -167,7 +169,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             int index = position-directory.getFiles().size();
 
 
-            ((PDFVIewHolder) holder).relativeLayoutBG.setOnLongClickListener(new View.OnLongClickListener() {
+            ((PDFVIewHolder) holder).root.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
                     LongClickOptions longClickOptions = new LongClickOptions(sangharshBooks,context,directory.getPdfModels().get(index),uiUpdaterHomeFrag,DirectoryAdapter.this,position,index, directory.getPdfModels());
@@ -177,7 +179,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
 
-            ((PDFVIewHolder) holder).relativeLayoutBG.setOnClickListener(new View.OnClickListener() {
+            ((PDFVIewHolder) holder).root.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     getAdvPdf(holder,index);
@@ -271,7 +273,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     private void getAdvPdf(RecyclerView.ViewHolder holder,int index){
-        ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(false);
+        ((PDFVIewHolder) holder).root.setEnabled(false);
         boolean b = false;
         for(int i =0;i<new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).size();i++){
             if(new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED).get(i).getPointingDir().equals(directory.getPdfModels().get(index).getPointingDir()) ){
@@ -281,11 +283,13 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             }
         }
         if(b){
-            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
+            ((PDFVIewHolder) holder).root.setEnabled(true);
             sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
             context.startActivity(new Intent(context, PDFDisplay.class));
         }else{
             Log.i("sba pdf onclick", "onClick: not downloaded! initiating download");
+            ((PDFVIewHolder) holder).seekBar.setVisibility(View.VISIBLE);
+            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.VISIBLE);
             PRDownloader.initialize(context);
             String url = directory.getPdfModels().get(index).getUrl();
             String dirPath = context.getFilesDir().getAbsolutePath();
@@ -315,7 +319,8 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
                             int prog = ((int)(progress.currentBytes*100/progress.totalBytes));
                             Log.i("sba", "onProgress: "+String.valueOf(prog));
-//                            ((PDFVIewHolder) holder).seekBar.setProgress(prog);
+                            ((PDFVIewHolder) holder).seekBar.setProgress(prog);
+                            ((PDFVIewHolder) holder).downloadPercentTV.setText(String.valueOf(prog)+"%");
 
                         }
                     })
@@ -325,11 +330,11 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
                             ArrayList<PDFModel> pdfs = new StorageHelper(context).getArrayListOfPDFModel(StorageHelper.DOWNLOADED);
                             pdfs.add(directory.getPdfModels().get(index));
-//                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-//                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
                             new StorageHelper(context).savePDFModel(pdfs,StorageHelper.DOWNLOADED);
                             Toast.makeText(context, "Download Completed!", Toast.LENGTH_SHORT).show();
-                            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
+                            ((PDFVIewHolder) holder).root.setEnabled(true);
                             sangharshBooks.setActivePdfModel(directory.getPdfModels().get(index));
                             context.startActivity(new Intent(context, PDFDisplay.class));
 
@@ -338,11 +343,11 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         @Override
                         public void onError(Error error) {
                             Log.d("sba", "download onError: "+error.getServerErrorMessage()+" connection exception "  +error.getConnectionException());
-//                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
-//                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
+                            ((PDFVIewHolder) holder).seekBar.setVisibility(View.GONE);
+                            ((PDFVIewHolder) holder).downloadPercentTV.setVisibility(View.GONE);
 
                             Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
-                            ((PDFVIewHolder) holder).relativeLayoutBG.setEnabled(true);
+                            ((PDFVIewHolder) holder).root.setEnabled(true);
 
                         }
 
@@ -408,18 +413,18 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
     }
     public class PDFVIewHolder extends RecyclerView.ViewHolder{
-        TextView pdfNamepdfItem;
-        CardView relativeLayoutBG;
-//        SeekBar seekBar;
-//        ProgressBar downloadPercentTV;
+        TextView pdfNamepdfItem,downloadPercentTV;
+        CardView root;
+        SeekBar seekBar;
+
 //        LinearLayout llBG;
 
         public PDFVIewHolder(View itemView){
             super(itemView);
             pdfNamepdfItem = itemView.findViewById(R.id.pdf_name_pdf_item);
-            relativeLayoutBG = itemView.findViewById(R.id.background_file_item);
-//            seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
-//            downloadPercentTV = itemView.findViewById(R.id.download_percent);
+            root = itemView.findViewById(R.id.pdf_item_background);
+            seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
+            downloadPercentTV = itemView.findViewById(R.id.download_percent_tv);
 //            llBG = itemView.findViewById(R.id.ll);
 
         }

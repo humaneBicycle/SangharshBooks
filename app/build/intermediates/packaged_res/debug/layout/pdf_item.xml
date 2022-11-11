@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="16dp"
     android:background="@color/black"
-    android:id="@+id/background_file_item"
+    android:id="@+id/pdf_item_background"
     android:layout_marginTop="8dp"
     android:padding="8dp">
 
@@ -20,52 +20,80 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="124dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:id="@+id/file_item_background"
             android:gravity="center"
             android:background="@drawable/cardviewblackbg"
             >
-            <TextView
-                android:id="@+id/pdf_name_pdf_item"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_gravity="center"
-                android:fontFamily="@font/poppinsbold"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:layout_weight="1"
-                android:maxLength="18"
-                android:ellipsize="end"
-                android:maxLines="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:orientation="horizontal"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="108dp"
-                android:id="@+id/book_item_holder_imageview"
-                android:layout_gravity="center"
-                android:padding="4dp"
-                android:scaleType="centerCrop"
-                />
+                <TextView
+                    android:id="@+id/pdf_name_pdf_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppinsbold"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_weight="1"
+                    android:text="afdja"
+                    android:maxLength="18"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/download_percent_tv"
+                    android:text="0%"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="12dp">
+                <SeekBar
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/pdf_item_download_seekbar"
+                    android:visibility="gone"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_gravity="end"
+                    android:text="Read>"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:paddingEnd="15dp"/>
+            </LinearLayout>
 
         </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-30dp"
-            android:layout_gravity="end"
-            android:text="Open>"
-            android:textSize="16sp"
-            android:textColor="@color/white"
-            android:paddingEnd="15dp"
-            />
+
         <TextView
             android:layout_gravity="bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Read"
+            android:text="PDF"
             android:textSize="14sp"
             android:padding="5dp"
             android:background="@drawable/redbg"

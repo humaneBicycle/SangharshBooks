@@ -1,16 +1,12 @@
 package com.sangharsh.books
 
-import android.content.Intent
+import android.content.ContentValues
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.GridLayout
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ScrollView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.github.mikephil.charting.animation.Easing
@@ -20,11 +16,12 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.MPPointF
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.gson.Gson
 import com.sangharsh.books.model.Test
+import com.squareup.picasso.Picasso
 import java.lang.String
 
 
@@ -40,7 +37,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var optionAIV :ImageView
     private lateinit var optionBIV :ImageView
     private lateinit var optionCIV :ImageView
-    lateinit var optionDIV :ImageView
+    private lateinit var optionDIV :ImageView
     lateinit var gridL: GridLayout
     lateinit var resultScrollView: ScrollView
     lateinit var questionTVResult: TextView
@@ -64,7 +61,7 @@ class ResultActivity : AppCompatActivity() {
     lateinit var pieChart: PieChart
     lateinit var mAdView : AdView
     lateinit var mAdView2 : AdView
-
+    var mInterstitialAd:InterstitialAd? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,7 +94,7 @@ class ResultActivity : AppCompatActivity() {
 
 
 
-
+        loadAd()
 
 
         test = Gson().fromJson(intent.getStringExtra("TEST"), Test::class.java)
@@ -186,17 +183,32 @@ class ResultActivity : AppCompatActivity() {
             ||test.questions[index-1].option3ImgUrl!=null
             ||test.questions[index-1].option4ImgUrl!= null){
 
-            if(test.questions[index-1].quesImgUrl!= null)
+            if(test.questions[index-1].quesImgUrl!= null){
                 questionIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].quesImgUrl).into(questionIV)
+            }
             //TODO set the images from the link
-            if(test.questions[index-1].option1ImgUrl!= null)
+            if(test.questions[index-1].option1ImgUrl!= null){
                 optionAIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option2ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option1ImgUrl).into(optionAIV)
+            }
+            if(test.questions[index-1].option2ImgUrl!= null){
                 optionBIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option3ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option2ImgUrl).into(optionBIV)
+
+            }
+            if(test.questions[index-1].option3ImgUrl!= null){
                 optionCIV.visibility = View.VISIBLE
-            if(test.questions[index-1].option4ImgUrl!= null)
+                Picasso.get().load(test.questions[index-1].option3ImgUrl).into(optionCIV)
+            }
+
+            if(test.questions[index-1].option4ImgUrl!= null){
                 optionDIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option4ImgUrl).into(optionDIV)
+            }
+
+
+
         }
         else{
             Log.i("images", "images adresses are null")
@@ -341,5 +353,63 @@ class ResultActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun loadAd() {
+        Log.i(ContentValues.TAG, "loadAd: sba load interstitial ad called")
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this, getString(R.string.admob_id_interstitial), adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    // The mInterstitialAd reference will be null until
+                    // an ad is loaded.
+                    mInterstitialAd = interstitialAd
+                    mInterstitialAd!!.setFullScreenContentCallback(object :
+                        FullScreenContentCallback() {
+                        override fun onAdClicked() {
+                            // Called when a click is recorded for an ad.
+                            Log.d(ContentValues.TAG, "Ad was clicked.")
+                        }
+
+                        override fun onAdDismissedFullScreenContent() {
+                            // Called when ad is dismissed.
+                            // Set the ad reference to null so you don't show the ad a second time.
+                            Log.d(ContentValues.TAG, "Ad dismissed fullscreen content.")
+                            mInterstitialAd = null
+                        }
+
+                        override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                            // Called when ad fails to show.
+                            Log.e(ContentValues.TAG, "Ad failed to show fullscreen content.")
+                            mInterstitialAd = null
+                        }
+
+                        override fun onAdImpression() {
+                            // Called when an impression is recorded for an ad.
+                            Log.d(ContentValues.TAG, "Ad recorded an impression.")
+                        }
+
+                        override fun onAdShowedFullScreenContent() {
+                            // Called when ad is shown.
+                            Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                        }
+                    })
+                    Log.i("sba ", "onAdLoaded")
+                }
+
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    // Handle the error
+                    Log.d("sba", loadAdError.toString())
+                    mInterstitialAd = null
+                }
+            })
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if(mInterstitialAd!=null){
+            mInterstitialAd!!.show(this)
+        }
+    }
+
 
 }

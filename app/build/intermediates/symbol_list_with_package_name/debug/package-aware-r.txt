@@ -2662,6 +2662,7 @@ drawable optionwhitbg
 drawable quesmark
 drawable redbg
 drawable redbgforbtn
+drawable redbgstarttest
 drawable resultbg
 drawable selctedoptionbg
 drawable studying_illustration
@@ -2874,6 +2875,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id download_percent_tv
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3108,6 +3110,8 @@ id password_toggle
 id path
 id pathRelative
 id path_bottom_sheet
+id pdf_item_background
+id pdf_item_download_seekbar
 id pdf_name_edittext
 id pdf_name_pdf_item
 id pdf_view_heading

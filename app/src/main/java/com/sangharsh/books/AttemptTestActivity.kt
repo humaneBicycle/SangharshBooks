@@ -1,7 +1,7 @@
 package com.sangharsh.books
 
+import android.content.ContentValues
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
@@ -13,16 +13,17 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.get
-import androidx.core.view.marginEnd
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
 import com.squareup.picasso.Picasso
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+import kotlin.collections.set
 
 class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     lateinit var questionTV : TextView
@@ -62,11 +63,14 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     lateinit var mAdView : AdView
     var isLastQuestionreached:Boolean = false
      var isGridVisible:Boolean = false
+    var mInterstitialAd:InterstitialAd?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attempt_test)
+
+        loadAd()
 
         questionTV = findViewById(R.id.questionTV)
         optionATV = findViewById(R.id.optionATV)
@@ -139,8 +143,13 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         noOfQues = test.questions.size.toInt()
         setQuesNoinTV()
         nextBtn.setOnClickListener(View.OnClickListener {
-            if (isLastQuestionreached)
-                launchResultActivity()
+            if (isLastQuestionreached) {
+                if(mInterstitialAd!=null) {
+                    mInterstitialAd!!.show(this)
+                }
+                showAlertOfLastQuestion()
+            }
+
             else
                 nextQuestion()
         })
@@ -176,6 +185,20 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+    }
+
+    private fun showAlertOfLastQuestion() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Do you really want to submit")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Yes") {
+                dialog, which -> launchResultActivity()
+        }
+        builder.setNegativeButton("No") {
+                dialog, which -> dialog.cancel()
+        }
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
     private fun onClickEventInGrid(index:Int){
@@ -216,12 +239,47 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
 
     fun updateQuestion(ques: Question,currentQuesNo:Int){
         currentQuestion = test.questions[currentQuesNo]
-        questionTV.text = currentQuestion.question
-        optionATV.text = currentQuestion.option1
-        optionBTV.text = currentQuestion.option2
-        optionCTV.text = currentQuestion.option3
-        optionDTV.text = currentQuestion.option4
+
+        if(test.questions[currentQuesNo].question != null){
+            questionTV.text = currentQuestion.question
+        }
+        else{
+            questionTV.visibility = View.GONE
+        }
+
+        if(test.questions[currentQuesNo].option1!=null){
+            optionATV.text = currentQuestion.option1
+        }
+        else{
+            optionATV.text = "Option A"
+
+        }
+        if(test.questions[currentQuesNo].option2!=null){
+            optionBTV.text = currentQuestion.option2
+        }
+        else{
+            optionBTV.text = "Option B"
+
+        }
+        if(test.questions[currentQuesNo].option3!=null){
+            optionCTV.text = currentQuestion.option3
+        }
+        else{
+            optionCTV.text = "Option C"
+
+        }
+        if(test.questions[currentQuesNo].option4!=null){
+            optionDTV.text = currentQuestion.option4
+        }
+        else{
+            optionDTV.text = "Option D"
+
+        }
         setDefaultOptionsUI()
+
+
+
+
         if(answers.containsKey(currentQuestionNo)) {
             Log.i("FuncHit", "contains key ${answers[currentQuestionNo]}")
             mselectedOptionPosition = answers[currentQuestionNo]!!
@@ -263,6 +321,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
         }
         for(optionTV in optionsTV){
             optionTV.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+
         }
 
     }
@@ -308,7 +367,7 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
     fun showAlert(){
         val builder = AlertDialog.Builder(this)
         builder.setMessage("Do you really want to exit ?")
-        builder.setTitle("Your progress will be deleted!!!")
+        builder.setTitle("Your progress will be deleted!")
         builder.setCancelable(false)
         builder.setPositiveButton("Yes") {
                 dialog, which -> finish()
@@ -384,6 +443,55 @@ class AttemptTestActivity : AppCompatActivity() ,View.OnClickListener {
             Log.i("images", "images adresses are null")
     }
 }
+    private fun loadAd() {
+        Log.i(ContentValues.TAG, "loadAd: sba load interstitial ad called")
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this, getString(R.string.admob_id_interstitial), adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    // The mInterstitialAd reference will be null until
+                    // an ad is loaded.
+                    mInterstitialAd = interstitialAd
+                    mInterstitialAd!!.fullScreenContentCallback =
+                        object : FullScreenContentCallback() {
+                            override fun onAdClicked() {
+                                // Called when a click is recorded for an ad.
+                                Log.d(ContentValues.TAG, "Ad was clicked.")
+                            }
+
+                            override fun onAdDismissedFullScreenContent() {
+                                // Called when ad is dismissed.
+                                // Set the ad reference to null so you don't show the ad a second time.
+                                Log.d(ContentValues.TAG, "Ad dismissed fullscreen content.")
+                                mInterstitialAd = null
+                            }
+
+                            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                                // Called when ad fails to show.
+                                Log.e(ContentValues.TAG, "Ad failed to show fullscreen content.")
+                                mInterstitialAd = null
+                            }
+
+                            override fun onAdImpression() {
+                                // Called when an impression is recorded for an ad.
+                                Log.d(ContentValues.TAG, "Ad recorded an impression.")
+                            }
+
+                            override fun onAdShowedFullScreenContent() {
+                                // Called when ad is shown.
+                                Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                            }
+                        }
+                    Log.i("sba ", "onAdLoaded")
+                }
+
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    // Handle the error
+                    Log.d("sba", loadAdError.toString())
+                    mInterstitialAd = null
+                }
+            })
+    }
 }
 
 

@@ -180,6 +180,10 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\circle.xml"
     },
     {
+        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_redbgstarttest.xml.flat",
+        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\redbgstarttest.xml"
+    },
+    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_default_gradient.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\default_gradient.xml"
     },
@@ -192,20 +196,16 @@
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\test_item.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\menu_bottom_nav.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\menu\\bottom_nav.xml"
-    },
-    {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_back_arrow.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_back_arrow.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_file.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_file.xml"
+        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\menu_bottom_nav.xml.flat",
+        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\menu\\bottom_nav.xml"
     },
     {
-        "merged": "com.sangharsh.books.app-merged_res-6:/layout_ad_layout.xml.flat",
-        "source": "com.sangharsh.books.app-main-8:/layout/ad_layout.xml"
+        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_file.xml.flat",
+        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_file.xml"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_picture_as_pdf_24.xml.flat",
@@ -246,6 +246,10 @@
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.sangharsh.books.app-merged_res-6:/layout_activity_attempt_test.xml.flat",
+        "source": "com.sangharsh.books.app-main-8:/layout/activity_attempt_test.xml"
     },
     {
         "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_home_24.xml.flat",

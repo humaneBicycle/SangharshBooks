@@ -302,7 +302,7 @@
                     <ImageView
                         android:id="@+id/optionAIV"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:padding="20dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/testwelcomebannertemplate"
@@ -331,7 +331,7 @@
                     <ImageView
                         android:id="@+id/optionBIV"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:padding="20dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/testwelcomebannertemplate"
@@ -361,9 +361,9 @@
                     <ImageView
                         android:id="@+id/optionCIV"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="20dp"
+                        android:layout_height="200dp"
                         android:scaleType="centerCrop"
+                        android:padding="20dp"
                         android:src="@drawable/testwelcomebannertemplate"
                         android:visibility="gone" />
 
@@ -391,7 +391,7 @@
                     <ImageView
                         android:id="@+id/optionDIV"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:padding="20dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/testwelcomebannertemplate"
