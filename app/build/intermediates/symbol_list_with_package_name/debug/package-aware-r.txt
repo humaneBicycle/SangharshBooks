@@ -3550,6 +3550,7 @@ string add
 string adding_to_path
 string admob_id_banner
 string admob_id_interstitial
+string admob_id_native
 string advanced_pdf_viewer
 string androidx_startup
 string app_name
