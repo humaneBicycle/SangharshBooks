@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag 
     }
 
     private void loadAd(){
+        Log.i(TAG, "loadAd: sba load interstitial ad called");
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(this,getString(R.string.admob_id_interstitial), adRequest,
                 new InterstitialAdLoadCallback() {
@@ -183,14 +184,15 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag 
 
     @Override
     protected void onResume() {
-        if (mInterstitialAd != null && sangharshBooks.getAdCount()%2==0) {
+        if (mInterstitialAd != null) {
             mInterstitialAd.show(MainActivity.this);
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.");
-        }
-        if(sangharshBooks.getAdCount()%2!=0){
             loadAd();
         }
+//        if(sangharshBooks.getAdCount()%2!=0){
+//            loadAd();
+//        }
         super.onResume();
     }
 

@@ -53,6 +53,7 @@ drawable ic_baseline_home_24
 drawable ic_baseline_menu_24
 drawable ic_baseline_notifications_24
 drawable ic_baseline_picture_as_pdf_24
+drawable ic_bell
 drawable ic_bookmarks
 drawable ic_downloads
 drawable ic_home_icon
@@ -61,6 +62,7 @@ drawable ic_launcher_foreground
 drawable ic_layer_1
 drawable ic_layer_2
 drawable ic_layer_3
+drawable ic_notificationn
 drawable ic_profile
 drawable ic_sangharsh
 drawable light_bell
@@ -80,6 +82,9 @@ font poppinsbold
 font poppinsregular
 id adView
 id adView2
+id ad_desc_rv
+id ad_image
+id ad_title_rv
 id add_pdf_local_storage
 id backBtn
 id backBtnImg
@@ -89,6 +94,7 @@ id backCrossIV
 id back_file
 id back_noti
 id back_pdf_view
+id background_ad_item
 id background_file_item
 id body_holder_main_activity_view_pager
 id book_item_holder_imageview
@@ -101,15 +107,16 @@ id bottom_sheet_add_button
 id cardView
 id correctAnswerTV
 id counter
+id cta_ad_view
 id descriptionTV
-id download_percent
+id download_percent_tv
 id file_activity_heading
 id file_item_background
 id file_name_edittext
 id gridTV
+id imageCard
 id imageView
 id imageView2
-id img_pdf
 id incorrectAnswerTV
 id is_bookmarked_pdf_view
 id item0
@@ -122,10 +129,10 @@ id linearLayout
 id linearLayout2
 id linearLayout3
 id linerlayout_download_frag
-id ll
 id load_pdf_display
 id myAdView
 id myAdViewPDFDisplay
+id native_ad_layout
 id nextBtnTV
 id noOfQuesTV
 id noofQuesTV
@@ -210,6 +217,7 @@ layout activity_notification
 layout activity_pdfdisplay
 layout activity_result
 layout activity_start_test
+layout ad_layout
 layout add_bottom_sheet
 layout file_item
 layout fragment_about
@@ -229,6 +237,7 @@ string add
 string adding_to_path
 string admob_id_banner
 string admob_id_interstitial
+string admob_id_native
 string advanced_pdf_viewer
 string app_name
 string basic_pdf_viewer

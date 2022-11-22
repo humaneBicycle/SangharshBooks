@@ -69,18 +69,18 @@
 
 
 
-            <TextView
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quiz"
-                android:textSize="14sp"
-                android:padding="5dp"
-                android:background="@drawable/redbg"
-                android:textColor="@color/white"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="-10dp"
-                />
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiz"
+            android:textSize="14sp"
+            android:padding="5dp"
+            android:background="@drawable/redbg"
+            android:textColor="@color/white"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-10dp"
+            />
 
 
 

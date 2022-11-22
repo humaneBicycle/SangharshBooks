@@ -37,7 +37,7 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
     ArrayList<PDFModel> pdfModels;
     SangharshBooks sangharshBooks;
     String mode;
-    ArrayList<Integer> colors;
+//    ArrayList<Integer> colors;
 
 
     public PDFAdapter (Application application, Context context, ArrayList<PDFModel> pdfModels,String mode){
@@ -45,7 +45,7 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
         this.pdfModels = pdfModels;
         this.sangharshBooks = (SangharshBooks) application;
         this.mode = mode;
-        inflateColors();
+//        inflateColors();
     }
 
     @NonNull
@@ -59,15 +59,15 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.pdfName.setText(pdfModels.get(position).getName());
 
-        int randForColor = new Random().nextInt(colors.size());
-        holder.llBG.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(colors.get(randForColor))));
-        Drawable drawable=context.getResources().getDrawable(R.drawable.tiny_stroke);
-        drawable.setTint(context.getResources().getColor(colors.get(randForColor)));
-        holder.cardView.setBackgroundDrawable(drawable);
-        colors.remove(randForColor);
-        if(colors.size()==0){
-            inflateColors();
-        }
+//        int randForColor = new Random().nextInt(colors.size());
+////        holder.llBG.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(colors.get(randForColor))));
+//        Drawable drawable=context.getResources().getDrawable(R.drawable.tiny_stroke);
+//        drawable.setTint(context.getResources().getColor(colors.get(randForColor)));
+//        holder.cardView.setBackgroundDrawable(drawable);
+//        colors.remove(randForColor);
+//        if(colors.size()==0){
+//            inflateColors();
+//        }
 
 //        holder.basicViewTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -251,23 +251,23 @@ public class PDFAdapter extends RecyclerView.Adapter<PDFAdapter.MyViewHolder> {
 //            advancedViewTV = itemView.findViewById(R.id.pdf_view_advance);
 //            basicViewTV = itemView.findViewById(R.id.pdf_view_basic);
             cardView = itemView.findViewById(R.id.pdf_item_background);
-            backgroundLL = itemView.findViewById(R.id.ll);
-            igmPdf=itemView.findViewById(R.id.img_pdf);
+//            backgroundLL = itemView.findViewById(R.id.ll);
+//            igmPdf=itemView.findViewById(R.id.img_pdf);
 //            appCompatButton = itemView.findViewById(R.id.download_pdf_item);
-            seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
-            downloadPercentTV = itemView.findViewById(R.id.download_percent);
-            llBG = itemView.findViewById(R.id.ll);
+//            seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
+//            downloadPercentTV = itemView.findViewById(R.id.download_percent);
+//            llBG = itemView.findViewById(R.id.ll);
         }
     }
-    private void inflateColors(){
-        if(colors==null) {
-            colors = new ArrayList<>();
-        }
-        colors.add(R.color.my_green);
-        colors.add(R.color.my_blue);
-        colors.add(R.color.my_red);
-        colors.add(R.color.my_yellow);
-        colors.add(R.color.my_skyblue);
-        colors.add(R.color.my_purple);
-    }
+//    private void inflateColors(){
+//        if(colors==null) {
+//            colors = new ArrayList<>();
+//        }
+//        colors.add(R.color.my_green);
+//        colors.add(R.color.my_blue);
+//        colors.add(R.color.my_red);
+//        colors.add(R.color.my_yellow);
+//        colors.add(R.color.my_skyblue);
+//        colors.add(R.color.my_purple);
+//    }
 }

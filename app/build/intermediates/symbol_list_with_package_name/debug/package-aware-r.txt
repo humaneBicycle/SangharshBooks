@@ -2594,6 +2594,7 @@ drawable ic_baseline_home_24
 drawable ic_baseline_menu_24
 drawable ic_baseline_notifications_24
 drawable ic_baseline_picture_as_pdf_24
+drawable ic_bell
 drawable ic_bookmarks
 drawable ic_clock_black_24dp
 drawable ic_downloads
@@ -2611,6 +2612,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notificationn
 drawable ic_profile
 drawable ic_sangharsh
 drawable light_bell
@@ -2745,6 +2747,9 @@ id actions
 id activity_chooser_view_content
 id adView
 id adView2
+id ad_desc_rv
+id ad_image
+id ad_title_rv
 id add
 id add_pdf_local_storage
 id adjust_height
@@ -2773,6 +2778,7 @@ id backCrossIV
 id back_file
 id back_noti
 id back_pdf_view
+id background_ad_item
 id background_file_item
 id barrier
 id baseline
@@ -2842,6 +2848,7 @@ id correctAnswerTV
 id cos
 id counter
 id counterclockwise
+id cta_ad_view
 id currentState
 id custom
 id customPanel
@@ -2868,7 +2875,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
-id download_percent
+id download_percent_tv
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2938,9 +2945,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageCard
 id imageView
 id imageView2
-id img_pdf
 id immediateStop
 id included
 id incorrectAnswerTV
@@ -2974,7 +2981,6 @@ id linearLayout3
 id linerlayout_download_frag
 id listMode
 id list_item
-id ll
 id load_pdf_display
 id masked
 id match_constraint
@@ -3035,6 +3041,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id myAdView
 id myAdViewPDFDisplay
+id native_ad_layout
 id nav_controller_view_tag
 id nav_host_fragment_container
 id navigation_bar_item_active_indicator_view
@@ -3401,6 +3408,7 @@ layout activity_notification
 layout activity_pdfdisplay
 layout activity_result
 layout activity_start_test
+layout ad_layout
 layout add_bottom_sheet
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3543,6 +3551,7 @@ string add
 string adding_to_path
 string admob_id_banner
 string admob_id_interstitial
+string admob_id_native
 string advanced_pdf_viewer
 string androidx_startup
 string app_name

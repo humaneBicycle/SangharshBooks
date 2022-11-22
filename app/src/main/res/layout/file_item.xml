@@ -6,7 +6,7 @@
     app:cardCornerRadius="16dp"
     android:background="@color/black"
     android:id="@+id/background_file_item"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="2dp"
     android:padding="8dp">
 
     <LinearLayout
@@ -51,6 +51,16 @@
                 />
 
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-30dp"
+            android:layout_gravity="end"
+            android:text="Open>"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:paddingEnd="15dp"
+            />
         <TextView
             android:layout_gravity="bottom"
             android:layout_width="wrap_content"
