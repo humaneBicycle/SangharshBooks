@@ -1,7 +1,9 @@
 package com.sangharsh.books.fragments;
 
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -14,13 +16,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.gson.Gson;
+import com.sangharsh.books.LoginActivity;
 import com.sangharsh.books.R;
+import com.sangharsh.books.ReferActivity;
+import com.sangharsh.books.Tools.CircleTransform;
+import com.sangharsh.books.model.User;
+import com.squareup.picasso.Picasso;
 
 public class AboutFragment extends Fragment {
 
@@ -28,10 +42,20 @@ public class AboutFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private TextView nameTxt;
+    private TextView phoneTxt;
+    private TextView signUpTxt;
+    private LinearLayout userInfoLayout;
+    private TextView editProfileTxt;
+    private ImageView profileImg;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_about, container, false);
+        findViews(v);
+        setUpViews();
+        showPoints();
         v.findViewById(R.id.rate_us).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +75,100 @@ public class AboutFragment extends Fragment {
 
 
         return v;
+    }
+
+    private void showPoints() {
+        User.getUser(new User.UserListener() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getActivity(), "Error fetching points: " + error, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onUserFound(User user) {
+                Log.i("AboutLog", new Gson().toJson(user));
+                if (user != null){
+                    phoneTxt.setText(user.getPoints() + " Points");
+                }
+            }
+        });
+    }
+
+    private void findViews(View view) {
+        MaterialButton logoutBtn = view.findViewById(R.id.logOutBtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirmLogout();
+            }
+        });
+
+        userInfoLayout = view.findViewById(R.id.userInfoLayout);
+        nameTxt = view.findViewById(R.id.nameTxt);
+        phoneTxt = view.findViewById(R.id.phoneNumTxt);
+        signUpTxt = view.findViewById(R.id.signUpTxt);
+        editProfileTxt = view.findViewById(R.id.editProfileTxt);
+        profileImg = view.findViewById(R.id.displayImg);
+
+        view.findViewById(R.id.referButton).setOnClickListener(view1 ->{
+            startActivity(new Intent(getActivity(), ReferActivity.class));
+        });
+
+    }
+
+    private void confirmLogout() {
+        String message = "Are you sure you want to logout?";
+        if (FirebaseAuth.getInstance().getCurrentUser().isAnonymous()){
+            message = message + "\nWARNING: You are logged in as anonymous user. You will loose all your progress once you logout.";
+        }
+        new AlertDialog.Builder(getActivity())
+                .setTitle("Log out")
+                .setMessage(message)
+                .setCancelable(true)
+                .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                        logout();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .show();
+
+    }
+
+    private void setUpViews() {
+        if (FirebaseAuth.getInstance().getCurrentUser().isAnonymous()){
+            editProfileTxt.setVisibility(View.GONE);
+            phoneTxt.setVisibility(View.GONE);
+            userInfoLayout.setOnClickListener(view -> login());
+        } else {
+            signUpTxt.setVisibility(View.GONE);
+            if (FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl() != null && !FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString().isEmpty())
+                Picasso.get()
+                        .load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl())
+                        .transform(new CircleTransform())
+                        .into(profileImg);
+            nameTxt.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+            phoneTxt.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+        }
+    }
+
+    private void login() {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        intent.putExtra("convertToPermanent", true);
+        startActivity(intent);
+    }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
+        getActivity().finish();
     }
 
     public void rateApp(){

@@ -24,6 +24,7 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.firebase.auth.FirebaseAuth;
 import com.sangharsh.books.adapter.ViewPagerAdapter;
 import com.sangharsh.books.fragments.AboutFragment;
 import com.sangharsh.books.fragments.BookmarksFragment;
@@ -59,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag 
             }
 
         super.onCreate(savedInstanceState);
+            if (FirebaseAuth.getInstance().getCurrentUser() == null){
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
+                return;
+            }
         setContentView(R.layout.activity_main);
         loadBanner();
 

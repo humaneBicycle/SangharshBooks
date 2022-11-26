@@ -1,298 +1,378 @@
 [
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_notifications_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_notifications_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_redbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/redbg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_downloads.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_downloads.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_bookmarks.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_bookmarks.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_gridtvbgred.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\gridtvbgred.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_layer_1.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_layer_1.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_bell.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_bell.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_file_item.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/file_item.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_home.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\font_poppinsregular.ttf.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\font\\poppinsregular.ttf"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_fragment_about.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/fragment_about.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\xml_provider_paths.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\xml\\provider_paths.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_greenoptionbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/greenoptionbg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-nodpi_backbtn.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-nodpi\\backbtn.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_gridtvbgred.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/gridtvbgred.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_home_icon.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_home_icon.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_refer.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_refer.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_greenoptionbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\greenoptionbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_tiny_stroke.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/tiny_stroke.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_ad_layout.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\ad_layout.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_login.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_graybg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\graybg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_mail_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_mail_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_about.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_about.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_fragment_home.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_notification_item.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\notification_item.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_arrow_circle_down_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_arrow_circle_down_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_pdf_item.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\pdf_item.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/font_poppins_semibold.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/font/poppins_semibold.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_gridtvbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\gridtvbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_cardviewblackbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/cardviewblackbg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_redbgforbtn.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\redbgforbtn.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_notificationn.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_notificationn.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_notification.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_notification.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-nodpi_timericon.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-nodpi/timericon.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-nodpi_quesmark.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-nodpi\\quesmark.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_downloads.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_downloads.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_notificationn.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_notificationn.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_menu_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_menu_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_tiny_stroke.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\tiny_stroke.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-nodpi_testwelcomebannertemplate.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-nodpi/testwelcomebannertemplate.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_bookmarks.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_bookmarks.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_profile.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_profile.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_result.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_result.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_bookmark_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_bookmark_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_main.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_arrow_back_ios_new_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_arrow_back_ios_new_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_blur_blue.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\blur_blue.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-nodpi_cross.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-nodpi/cross.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_bookmark_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_bookmark_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_long_click_options.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/long_click_options.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_long_click_options.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\long_click_options.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/xml_backup_rules.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_gridtvbggreen.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\gridtvbggreen.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_register.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\xml\\backup_rules.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_bookmark_border_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_bookmark_border_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_optionwhitbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\optionwhitbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-nodpi_quesmark.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-nodpi/quesmark.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_arrow_back_ios_new_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_arrow_back_ios_new_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_light_bell.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/light_bell.xml"
     },
     {
-        "merged": "com.sangharsh.books.app-merged_res-6:/layout_fragment_home.xml.flat",
-        "source": "com.sangharsh.books.app-main-8:/layout/fragment_home.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_optionwhitbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/optionwhitbg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_pdfdisplay.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_pdfdisplay.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_test_item.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/test_item.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_bookmark_border_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_bookmark_border_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_layer_3.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_layer_3.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_layer_3.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_layer_3.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_notifications_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_notifications_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_add_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_add_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_share_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_share_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_start_test.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_start_test.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_default_gradient.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/default_gradient.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_light_bell.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\light_bell.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-v24_bg_round_fg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-v24/bg_round_fg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_attempt_test.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_attempt_test.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_cardviewblackbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\cardviewblackbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-v24_ic_baseline_edit_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-v24/ic_baseline_edit_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_attempt_test.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_attempt_test.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-v24_notification_bell.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-v24/notification_bell.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_sangharsh.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_sangharsh.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_sangharsh.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_sangharsh.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_profile.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_profile.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_circle.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/circle.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_menu_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_menu_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_add_bottom_sheet.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\add_bottom_sheet.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_bell.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_bell.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_circle.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\circle.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_graybg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/graybg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_redbgstarttest.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\redbgstarttest.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_edittext_bg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/edittext_bg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_default_gradient.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\default_gradient.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_blur_blue.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/blur_blue.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_file_item.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\file_item.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_resultbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/resultbg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_test_item.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\test_item.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_notification.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_notification.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_back_arrow.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_back_arrow.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_ad_layout.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/ad_layout.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\menu_bottom_nav.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\menu\\bottom_nav.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_gridtvbggreen.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/gridtvbggreen.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_activity_file.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\activity_file.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/mipmap-mdpi_ic_launcher.jpeg.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/mipmap-mdpi/ic_launcher.jpeg"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_picture_as_pdf_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_picture_as_pdf_24.xml"
+        "merged": "com.sangharsh.books.app-merged_res-42:/layout_activity_refer.xml.flat",
+        "source": "com.sangharsh.books.app-main-44:/layout/activity_refer.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_banner.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_banner.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-v24_ic_baseline_navigate_next_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-v24/ic_baseline_navigate_next_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_redbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\redbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_google.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_google.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_layer_2.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_layer_2.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_layer_2.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_layer_2.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_downloads.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_downloads.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/xml_provider_paths.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/xml/provider_paths.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_arrow_circle_down_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_arrow_circle_down_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_start_test.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_start_test.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\mipmap-mdpi_ic_launcher.jpeg.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\mipmap-mdpi\\ic_launcher.jpeg"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_person_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_person_24.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-nodpi_cross.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-nodpi\\cross.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_pdf_item.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/pdf_item.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-v24_notification_bell.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-v24\\notification_bell.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_result.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_result.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\xml\\data_extraction_rules.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_selctedoptionbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/selctedoptionbg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_baseline_home_24.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_baseline_home_24.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-nodpi_backbtn.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-nodpi/backbtn.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-nodpi_testwelcomebannertemplate.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-nodpi\\testwelcomebannertemplate.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_back_arrow.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_back_arrow.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_launcher_background.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_pdfdisplay.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_pdfdisplay.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_resultbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\resultbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_notification_item.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/notification_item.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_question_testbox.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\question_testbox.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable-v24_studying_illustration.png.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable-v24/studying_illustration.png"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_selctedoptionbg.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\selctedoptionbg.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_btn_primary_dis_bg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/btn_primary_dis_bg.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-v24_studying_illustration.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-v24\\studying_illustration.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_item_rv_referral.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/item_rv_referral.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable-nodpi_timericon.png.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable-nodpi\\timericon.png"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/font_poppins.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/font/poppins.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\font_poppinsbold.ttf.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\font\\poppinsbold.ttf"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/font_poppinsregular.ttf.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/font/poppinsregular.ttf"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\drawable_ic_layer_1.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\drawable\\ic_layer_1.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_add_bottom_sheet.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/add_bottom_sheet.xml"
     },
     {
-        "merged": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-merged_res-6:\\layout_fragment_bookmarks.xml.flat",
-        "source": "C:\\Users\\abhay\\.gradle\\daemon\\7.4\\com.sangharsh.books.app-main-8:\\layout\\fragment_bookmarks.xml"
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_question_testbox.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/question_testbox.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_picture_as_pdf_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_picture_as_pdf_24.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_main.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_redbgstarttest.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/redbgstarttest.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_redbgforbtn.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/redbgforbtn.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_gridtvbg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/gridtvbg.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_add_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/font_poppins_medium.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/font/poppins_medium.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_fragment_downloads.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/fragment_downloads.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/font_poppinsbold.ttf.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/font/poppinsbold.ttf"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_home_icon.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_home_icon.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_activity_file.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/activity_file.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/menu_bottom_nav.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/menu/bottom_nav.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_lock_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_fragment_bookmarks.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/fragment_bookmarks.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/font_poppins_bold.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/font/poppins_bold.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_btn_primary_bg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/btn_primary_bg.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_ic_baseline_home_24.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/drawable_btn_secondary_bg.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/drawable/btn_secondary_bg.xml"
+    },
+    {
+        "merged": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-merged_res-42:/layout_fragment_banner.xml.flat",
+        "source": "/Users/adityarana/.gradle/daemon/7.4/com.sangharsh.books.app-main-44:/layout/fragment_banner.xml"
     }
 ]
