@@ -42,6 +42,7 @@ color teal_200
 color teal_700
 color white
 drawable backbtn
+drawable bg_card_trans
 drawable bg_round_fg
 drawable blur_blue
 drawable btn_primary_bg
@@ -206,6 +207,7 @@ id notification_item_title
 id notification_main_activity
 id notification_rv
 id numberTxt
+id openTxt
 id optionAIV
 id optionAResultLL
 id optionATV
@@ -231,6 +233,7 @@ id optionDTVResult
 id optionDTestIV
 id optionDTestLL
 id orTxt
+id paidLayout
 id passwordET
 id passwordLayout
 id path_bottom_sheet
@@ -244,6 +247,7 @@ id pdf_viewer
 id phoneNumTxt
 id pieChart
 id ppTxt
+id priceTxt
 id privacy_policy
 id processLayout
 id processTxt

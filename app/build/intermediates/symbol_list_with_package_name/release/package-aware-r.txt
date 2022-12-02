@@ -2549,6 +2549,7 @@ drawable admob_close_button_white_circle_black_cross
 drawable avd_hide_password
 drawable avd_show_password
 drawable backbtn
+drawable bg_card_trans
 drawable bg_round_fg
 drawable blur_blue
 drawable btn_checkbox_checked_mtrl
@@ -3137,6 +3138,7 @@ id numberTxt
 id off
 id on
 id onInterceptTouchReturnSwipe
+id openTxt
 id optionAIV
 id optionAResultLL
 id optionATV
@@ -3166,6 +3168,7 @@ id outline
 id outward
 id overshoot
 id packed
+id paidLayout
 id parallax
 id parent
 id parentPanel
@@ -3192,6 +3195,7 @@ id pin
 id position
 id postLayout
 id ppTxt
+id priceTxt
 id privacy_policy
 id processLayout
 id processTxt

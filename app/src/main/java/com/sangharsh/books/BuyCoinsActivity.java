@@ -31,12 +31,15 @@ import com.google.common.collect.ImmutableList;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 import com.sangharsh.books.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class BuyCoinsActivity extends AppCompatActivity {
@@ -229,11 +232,12 @@ public class BuyCoinsActivity extends AppCompatActivity {
             for (String sku: purchase.getProducts()){
                 totalPointsAdded = totalPointsAdded + points.get(sku);
             }
-            FirebaseDatabase.getInstance()
-                    .getReference("Users")
-                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                    .child("points")
-                    .setValue(ServerValue.increment(totalPointsAdded))
+            Map updates = new HashMap();
+            updates.put("points", FieldValue.increment(totalPointsAdded));
+            FirebaseFirestore.getInstance()
+                    .collection("Users")
+                    .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .update(updates)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -242,7 +246,7 @@ public class BuyCoinsActivity extends AppCompatActivity {
                                 retryTime = 0;
                                 purchasedSomething = true;
                                 inNormalState = true;
-                                final ConsumeParams consumeParams =
+                                ConsumeParams consumeParams =
                                         ConsumeParams.newBuilder()
                                                 .setPurchaseToken(purchase.getPurchaseToken())
                                                 .build();
@@ -253,14 +257,25 @@ public class BuyCoinsActivity extends AppCompatActivity {
                                         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                                             handlingPurchase = false;
                                             retryTime = 0;
-                                            progressBar.setVisibility(View.GONE);
-                                            Toast.makeText(BuyCoinsActivity.this, "Purchase successful!", Toast.LENGTH_SHORT).show();
-                                        } else {
+                                            runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    progressBar.setVisibility(View.GONE);
+                                                    Toast.makeText(BuyCoinsActivity.this, "Purchase successful!", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                            } else {
                                             if (retryTime >2){
                                                 handlingPurchase = false;
                                                 retryTime = 0;
-                                                progressBar.setVisibility(View.GONE);
-                                                Toast.makeText(BuyCoinsActivity.this, "\"Something went wrong! You will be refunded in 3 days if we do not credit points.\"", Toast.LENGTH_SHORT).show();
+
+                                                runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(BuyCoinsActivity.this, "\"Something went wrong! You will be refunded in 3 days if we do not credit points.\"", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                });
                                             } else {
                                                 retryTime++;
                                                 billingClient.consumeAsync(consumeParams, this);
