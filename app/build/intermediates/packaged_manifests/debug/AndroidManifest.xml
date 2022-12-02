@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sangharshbooks.test"
-    android:versionCode="33"
-    android:versionName="3.1" >
+    android:versionCode="100"
+    android:versionName="0.5" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -18,9 +18,15 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Permission will be merged into the manifest of the hosting app. -->
     <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Android package visibility setting -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <!--
+    This has been added to conform with requirement from Android 11 (API level 30) onwards
+    (http://screen/9iGdBMRWDmVbRJ6), after getting confirmation in http://yaqs/995038231927980032#a1
+    -->
     <queries>
-
+        <intent>
+            <action android:name="com.android.vending.billing.InAppBillingService.BIND" />
+        </intent>
         <!-- For browser content -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -28,15 +34,14 @@
             <category android:name="android.intent.category.BROWSABLE" />
 
             <data android:scheme="https" />
-        </intent>
-        <!-- End of browser content -->
+        </intent> <!-- End of browser content -->
         <!-- For CustomTabsService -->
         <intent>
             <action android:name="android.support.customtabs.action.CustomTabsService" />
         </intent>
-        <!-- End of CustomTabsService -->
     </queries>
 
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -52,8 +57,14 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Light" >
+        <activity
+            android:name="com.sangharsh.books.BuyCoinsActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="com.sangharsh.books.ReferActivity"
             android:exported="false" >
@@ -263,6 +274,15 @@
             android:authorities="com.sangharshbooks.test.com.squareup.picasso"
             android:exported="false" />
 
+        <meta-data
+            android:name="com.google.android.play.billingclient.version"
+            android:value="5.1.0" />
+
+        <activity
+            android:name="com.android.billingclient.api.ProxyBillingActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

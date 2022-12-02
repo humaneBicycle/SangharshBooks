@@ -17,7 +17,7 @@
             android:id="@+id/back_pdf_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
+            android:layout_marginStart="6dp"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="18dp"
             android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
@@ -54,11 +54,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-    <com.sangharsh.books.PDFView
-        android:id="@+id/pdf_viewer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <com.sangharsh.books.PdfView.PDFView
+            android:id="@+id/pdf_viewer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/myAdViewPDFDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="@string/admob_id_banner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.gms.ads.AdView>
 
     <ProgressBar
         android:id="@+id/load_pdf_display"

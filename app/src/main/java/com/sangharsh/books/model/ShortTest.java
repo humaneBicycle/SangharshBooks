@@ -11,6 +11,19 @@ public class ShortTest {
     public ShortTest() {
     }
 
+    boolean isPaid;
+    int price;
+
+
+    public boolean isPaid(){
+        return isPaid;
+    }
+
+
+    public int getPrice() {
+        return price;
+    }
+
     public String getId() {
         return id;
     }

@@ -4,7 +4,7 @@
             "outputFile": "com.sangharsh.books.app-mergeDebugResources-40:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/adityarana/.gradle/caches/transforms-3/f2c5b9852ee38276c46ae3a3660ceb0f/transformed/jetified-play-services-auth-20.1.0/res/values-watch-v20/values.xml",
+                    "source": "/Users/adityarana/.gradle/caches/transforms-3/8de9deabc059028feff529e89e41e370/transformed/jetified-play-services-auth-20.1.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/adityarana/.gradle/caches/transforms-3/e1aa22b9b5258d9cfb34103051fa4440/transformed/appcompat-1.4.2/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/adityarana/.gradle/caches/transforms-3/02701d040aeacf94d2fb4ebd606ae8ba/transformed/appcompat-1.4.2/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

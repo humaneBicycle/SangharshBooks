@@ -9,8 +9,14 @@
     android:layout_marginTop="2dp"
     android:padding="4dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -76,6 +82,8 @@
                     android:id="@+id/pdf_item_download_seekbar"
                     android:visibility="gone"/>
                 <TextView
+                    android:id="@+id/openTxt"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-30dp"
@@ -102,5 +110,38 @@
             android:layout_marginTop="-15dp"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="@id/mainLayout"
+        app:layout_constraintEnd_toEndOf="@id/mainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paidLayout"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_card_trans">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins"
+            android:textSize="18sp"
+            android:text="$199"
+            android:id="@+id/priceTxt" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_baseline_lock_24" />
+    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

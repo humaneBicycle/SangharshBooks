@@ -2549,6 +2549,7 @@ drawable admob_close_button_white_circle_black_cross
 drawable avd_hide_password
 drawable avd_show_password
 drawable backbtn
+drawable bg_card_trans
 drawable bg_round_fg
 drawable blur_blue
 drawable btn_checkbox_checked_mtrl
@@ -2616,6 +2617,7 @@ drawable ic_baseline_picture_as_pdf_24
 drawable ic_baseline_share_24
 drawable ic_bell
 drawable ic_bookmarks
+drawable ic_buy_coins
 drawable ic_clock_black_24dp
 drawable ic_downloads
 drawable ic_google
@@ -2839,6 +2841,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id buyCoinsBtn
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2868,6 +2871,9 @@ id clockwise
 id closest
 id codeLayout
 id codeTxt
+id coins_10000
+id coins_1500
+id coins_5000
 id collapseActionView
 id compress
 id confirmPassEt
@@ -3132,6 +3138,7 @@ id numberTxt
 id off
 id on
 id onInterceptTouchReturnSwipe
+id openTxt
 id optionAIV
 id optionAResultLL
 id optionATV
@@ -3161,6 +3168,7 @@ id outline
 id outward
 id overshoot
 id packed
+id paidLayout
 id parallax
 id parent
 id parentPanel
@@ -3187,6 +3195,7 @@ id pin
 id position
 id postLayout
 id ppTxt
+id priceTxt
 id privacy_policy
 id processLayout
 id processTxt
@@ -3491,6 +3500,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attempt_test
+layout activity_buy_coins
 layout activity_file
 layout activity_login
 layout activity_main

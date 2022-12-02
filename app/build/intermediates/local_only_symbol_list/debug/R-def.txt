@@ -42,6 +42,7 @@ color teal_200
 color teal_700
 color white
 drawable backbtn
+drawable bg_card_trans
 drawable bg_round_fg
 drawable blur_blue
 drawable btn_primary_bg
@@ -75,6 +76,7 @@ drawable ic_baseline_picture_as_pdf_24
 drawable ic_baseline_share_24
 drawable ic_bell
 drawable ic_bookmarks
+drawable ic_buy_coins
 drawable ic_downloads
 drawable ic_google
 drawable ic_home_icon
@@ -136,9 +138,13 @@ id bottomBtnLinearLayoutDuringGrid
 id bottomBtnsLinearLayout
 id bottomLayout
 id bottom_sheet_add_button
+id buyCoinsBtn
 id cardView
 id codeLayout
 id codeTxt
+id coins_10000
+id coins_1500
+id coins_5000
 id confirmPassEt
 id confirmPasswordLayout
 id continueBtn
@@ -159,6 +165,7 @@ id file_name_edittext
 id googleBtn
 id gridTV
 id header
+id header_title
 id header_tv
 id imageCard
 id imageView
@@ -200,6 +207,7 @@ id notification_item_title
 id notification_main_activity
 id notification_rv
 id numberTxt
+id openTxt
 id optionAIV
 id optionAResultLL
 id optionATV
@@ -225,6 +233,7 @@ id optionDTVResult
 id optionDTestIV
 id optionDTestLL
 id orTxt
+id paidLayout
 id passwordET
 id passwordLayout
 id path_bottom_sheet
@@ -238,6 +247,7 @@ id pdf_viewer
 id phoneNumTxt
 id pieChart
 id ppTxt
+id priceTxt
 id privacy_policy
 id processLayout
 id processTxt
@@ -300,6 +310,7 @@ id welcome_header
 id welcome_txt
 id yourCode
 layout activity_attempt_test
+layout activity_buy_coins
 layout activity_file
 layout activity_login
 layout activity_main

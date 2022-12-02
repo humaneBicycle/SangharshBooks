@@ -11,6 +11,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +30,8 @@ import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
+import com.sangharsh.books.BuyCoinsActivity;
+import com.sangharsh.books.LiveData.UserData;
 import com.sangharsh.books.LoginActivity;
 import com.sangharsh.books.R;
 import com.sangharsh.books.ReferActivity;
@@ -78,18 +81,10 @@ public class AboutFragment extends Fragment {
     }
 
     private void showPoints() {
-        User.getUser(new User.UserListener() {
+        UserData.getUserLiveData().observe(getActivity(), new Observer<User>() {
             @Override
-            public void onError(String error) {
-                Toast.makeText(getActivity(), "Error fetching points: " + error, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onUserFound(User user) {
-                Log.i("AboutLog", new Gson().toJson(user));
-                if (user != null){
-                    phoneTxt.setText(user.getPoints() + " Points");
-                }
+            public void onChanged(User user) {
+                phoneTxt.setText(user.getPoints() + " Coins");
             }
         });
     }
@@ -112,6 +107,9 @@ public class AboutFragment extends Fragment {
 
         view.findViewById(R.id.referButton).setOnClickListener(view1 ->{
             startActivity(new Intent(getActivity(), ReferActivity.class));
+        });
+        view.findViewById(R.id.buyCoinsBtn).setOnClickListener(view1 ->{
+            startActivity(new Intent(getActivity(), BuyCoinsActivity.class));
         });
 
     }

@@ -286,6 +286,7 @@ public class LoginActivity extends AppCompatActivity {
         mainLayout = findViewById(R.id.mainLayout);
         referralLayout = findViewById(R.id.referralLayout);
         mainLayout.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
         referralLayout.setVisibility(View.VISIBLE);
 
          continueBtn = findViewById(R.id.continueBtn);
@@ -511,6 +512,14 @@ public class LoginActivity extends AppCompatActivity {
             newUser = true;
             User user = new User(fuser.getUid(), System.currentTimeMillis());
             user.setUid(task.getResult().getUser().getUid());
+            FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
+            if (u.getEmail() != null)
+                user.setEmail(u.getEmail());
+            if (u.getPhotoUrl() != null)
+                user.setPhotoUrl(u.getPhotoUrl().toString());
+            if (u.getDisplayName() != null)
+                user.setPhotoUrl(u.getDisplayName());
+
             String androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
             user.setDeviceId(androidId);
             FirebaseFirestore.getInstance()

@@ -7,6 +7,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.sangharsh.books.LiveData.UserData;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,24 @@ public class User {
     String referredBy;
     String referralId;
     String deviceId;
+    String email;
+    String photoUrl;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
 
     private int points;
 
@@ -49,16 +68,8 @@ public class User {
 
     private static User mUser;
 
-    public interface UserListener{
-        void onUserFound(User user);
-        default void onError(String error){}
-    }
-    public static void getUser(UserListener listener){
-        if (mUser != null) {
-            listener.onUserFound(mUser);
-            return;
-        }
-
+    public static void refresh(){
+        mUser = null;
         FirebaseFirestore.getInstance()
                 .collection("Users")
                 .document(FirebaseAuth.getInstance()
@@ -67,15 +78,14 @@ public class User {
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isComplete()){
+                        if (task.isSuccessful()){
                             mUser = task.getResult().toObject(User.class);
-                            listener.onUserFound(mUser);
-                        } else {
-                            listener.onError(task.getException().getMessage());
+                            UserData.setUser(mUser);
                         }
                     }
                 });
     }
+
 
     public User() {
     }

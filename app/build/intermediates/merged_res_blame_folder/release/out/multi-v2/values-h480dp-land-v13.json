@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.sangharsh.books.app-mergeReleaseResources-4:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
+            "outputFile": "com.sangharsh.books.app-mergeReleaseResources-40:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\812940354306482eb4133cbd6aa2c3fc\\transformed\\material-1.6.1\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "/Users/adityarana/.gradle/caches/transforms-3/f51c270c24c1c503cbd6390662a533a9/transformed/material-1.6.1/res/values-h480dp-land-v13/values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

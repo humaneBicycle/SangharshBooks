@@ -4,15 +4,15 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.sangharsh.books.rrb",
+  "applicationId": "com.sangharshbooks.test",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.0",
+      "versionCode": 100,
+      "versionName": "0.5",
       "outputFile": "AndroidManifest.xml"
     }
   ],

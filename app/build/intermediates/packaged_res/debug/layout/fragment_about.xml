@@ -157,6 +157,25 @@
                 android:drawableRight="@drawable/ic_baseline_navigate_next_24"
                 style="@style/ThemeOverlay.Material3.Button.TextButton" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_secondary_txt" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buyCoinsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buy Coins"
+                android:textAllCaps="false"
+                android:fontFamily="@font/poppins"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textAlignment="textStart"
+                android:background="@android:color/transparent"
+                android:textColor="@color/color_primary_txt"
+                android:drawableRight="@drawable/ic_baseline_navigate_next_24"
+                style="@style/ThemeOverlay.Material3.Button.TextButton" />
+
 
 
             <LinearLayout
