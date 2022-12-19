@@ -1635,10 +1635,10 @@
     <string name="adding_to_path">Adding to Path</string>
     <string name="admob_id_banner">ca-app-pub-6764809003226506/3721076717</string>
     <string name="admob_id_interstitial">ca-app-pub-6764809003226506/5240944462</string>
-    <string name="admob_id_native">ca-app-pub-6764809003226506/3721076717</string>
+    <string name="admob_id_native">ca-app-pub-6764809003226506/9894862508</string>
     <string name="advanced_pdf_viewer">Advanced PDF Viewer</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
-    <string name="app_name">CTET previous year question bank with answers key</string>
+    <string name="app_name">Sangharsh Quiz and PDF</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="basic_pdf_viewer">Basic PDF Viewer</string>
     <string name="bookmark">Bookmark</string>
