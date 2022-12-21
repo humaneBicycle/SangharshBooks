@@ -120,30 +120,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         this.sangharshBooks = sangharshBooks;
         this.uiUpdaterHomeFrag = uiUpdateHomeFrag;
-//        inflateColors();
-//        inflateLayers();
     }
-
-//    private void inflateColors(){
-//        if(colors==null) {
-//            colors = new ArrayList<>();
-//        }
-//        colors.add(R.color.my_green);
-//        colors.add(R.color.my_blue);
-//        colors.add(R.color.my_red);
-//        colors.add(R.color.my_yellow);
-//        colors.add(R.color.my_skyblue);
-//
-//    }
-
-//    private void inflateLayers(){
-//        if(layers==null) {
-//            layers = new ArrayList<>();
-//        }
-//        layers.add(R.drawable.ic_layer_1);
-//        layers.add(R.drawable.ic_layer_2);
-//        layers.add(R.drawable.ic_layer_3);
-//    }
 
     @NonNull
     @Override
@@ -154,7 +131,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }else if(viewType==TYPE_PDF){
             View view = LayoutInflater.from(context).inflate(R.layout.pdf_item,new LinearLayout(context),false);
             return new PDFVIewHolder(view);
-
         }else if(viewType==TYPE_TEST){
             View view = LayoutInflater.from(context).inflate(R.layout.test_item,new LinearLayout(context),false);
             return new TestHolder(view);
@@ -673,7 +649,6 @@ public class DirectoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             root = itemView.findViewById(R.id.pdf_item_background);
             seekBar = itemView.findViewById(R.id.pdf_item_download_seekbar);
             downloadPercentTV = itemView.findViewById(R.id.download_percent_tv);
-//            llBG = itemView.findViewById(R.id.ll);
 
             lockLayout = itemView.findViewById(R.id.paidLayout);
             openTxt = itemView.findViewById(R.id.openTxt);
