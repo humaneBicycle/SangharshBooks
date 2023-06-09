@@ -9,6 +9,25 @@ public class FileModel {
 
     public FileModel(){}
 
+    boolean isPaid;
+    int price;
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public FileModel(String name, String pointingDirId) {
         this.name = name;
         this.pointingDirId = pointingDirId;

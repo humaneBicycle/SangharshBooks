@@ -2,21 +2,21 @@
     <!-- Base application theme. -->
     <style name="Theme.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/redBtnBg</item>
+        <item name="colorPrimaryVariant">#353535</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="backgroundColorTheme">#FFFFFF</item>
-        <item name="textColorTheme">#000000</item>
-        <item name="bottom_bar">#173535</item>
-        <item name="bottom_bar_indicator">#86727878</item>
-        <item name="image_background">#B1BDBD</item>
-        <item name="test_color_sub">#4F5555</item>
+        <item name="backgroundColorTheme">#000000</item>
+        <item name="textColorTheme">#FFFFFF</item>
+        <item name="bottom_bar">#E8E7FA</item>
+        <item name="bottom_bar_indicator">#3CADB1B3</item>
+        <item name="image_background">#19191B</item>
+        <item name="test_color_sub">#B8C6C6</item>
     </style>
 </resources>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#191919"
+    android:layout_height="match_parent"
+    tools:context=".ReferActivity">
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/myProgressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:animateLayoutChanges="true"
+        android:id="@+id/paymentsLayout"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header"
+            android:textColor="@color/redBtnBg"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="28sp"
+            android:text="Redeem Your Rewards" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/selectMethodTxt"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:text="Select Payment Option" />
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:id="@+id/methodLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bankViewBtn"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:text="Bank"
+                android:textColor="@color/redBtnBg"
+                android:textAllCaps="false"
+                android:background="@drawable/btn_secondary_bg" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:id="@+id/upiViewBtn"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:textColor="@color/redBtnBg"
+                android:text="UPI"
+                android:textAllCaps="false"
+                android:background="@drawable/btn_secondary_bg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/bankLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_marginTop="16dp"
+                android:id="@+id/bankName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/edittext_bg"
+                android:hint="Account holder's name"/>
+
+            <EditText
+                android:layout_marginTop="16dp"
+                android:id="@+id/bankAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:inputType="number"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Account number"/>
+
+            <EditText
+                android:layout_marginTop="16dp"
+                android:id="@+id/bankIfsc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:inputType="text"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:background="@drawable/edittext_bg"
+                android:hint="IFSC code"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bankBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:text="Request Payment"
+                android:padding="12dp"
+                app:cornerRadius="15dp"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/my_blue"
+                android:layout_marginTop="32dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins"
+                android:text="Note: Please fill the form carefully. Mistakes cannot be corrected. Sangharsh
+holds no liability for payments sent to wrong accounts due to your mistakes." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/upiLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_marginTop="16dp"
+                android:id="@+id/upiId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/edittext_bg"
+                android:hint="UPI ID"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/upiButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:text="Request Payment"
+                android:padding="12dp"
+                app:cornerRadius="15dp"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/my_blue"
+                android:layout_marginTop="32dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins"
+                android:text="Note: Please fill the form carefully. Mistakes cannot be corrected. Sangharsh
+holds no liability for payments sent to wrong accounts due to your mistakes." />
+
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingTop="16dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:layout_marginStart="16dp"
+                android:paddingEnd="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:id="@+id/header_tv"
+                android:textColor="@color/redBtnBg"
+                android:text="Refer and Earn" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:srcCompat="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:padding="16dp"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/infoTxt"
+                android:textAlignment="center"
+                android:textColor="@color/color_secondary_txt"
+                android:text="@string/referrHeader"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/referralLayout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/codeLayout"
+                    android:layout_width="wrap_content"
+                    android:padding="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins"
+                        android:id="@+id/yourCode"
+                        android:textAlignment="center"
+                        android:textColor="@color/color_secondary_txt"
+                        android:text="Your Code" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="28sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:id="@+id/codeTxt"
+                        android:textColor="@color/redBtnBg"
+                        android:text="X0EA4D" />
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/shareBtn"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/btn_primary_bg"
+                    android:text="Share"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="28sp"
+                    android:textAllCaps="false"
+                    android:drawableLeft="@drawable/ic_baseline_share_24"
+                    android:padding="8dp"
+                    android:drawableTint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    app:cornerRadius="15dp"
+                    android:drawablePadding="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/referredDetailsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="28sp"
+                        android:layout_marginStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:id="@+id/subHead"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/black"
+                        android:text="Your Referrals" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:padding="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:visibility="gone"
+                        android:id="@+id/redeemBtn"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/btn_primary_bg"
+                        android:text="Redeem"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="28sp"
+                        android:textAllCaps="false"
+                        android:padding="8dp"
+                        android:textColor="@android:color/white"
+                        app:cornerRadius="15dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/processLayout"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:padding="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:id="@+id/processTxt"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_secondary_txt"
+                    android:text="Please wait while we load your referral id" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progressBar"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

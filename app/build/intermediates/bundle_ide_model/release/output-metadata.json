@@ -4,7 +4,7 @@
     "type": "BUNDLE",
     "kind": "RegularFile"
   },
-  "applicationId": "com.sangharsh.books.rrb",
+  "applicationId": "com.sangharshbooks.test",
   "variantName": "release",
   "elements": [
     {
