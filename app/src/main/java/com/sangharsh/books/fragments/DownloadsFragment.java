@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class DownloadsFragment extends Fragment {
 
     RecyclerView recyclerView;
-    //LinearLayout linearLayout;
     ArrayList<PDFModel> pdfModels;
     PDFAdapter pdfAdapter;
 
