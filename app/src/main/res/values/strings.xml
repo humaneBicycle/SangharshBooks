@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CTET previous year question bank with answers key</string>
+    <string name="app_name">Sangharsh Quiz and PDF</string>
     <string name="good">Good</string>
     <string name="morning">Morning!</string>
     <string name="evening">Evening!</string>
@@ -10,6 +10,14 @@
     <string name="bookmarks">Bookmarks</string>
     <string name="night_mode">Night Mode</string>
     <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="understand">I understand/मै समझ गया</string>
+    <string name="referrHeader">By sharing Sangharsh Quiz and PDF with your friends you can earn up to 100 coins per sign up. You can use these coins to further purchase PDFs and quizzes available on our app.</string>
+    <string name="referredAccountHeader">आपके कोड से जुड़े हुए उपयोगकर्ताओं की सूची यहां दिखाई देगी, उपरोक्त बटन दबाकर अपना कोड साझा करें</string>
+    <string name="withdrawalNotice">कृपया प्रतीक्षा करें ; हमारी टीम आपके लिए प्रतिबद्ध है ; समीक्षा के तुरंत बाद ( 24 घंटे के अंदर)  ही आपको आपकी राशि का भुगतान कर दिया जाएगा</string>
+    <string name="noDoubtAccess">आपने कोई  कोर्स नहीं खरीदा है।\n\nकेवल वे उपयोगकर्ता जिन्होंने कम से कम एक कोर्स खरीदा है, हमसे मदद ले सकते हैं । यह बॉट और स्पैमर को हमारे प्रीमियम इनबॉक्स में आने से रोकने के लिए है।</string>
+
+
     <string name="privacy_policy_link">https://privacypolicy5684.blogspot.com/2022/09/privacy-policy-for-ctet-previous-year.html</string>
     <string name="about_us">About Us</string>
     <string name="advanced_pdf_viewer">Advanced PDF Viewer</string>
@@ -27,6 +35,7 @@
     <string name="bookmark">Bookmark</string>
     <string name="rate_us">Rate Us</string>
     <string name="admob_id_banner">ca-app-pub-6764809003226506/3721076717</string>
+    <string name="admob_id_native">ca-app-pub-6764809003226506/9894862508</string>
     <string name="admob_id_interstitial">ca-app-pub-6764809003226506/5240944462</string>
     <string name="version">1.0.0</string>
     <!-- TODO: Remove or change this placeholder text -->

@@ -24,6 +24,7 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.firebase.auth.FirebaseAuth;
 import com.sangharsh.books.adapter.ViewPagerAdapter;
 import com.sangharsh.books.fragments.AboutFragment;
 import com.sangharsh.books.fragments.BookmarksFragment;
@@ -59,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag 
             }
 
         super.onCreate(savedInstanceState);
+            if (FirebaseAuth.getInstance().getCurrentUser() == null){
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
+                return;
+            }
         setContentView(R.layout.activity_main);
         loadBanner();
 
@@ -81,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag 
     }
 
     private void loadAd(){
+        Log.i(TAG, "loadAd: sba load interstitial ad called");
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(this,getString(R.string.admob_id_interstitial), adRequest,
                 new InterstitialAdLoadCallback() {
@@ -183,14 +190,15 @@ public class MainActivity extends AppCompatActivity implements UIUpdateHomeFrag 
 
     @Override
     protected void onResume() {
-        if (mInterstitialAd != null && sangharshBooks.getAdCount()%2==0) {
+        if (mInterstitialAd != null) {
             mInterstitialAd.show(MainActivity.this);
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.");
-        }
-        if(sangharshBooks.getAdCount()%2!=0){
             loadAd();
         }
+//        if(sangharshBooks.getAdCount()%2!=0){
+//            loadAd();
+//        }
         super.onResume();
     }
 

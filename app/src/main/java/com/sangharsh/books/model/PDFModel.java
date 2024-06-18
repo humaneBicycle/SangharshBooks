@@ -8,6 +8,19 @@ public class PDFModel {
     String pointingDir;
     boolean isBookMarked;
 
+    boolean isPaid;
+    int price;
+
+
+    public boolean isPaid(){
+        return isPaid;
+    }
+
+
+    public int getPrice() {
+        return price;
+    }
+
     public boolean isBookMarked() {
         return isBookMarked;
     }

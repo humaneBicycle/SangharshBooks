@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import com.sangharsh.books.model.Question
 import com.sangharsh.books.model.Test
+import com.squareup.picasso.Picasso
 
 class StartTest : AppCompatActivity() {
     lateinit var test: Test
@@ -35,7 +36,7 @@ class StartTest : AppCompatActivity() {
     lateinit var topTitleTV:TextView
     lateinit var question: Question
     lateinit var startTestActivityFinish : ImageView
-    private var mInterstitialAd: InterstitialAd? = null
+    lateinit var testBannerIV : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +48,7 @@ class StartTest : AppCompatActivity() {
         timerTV = findViewById(R.id.timerTV)
         topTitleTV = findViewById(R.id.topTitleTV)
         startTestActivityFinish = findViewById(R.id.startTestActivityFinishBtn)
+        testBannerIV = findViewById(R.id.testBannerIV)
         question = Question()
         startTestActivityFinish.setOnClickListener(View.OnClickListener {
             finish()
@@ -77,11 +79,6 @@ class StartTest : AppCompatActivity() {
                     currentTestDescription = test.testDescription.toString()
                     noOfQues = (test.questions.size)
                     timeAllowed = test.timeAllowed.toString()
-//                    test.testTitle = test.questions[index].question.toString()
-//                    Log.i("adi", currentTestTitle)
-//                    Log.i("adi", currentTestDescription)
-//                    Log.i("adi", noOfQues.toString())
-//                    Log.i("adi", test.timeAllowed.toString())
                     for (index in 0.. noOfQues-1){
                     Log.i("adi test", test.questions.get(index).question.toString())}
                     if (currentTestTitle.isNotEmpty()){
@@ -98,22 +95,21 @@ class StartTest : AppCompatActivity() {
                     if (timeAllowed.isNotEmpty()){
                         timerTV.text = timeAllowed
                     }
+                    if(test.testBannerUrl != null){
+                        Picasso.get().load(test.testBannerUrl).into(testBannerIV)
+                    }
                     pd.dismiss()
                 }
             }
         }
 
-        MobileAds.initialize(this) {}
 
+        MobileAds.initialize(this) {}
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
 
-
-    //TODO hide loading screen --> done
-    // startTest test obj->
-    // attemptTest (serializable)
 
 }
 

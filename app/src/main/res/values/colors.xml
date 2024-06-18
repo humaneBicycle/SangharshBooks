@@ -9,6 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="greenPrimary">#337585</color>
 
+    <color name="color_primary_txt">#FFFFFF</color>
+    <color name="color_secondary_txt">#7D7B8C</color>
+
+    <color name="color_bg">#171431</color>
+    <color name="color_fg">#222047</color>
+    <color name="color_cta">#5468FF</color>
+
     <color name="my_green">#6CEA31</color>
     <color name="my_yellow">#F0E77B</color>
     <color name="my_red">#FB766A</color>

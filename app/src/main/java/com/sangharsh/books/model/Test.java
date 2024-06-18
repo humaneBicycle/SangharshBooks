@@ -7,8 +7,27 @@ public class Test implements Serializable {
     String testTitle;
     String testDescription;
     String id;
+    String testBannerUrl;
     int noOfQuestion;
     int timeAllowed;
+
+    boolean isPaid;
+    int price;
+    public boolean isPaid(){
+        return isPaid;
+    }
+    public int getPrice() {
+        return price;
+    }
+
+
+    public String getTestBannerUrl() {
+        return testBannerUrl;
+    }
+
+    public void setTestBannerUrl(String testBannerUrl) {
+        this.testBannerUrl = testBannerUrl;
+    }
 
     public int getTimeAllowed() {
         return timeAllowed;

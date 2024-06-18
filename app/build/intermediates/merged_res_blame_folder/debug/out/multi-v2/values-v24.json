@@ -4,17 +4,7 @@
             "outputFile": "com.sangharsh.books.app-mergeDebugResources-4:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\e1aa22b9b5258d9cfb34103051fa4440\\transformed\\appcompat-1.4.2\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\36962689b2a0ebd66f3b055087b6440c\\transformed\\material-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\f51c270c24c1c503cbd6390662a533a9\\transformed\\material-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\abhay\\.gradle\\caches\\transforms-3\\02701d040aeacf94d2fb4ebd606ae8ba\\transformed\\appcompat-1.4.2\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

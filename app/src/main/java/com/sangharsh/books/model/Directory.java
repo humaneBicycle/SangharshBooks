@@ -9,6 +9,18 @@ public class Directory {
     ArrayList<ShortTest> tests;
     String name;
     String path;
+    boolean isPaid;
+    int price;
+
+
+    public boolean isPaid(){
+        return isPaid;
+    }
+
+
+    public int getPrice() {
+        return price;
+    }
 
     public int getDepth() {
         return depth;

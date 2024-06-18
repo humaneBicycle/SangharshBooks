@@ -1,13 +1,12 @@
 package com.sangharsh.books
 
+import android.content.ContentValues
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.GridLayout
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.github.mikephil.charting.animation.Easing
@@ -17,32 +16,52 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.MPPointF
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.gson.Gson
 import com.sangharsh.books.model.Test
+import com.squareup.picasso.Picasso
 import java.lang.String
+
 
 class ResultActivity : AppCompatActivity() {
     lateinit var currTest:Test
     var settingOptionNo:Int = 0
     lateinit var titleTV :TextView
-    lateinit var correctAnswerTV :TextView
-    lateinit var incorrectAnswerTV :TextView
-    lateinit var unattemptedTV :TextView
-    lateinit var backBtnImg :ImageView
+    private lateinit var correctAnswerTV :TextView
+    private lateinit var incorrectAnswerTV :TextView
+    private lateinit var unattemptedTV :TextView
+    private lateinit var backBtnImg :ImageView
+    private lateinit var questionIV :ImageView
+    private lateinit var optionAIV :ImageView
+    private lateinit var optionBIV :ImageView
+    private lateinit var optionCIV :ImageView
+    private lateinit var optionDIV :ImageView
     lateinit var gridL: GridLayout
-    lateinit var tv : View
+    lateinit var resultScrollView: ScrollView
+    lateinit var questionTVResult: TextView
+    lateinit var optionATVResult: TextView
+    lateinit var optionBTVResult: TextView
+    lateinit var optionCTVResult: TextView
+    lateinit var optionDTVResult: TextView
+    lateinit var optionAResultLL : LinearLayout
+    lateinit var optionBResultLL : LinearLayout
+    lateinit var optionCResultLL : LinearLayout
+    lateinit var optionDResultLL : LinearLayout
+    lateinit var questionsResultLL : LinearLayout
+    lateinit var resultLL : LinearLayout
+    lateinit var backBtnLL : LinearLayout
+    private lateinit var tv : View
     lateinit var selectedOptions:HashMap<String,Int>
     var correctAnswers :Int =0
     var incorrectAnswers :Int =0
     var unattemptedQuestions :Int =0
     private lateinit var test: Test
     lateinit var pieChart: PieChart
-    private var answers = java.util.HashMap<Int, Int>()
-    lateinit var mAdView:AdView
+    lateinit var mAdView : AdView
+    lateinit var mAdView2 : AdView
+    var mInterstitialAd:InterstitialAd? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +73,35 @@ class ResultActivity : AppCompatActivity() {
         unattemptedTV = findViewById(R.id.unattemptedTV)
         backBtnImg = findViewById(R.id.backBtnImg)
         gridL = findViewById(R.id.quesDrawerGrid)
+        questionIV = findViewById(R.id.questionIV)
+        optionAIV = findViewById(R.id.optionAIV)
+        optionBIV = findViewById(R.id.optionBIV)
+        optionCIV = findViewById(R.id.optionCIV)
+        optionDIV = findViewById(R.id.optionDIV)
+        resultScrollView = findViewById(R.id.resultScrollView)
+        questionTVResult = findViewById(R.id.questionTVResult)
+        optionATVResult = findViewById(R.id.optionATVResult)
+        optionBTVResult = findViewById(R.id.optionBTVResult)
+        optionCTVResult = findViewById(R.id.optionCTVResult)
+        optionDTVResult = findViewById(R.id.optionDTVResult)
+        optionAResultLL = findViewById(R.id.optionAResultLL)
+        optionBResultLL = findViewById(R.id.optionBResultLL)
+        optionCResultLL = findViewById(R.id.optionCResultLL)
+        optionDResultLL = findViewById(R.id.optionDResultLL)
+        questionsResultLL = findViewById(R.id.questionsResultLL)
+        resultLL = findViewById(R.id.resultLL)
+        backBtnLL = findViewById(R.id.backBtnLL)
+
+
+
+        loadAd()
+
+
         test = Gson().fromJson(intent.getStringExtra("TEST"), Test::class.java)
+
+        for(index in 1..test.questions.size) {
+            showImages(index)
+        }
 
 
         backBtnImg.setOnClickListener(View.OnClickListener {
@@ -68,7 +115,7 @@ class ResultActivity : AppCompatActivity() {
         titleTV.text = currTest.testTitle
 
         for (index in 1 .. currTest.questions.size) {
-                compareCorrectOption(index)
+            compareCorrectOption(index)
         }
 
 
@@ -82,25 +129,91 @@ class ResultActivity : AppCompatActivity() {
             tv.tag = index
             gridL.addView(tv)
             gridL.findViewWithTag<TextView>(index).text= index.toString()
+            tv.setOnClickListener(View.OnClickListener {
+                resultLL.visibility= View.GONE
+                questionsResultLL.visibility = View.VISIBLE
+                resultScrollView.visibility = View.VISIBLE
+                backBtnLL.visibility = View.VISIBLE
+                setQuestionInLayout(index)
+                setOptionsUI(index)
+                setCorrectOptionUI(index)
+            })
         }
 
-        Log.i("compare",currTest.questions[0].correctOption.toString() )
-        Log.i("compare",currTest.questions[0].correctOption.toString() )
-        Log.i("compare",currTest.noOfQuestion.toString() )
-        Log.i("compare",correctAnswers.toString() )
-        Log.i("result","Unattempted : ${unattemptedQuestions}" )
-        Log.i("result","Correct : ${correctAnswers}" )
-        Log.i("result","Incorrect : ${incorrectAnswers}" )
-        Log.i("result","selected : $selectedOptions" )
 
         pieChart()
         showGridLayout()
-
         MobileAds.initialize(this) {}
 
         mAdView = findViewById(R.id.adView)
+        mAdView2 = findViewById(R.id.adView2)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+        mAdView2.loadAd(adRequest)
+
+        backBtnLL.setOnClickListener(View.OnClickListener {
+            resultLL.visibility = View.VISIBLE
+            questionsResultLL.visibility = View.GONE
+            backBtnLL.visibility = View.GONE
+
+        })
+
+
+    }
+
+
+
+    private fun setQuestionInLayout(index: Int) {
+
+//        if(isQuestionsRequested){
+            resultScrollView.visibility = View.VISIBLE
+            questionTVResult.text = test.questions[index-1].question
+            optionATVResult.text = test.questions[index-1].option1
+            optionBTVResult.text = test.questions[index-1].option2
+            optionCTVResult.text = test.questions[index-1].option3
+            optionDTVResult.text = test.questions[index-1].option4
+//        }
+
+    }
+
+    private fun showImages(index:Int) {
+        if(test.questions[index-1].quesImgUrl!= null
+            ||test.questions[index-1].option1ImgUrl!=null
+            ||test.questions[index-1].option2ImgUrl!= null
+            ||test.questions[index-1].option3ImgUrl!=null
+            ||test.questions[index-1].option4ImgUrl!= null){
+
+            if(test.questions[index-1].quesImgUrl!= null){
+                questionIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].quesImgUrl).into(questionIV)
+            }
+            //TODO set the images from the link
+            if(test.questions[index-1].option1ImgUrl!= null){
+                optionAIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option1ImgUrl).into(optionAIV)
+            }
+            if(test.questions[index-1].option2ImgUrl!= null){
+                optionBIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option2ImgUrl).into(optionBIV)
+
+            }
+            if(test.questions[index-1].option3ImgUrl!= null){
+                optionCIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option3ImgUrl).into(optionCIV)
+            }
+
+            if(test.questions[index-1].option4ImgUrl!= null){
+                optionDIV.visibility = View.VISIBLE
+                Picasso.get().load(test.questions[index-1].option4ImgUrl).into(optionDIV)
+            }
+
+
+
+        }
+        else{
+            Log.i("images", "images adresses are null")
+        }
+
 
     }
 
@@ -119,7 +232,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
 
-    fun pieChart(){
+    private fun pieChart(){
         val correctAnswersForPieChart = correctAnswers.toFloat()
         val incorrectAnswersForPieChart = incorrectAnswers.toFloat()
         val unattemptedForPieChart = unattemptedQuestions.toFloat()
@@ -167,10 +280,70 @@ class ResultActivity : AppCompatActivity() {
         pieChart.invalidate()
     }
 
-    fun showGridLayout(){
+
+    private fun setOptionsUI(index: Int){
+        if (!selectedOptions.containsKey("$index" as String)
+            || selectedOptions["$index" as String]!!.toInt() == -1 ){
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+
+        }
+        else if(selectedOptions["$index" as String]!!.toInt()==0
+            ){
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+        }
+        else if (selectedOptions["$index" as String]!!.toInt()==1){
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+        }
+        else if (selectedOptions["$index" as String]!!.toInt()==2){
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+        }
+        else if (selectedOptions["$index" as String]!!.toInt()==3){
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.selctedoptionbg)
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.optionwhitbg)
+
+        }
+    }
+
+    private fun setCorrectOptionUI(index: Int) {
+        if(test.questions[index-1].correctOption == 0){
+            optionAResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+        else if(test.questions[index-1].correctOption == 1){
+            optionBResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+        else if(test.questions[index-1].correctOption == 2){
+            optionCResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+        else if(test.questions[index-1].correctOption == 3){
+            optionDResultLL.background = ContextCompat.getDrawable(this,R.drawable.greenoptionbg)
+        }
+
+    }
+
+    private fun showGridLayout(){
         for(index in 1 .. test.questions.size){
             if (!selectedOptions.containsKey("$index" as String)
                 || selectedOptions["$index" as String]!!.toInt() == -1 ){
+
             } else if(selectedOptions["$index" as String]!!.toInt()==currTest.questions[index-1].correctOption){
                 gridL.findViewWithTag<TextView>(index).background = ContextCompat.getDrawable(this,R.drawable.gridtvbggreen)
             }
@@ -180,5 +353,63 @@ class ResultActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun loadAd() {
+        Log.i(ContentValues.TAG, "loadAd: sba load interstitial ad called")
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this, getString(R.string.admob_id_interstitial), adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    // The mInterstitialAd reference will be null until
+                    // an ad is loaded.
+                    mInterstitialAd = interstitialAd
+                    mInterstitialAd!!.setFullScreenContentCallback(object :
+                        FullScreenContentCallback() {
+                        override fun onAdClicked() {
+                            // Called when a click is recorded for an ad.
+                            Log.d(ContentValues.TAG, "Ad was clicked.")
+                        }
+
+                        override fun onAdDismissedFullScreenContent() {
+                            // Called when ad is dismissed.
+                            // Set the ad reference to null so you don't show the ad a second time.
+                            Log.d(ContentValues.TAG, "Ad dismissed fullscreen content.")
+                            mInterstitialAd = null
+                        }
+
+                        override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                            // Called when ad fails to show.
+                            Log.e(ContentValues.TAG, "Ad failed to show fullscreen content.")
+                            mInterstitialAd = null
+                        }
+
+                        override fun onAdImpression() {
+                            // Called when an impression is recorded for an ad.
+                            Log.d(ContentValues.TAG, "Ad recorded an impression.")
+                        }
+
+                        override fun onAdShowedFullScreenContent() {
+                            // Called when ad is shown.
+                            Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                        }
+                    })
+                    Log.i("sba ", "onAdLoaded")
+                }
+
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    // Handle the error
+                    Log.d("sba", loadAdError.toString())
+                    mInterstitialAd = null
+                }
+            })
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if(mInterstitialAd!=null){
+            mInterstitialAd!!.show(this)
+        }
+    }
+
 
 }
